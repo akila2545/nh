@@ -9019,19 +9019,19 @@ case 'alive': {
     {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
     ]
     let buttonMessage = {
-    image: { url: `${Config.ALIVE_LOGO}`},
+    image: { url: `${global.alive}`},
     caption: `│「 Hi 👋 」
     └┬❖ 「 ${pushname} 」
     ┌┤✑ i am ${global.botname} bot
     │└───────────────┈ ⳹
     │ 「 BOT INFO 」
-    │✙ 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-    │✙ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-    │✙ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
-    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
-    │✙ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-    │✙ 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
+    │🚀𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
+    │🕐𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+    │🧞‍♂️ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
+    │😎 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
+    │🐱‍🏍 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
+    │🐱‍👤 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+    │👩‍👩‍👧‍👧 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
     └┬──────────────┈ ⳹`,
     footer: `📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶`,
     buttons: buttons,
@@ -9049,13 +9049,13 @@ case 'menu': {
     ┌┤✑ i am ${global.botname} bot
     │└───────────────┈ ⳹
     │ 「 BOT INFO 」
-    │✙ 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-    │✙ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-    │✙ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
-    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
-    │✙ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-    │✙ 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
+    │🚀𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
+    │🕐𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+    │🧞‍♂️ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
+    │😎 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
+    │🐱‍🏍 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
+    │🐱‍👤 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+    │👩‍👩‍👧‍👧 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
     └┬──────────────┈ ⳹`,
                         buttonText: "Menu",
                         footerText: `${global.botname}`,
