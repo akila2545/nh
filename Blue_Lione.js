@@ -744,7 +744,7 @@ LioneBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kic
 					}
 			}
 			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-			for (let anju of yaudio){
+			for (let anju of xeonyaudio){
 				if (budy === anju){
 					result = fs.readFileSync(`./Blue-Lione-media/audio/${anju}.mp3`)
 					LioneBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
