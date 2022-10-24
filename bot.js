@@ -93,7 +93,7 @@ async function startLioneBotInc() {
        try {
        ppgc = await LioneBotInc.profilePictureUrl(pea[0].id, 'image')
        } catch {
-       ppgc = 'https://shortlink.LioneBotIncarridho.my.id/rg1oT'
+       ppgc = 'https://shortlink.xeonBotIncarridho.my.id/rg1oT'
        }
        let lolXeon = { url : ppgc }
        if (pea[0].announce == true) {
