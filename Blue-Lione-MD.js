@@ -1,10 +1,21 @@
-//------------------------------------------------------------
-// This Script is cod by nipuna .
-//------------------------------------------------------------
-//Thanks for vihaga,kavisha,Akila,nadeepa .
-//------------------------------------------------------------
-//Thanks for using Blue Lione Bot .
-//-------------------------------------------------------------
+
+//════════════════════════════//
+//If you want to recode, reupload
+//or copy the codes/script,
+//pls give credit
+//no credit? i will take action immediately
+//© 2022 NIPUNA Bot Inc. nero Bot MD
+//Thank you to Lord NIPUNA, Family and Myself
+//════════════════════════════//
+      // NIPUNA
+//════════════════════════════//
+//If you recode and uploading on your channel
+//or copy pasting the codes in ur script, 
+//i give permission to do as long as you
+//put Xeons youtube channel link in the video
+//description and tag me on githuh repo, 
+//thank you
+//════════════════════════════//
 
 require('./settings')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
@@ -27,13 +38,13 @@ const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const xeonkey = require('xfarr-api')
 const cheerio = require ("cheerio")
-const { LioneBotIncTiktok } = require('./lib/tiktokbyxeon')
+const { XeonBotIncTiktok } = require('./lib/tiktokbyxeon')
 let { msgFilter } = require('./lib/antispam')
 let { covid } = require('./lib/covid.js') 
 const { EmojiAPI } = require("emoji-api")
 const emoji = new EmojiAPI()
 const thiccysapi = require('textmaker-thiccy')
-const { LioneBotIncWiki } = require('./lib/xeonywiki.js')
+const { XeonBotIncWiki } = require('./lib/xeonywiki.js')
 const textpro = require('./lib/textpro')
 const { mediafireDl } = require('./lib/mediafire.js')
 const { Gempa } = require("./lib/gempa.js")
@@ -175,10 +186,10 @@ const {
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database omther\\
-let xeonysticker = JSON.parse(fs.readFileSync('./Blue-Lione-media/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
-let xeonyaudio = JSON.parse(fs.readFileSync('./Blue-Lione-media/theme/Media-Store-Karne-Ke-Liye/audio.json'));
-let xeonyimage = JSON.parse(fs.readFileSync('./Blue-Lione-media/theme/Media-Store-Karne-Ke-Liye/image.json'));
-let xeonyvideo = JSON.parse(fs.readFileSync('./Blue-Lione-media/theme/Media-Store-Karne-Ke-Liye/video.json'));
+let xeonysticker = JSON.parse(fs.readFileSync('./Blue-Lione-MD/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
+let xeonyaudio = JSON.parse(fs.readFileSync('./Blue-Lione-MD/theme/Media-Store-Karne-Ke-Liye/audio.json'));
+let xeonyimage = JSON.parse(fs.readFileSync('./Blue-Lione-MD/theme/Media-Store-Karne-Ke-Liye/image.json'));
+let xeonyvideo = JSON.parse(fs.readFileSync('./Blue-Lione-MD/theme/Media-Store-Karne-Ke-Liye/video.json'));
 let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'));
 const _autostick = JSON.parse(fs.readFileSync('./database/autostickpc.json'));
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
@@ -198,7 +209,7 @@ let tebaklirik = db.data.game.lirik = []
 let tebaktebakan = db.data.game.tebakan = []
 let vote = db.data.others.vote = []
 
-module.exports = LioneBotInc = async (LioneBotInc, m, chatUpdate, store) => {
+module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
@@ -207,7 +218,7 @@ module.exports = LioneBotInc = async (LioneBotInc, m, chatUpdate, store) => {
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
-        const botNumber = await LioneBotInc.decodeJid(LioneBotInc.user.id)
+        const botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
@@ -220,7 +231,7 @@ module.exports = LioneBotInc = async (LioneBotInc, m, chatUpdate, store) => {
 	    const messagesD = body.slice(0).trim().split(/ +/).shift().toLowerCase()
 
         //group\\
-        const groupMetadata = m.isGroup ? await LioneBotInc.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await XeonBotInc.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
@@ -301,7 +312,7 @@ if (!('templateVideo' in setting)) setting.templateVideo = false
 	
 	// FAKE TEXT IMG
 const textImg = (teks) => {
-LioneBotInc.sendMessage(m.chat, { text :teks, }, {quoted: m, thumbnail: fs.readFileSync('./Blue-Lione-media/image/wpmobile.png')}) 
+XeonBotInc.sendMessage(m.chat, { text :teks, }, {quoted: m, thumbnail: fs.readFileSync('./Blue-Lione-MD/image/wpmobile.png')}) 
 }
 
 //FAKE CONTACT
@@ -457,15 +468,15 @@ message: {
 	
 	//group target \\
 const reply = (teks) => {
-           LioneBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Blue-Lione-media/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+           XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Blue-Lione-MD/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            LioneBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Blue-Lione-media/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./Blue-Lione-MD/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
 	
         //Public & Self\\
-        if (!LioneBotInc.public) {
+        if (!XeonBotInc.public) {
             if (!m.key.fromMe) return
         }
 
@@ -500,7 +511,7 @@ jumlahharian = `${dataa.value}`
 	    let setting = global.db.data.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
 		let uptime = await runtime(process.uptime())
-		await LioneBotInc.setStatus(`${LioneBotInc.user.name} | 👨‍💻 Runtime : ${runtime(process.uptime())}`)
+		await XeonBotInc.setStatus(`${XeonBotInc.user.name} | 👨‍💻 Runtime : ${runtime(process.uptime())}`)
 		setting.status = new Date() * 1
 	    }
 	}
@@ -508,65 +519,65 @@ jumlahharian = `${dataa.value}`
 	//antispam or auto react
 //if (m.message && msgFilter.isFiltered(from)) {
 //console.log(`${global.themeemoji}[SPAM]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
-//return LioneBotInc.sendMessage(from, { react: { text: `${global.themeemoji}`, key: m.key }})
+//return XeonBotInc.sendMessage(from, { react: { text: `${global.themeemoji}`, key: m.key }})
 //}
 	
 //auto read whatsapp status
 if (autoreadsw) {
 		if (from === 'status@broadcast') {
-		LioneBotInc.chatRead(from)
+		XeonBotInc.chatRead(from)
 	}
 	}
 //autoreader gc and pm
 if (global.autoreadpmngc) {
 if (command) {
-await LioneBotInc.sendPresenceUpdate('composing', m.chat)
-LioneBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
+await XeonBotInc.sendPresenceUpdate('composing', m.chat)
+XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
 }
   //autoread gc only
   if (global.autoReadGc) {
-  if (m.isGroup) { LioneBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
+  if (m.isGroup) { XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
 }
   //auto recording all
-    if (global.autoRecord) { if (m.chat) { LioneBotInc.sendPresenceUpdate('recording', m.chat) }
+    if (global.autoRecord) { if (m.chat) { XeonBotInc.sendPresenceUpdate('recording', m.chat) }
 }
                                 //reactowner
-                                if (m.sender == `${global.REACT_NUMBER}@s.whatsapp.net`) LioneBotInc.sendMessage(from, { react: { text: global.OWNER_REACT , key: m.key }})
+                                if (m.sender == `${global.REACT_NUMBER}@s.whatsapp.net`) XeonBotInc.sendMessage(from, { react: { text: global.OWNER_REACT , key: m.key }})
 //autotyper all
-  if (global.autoTyping) { if (m.chat) { LioneBotInc.sendPresenceUpdate('composing', m.chat) }
+  if (global.autoTyping) { if (m.chat) { XeonBotInc.sendPresenceUpdate('composing', m.chat) }
 }
 //auto available all
-  if (global.available) { if (m.chat) { LioneBotInc.sendPresenceUpdate('available', m.chat) }
+  if (global.available) { if (m.chat) { XeonBotInc.sendPresenceUpdate('available', m.chat) }
   }
 
 // Autosticker gc
         if (isAutoSticker) {
             if (/image/.test(mime) && !/webp/.test(mime)) {
                 let mediac = await quoted.download()
-                await LioneBotInc.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                await XeonBotInc.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
                 console.log(`Auto sticker detected`)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return
                 let mediac = await quoted.download()
-                await LioneBotInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                await XeonBotInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
         //Autosticker pc
                 if (isAutoStick) {
             if (/image/.test(mime) && !/webp/.test(mime)) {
                 let mediac = await quoted.download()
-                await LioneBotInc.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                await XeonBotInc.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
                 console.log(`Auto sticker detected`)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return
                 let mediac = await quoted.download()
-                await LioneBotInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                await XeonBotInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
 
 	// AntiLinkgc
 if (AntiLink) {
-linkgce = await LioneBotInc.groupInviteCode(from)
+linkgce = await XeonBotInc.groupInviteCode(from)
 if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
 reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nYou won't be kicked by a bot because what you send is a link to this group`)
 } else if (isUrl(m.text)) {
@@ -575,8 +586,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 }
@@ -589,8 +600,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
   if (antiWame)
@@ -601,8 +612,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antivirtex by xeon
@@ -611,7 +622,7 @@ LioneBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n
   reply(`Somebody spammed virus!! Mark as read⚠️\n`.repeat(300))
   reply(`\`\`\`「 Virus Detected 」\`\`\`\n\nSorry You Will Be Kicked !`)
   if (!isBotAdmins) return reply(mess.botAdmin)
-  LioneBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+  XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   }
   }
 //anti bad words by xeon
@@ -626,8 +637,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${kice.split("@")[0]} was kicked because of using bad words in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})}
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${kice.split("@")[0]} was kicked because of using bad words in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})}
 }
 //antilink youtube video by xeon
 if (AntiLinkYoutubeVid)
@@ -638,8 +649,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 YouTube Video Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 YouTube Video Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antilink youtube channel by xeon
@@ -651,8 +662,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 YouTube Channel Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube channel link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 YouTube Channel Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube channel link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antilink instagram by xeon
@@ -664,8 +675,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Instagram Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending instagram link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Instagram Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending instagram link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antilink facebook by xeon
@@ -677,8 +688,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Facebook Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending facebook link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Facebook Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending facebook link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antilink telegram by xeon
@@ -691,8 +702,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Telegram Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending telegram link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Telegram Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending telegram link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antilink tiktok by xeon
@@ -704,8 +715,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Tiktok Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending tiktok link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Tiktok Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending tiktok link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antilink twitter by xeon
@@ -717,8 +728,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Tiktok Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending twitter link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Tiktok Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending twitter link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antilink all by xeon
@@ -730,8 +741,8 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await LioneBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-LioneBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 
@@ -739,29 +750,29 @@ LioneBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kic
   //if (Autoreply) //remove forwad slashes to make it autoreply on off
         for (let anji of xeonysticker){
 				if (budy === anji){
-					result = fs.readFileSync(`./Blue-Lione-media/sticker/${anji}.webp`)
-					LioneBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
+					result = fs.readFileSync(`./Blue-Lione-MD/sticker/${anji}.webp`)
+					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
 			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
 			for (let anju of xeonyaudio){
 				if (budy === anju){
-					result = fs.readFileSync(`./Blue-Lione-media/audio/${anju}.mp3`)
-					LioneBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					result = fs.readFileSync(`./Blue-Lione-MD/audio/${anju}.mp3`)
+					XeonBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
 			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
 			for (let anjh of xeonyimage){
 				if (budy === anjh){
-					result = fs.readFileSync(`./Blue-Lione-media/image/${anjh}.jpg`)
-					LioneBotInc.sendMessage(m.chat, { image: result }, { quoted: m })
+					result = fs.readFileSync(`./Blue-Lione-MD/image/${anjh}.jpg`)
+					XeonBotInc.sendMessage(m.chat, { image: result }, { quoted: m })
 					}
 			}
 			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
 					for (let anjh of xeonyvideo){
 				if (budy === anjh){
-					result = fs.readFileSync(`.//video/${anjh}.mp4`)
-					LioneBotInc.sendMessage(m.chat, { video: result }, { quoted: m })
+					result = fs.readFileSync(`./Blue-Lione-MD/video/${anjh}.mp4`)
+					XeonBotInc.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
 
@@ -774,7 +785,7 @@ emoji.get(satu)
 .then(emoji => {
 const buttons = [{buttonId: "y", buttonText: {displayText:satu}, type: 1}]
 const buttonMessage = {image: {url: emoji.images[dua].url},caption: "Here you go!",footerText: `${botname}`,buttons: buttons,headerType: 4}
-LioneBotInc.sendMessage(from, buttonMessage, {quoted:m})
+XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 })
 } catch (e) {
 reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
@@ -797,10 +808,10 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
         let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
         let { text, mentionedJid } = hash
         let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {
-            userJid: LioneBotInc.user.id,
+            userJid: XeonBotInc.user.id,
             quoted: m.quoted && m.quoted.fakeObj
         })
-        messages.key.fromMe = areJidsSameUser(m.sender, LioneBotInc.user.id)
+        messages.key.fromMe = areJidsSameUser(m.sender, XeonBotInc.user.id)
         messages.key.id = m.key.id
         messages.pushName = m.pushName
         if (m.isGroup) messages.participant = m.sender
@@ -809,7 +820,7 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
             messages: [proto.WebMessageInfo.fromObject(messages)],
             type: 'append'
         }
-        LioneBotInc.ev.emit('messages.upsert', msg)
+        XeonBotInc.ev.emit('messages.upsert', msg)
         }
 	    
 	if (('family100'+m.chat in _family100) && isCmd) {
@@ -830,7 +841,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
     }).filter(v => v).join('\n')}
     ${isSurender ? '' : `Perfect Player`}`.trim()
-            LioneBotInc.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
+            XeonBotInc.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin || isSurender) delete _family100['family100'+m.chat]
         }
 
@@ -838,7 +849,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, LioneBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -856,7 +867,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, LioneBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -865,7 +876,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, LioneBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -875,7 +886,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, LioneBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
@@ -885,7 +896,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, LioneBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -894,7 +905,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, LioneBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -903,7 +914,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, LioneBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -966,8 +977,8 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌'
 Typed *surrender* to surrender and admited defeat`
 	    if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 	    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-	    if (room.x !== room.o) await LioneBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
-	    await LioneBotInc.sendText(room.o, str, m, { mentions: parseMention(str) } )
+	    if (room.x !== room.o) await XeonBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
+	    await XeonBotInc.sendText(room.o, str, m, { mentions: parseMention(str) } )
 	    if (isTie || isWin) {
 	    delete this.game[room.id]
 	    }
@@ -981,7 +992,7 @@ Typed *surrender* to surrender and admited defeat`
 	    let tie = false
 	    if (m.sender == roof.p2 && /^(acc(ept)?|accept|yes|okay?|reject|no|later|nope(k.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(reject|no|later|n|nope(k.)?yes)/i.test(m.text)) {
-	    LioneBotInc.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} Refuse Suit, Suit Canceled`, m)
+	    XeonBotInc.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} Refuse Suit, Suit Canceled`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
@@ -989,20 +1000,20 @@ Typed *surrender* to surrender and admited defeat`
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    LioneBotInc.sendText(m.chat, `Suit Has Been Sent To Chat
+	    XeonBotInc.sendText(m.chat, `Suit Has Been Sent To Chat
 
 @${roof.p.split`@`[0]} dan 
 @${roof.p2.split`@`[0]}
 
 Please Choose A Suit In The Respective Chat"
 Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) LioneBotInc.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
-	    if (!roof.pilih2) LioneBotInc.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih) XeonBotInc.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
-	    if (!roof.pilih && !roof.pilih2) LioneBotInc.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
+	    if (!roof.pilih && !roof.pilih2) XeonBotInc.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
-	    LioneBotInc.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
+	    XeonBotInc.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
 	    }
 	    delete this.suit[roof.id]
 	    return !0
@@ -1018,13 +1029,13 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
 	    reply(`You Have Chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting For The Opponent To Choose` : ''}`)
-	    if (!roof.pilih2) LioneBotInc.sendText(roof.p2, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
+	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
 	    reply(`You Have Chosen ${m.text} ${!roof.pilih ? `\n\nWaiting For The Opponent To Choose` : ''}`)
-	    if (!roof.pilih) LioneBotInc.sendText(roof.p, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
+	    if (!roof.pilih) XeonBotInc.sendText(roof.p, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
 	    }
 	    let stage = roof.pilih
 	    let stage2 = roof.pilih2
@@ -1037,7 +1048,7 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    LioneBotInc.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
+	    XeonBotInc.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
 
 @${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
 @${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost \n`}
@@ -1149,13 +1160,13 @@ if (args[0] === "on") {
 if (isBanChat) return replay('Already Banned')
 banchat.push(from)
 replay('Success in banning the gc')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nThe bot has been disabled in this group, now no one will able to use the bot in this group!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nThe bot has been disabled in this group, now no one will able to use the bot in this group!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!isBanChat) return replay('Already Unbanned')
 let off = banchat.indexOf(from)
@@ -1166,7 +1177,7 @@ replay('Success in unbanning the gc')
   { buttonId: `${command} on`, buttonText: { displayText: 'Ban' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Unban' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nBan to Ban\nUnban to unban`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nBan to Ban\nUnban to unban`, `${global.botname}`, m)
   }
   }
   break
@@ -1205,7 +1216,7 @@ if (q.includes('--help')) return reply(examkosong)
   if (!isInventory){ addInventori(m.sender) }
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
      
-     var LioneBotInc = await getBuffer(picak+`User's Inventory`)
+     var XeonBotInc = await getBuffer(picak+`User's Inventory`)
      let teksehmazeh = `_[ ❤️👩🏻‍💼INFO USER❤️👨🏻‍💼 ]_\n\n`
      teksehmazeh += `*❤️Your Blood* : ${getDarah(m.sender)}\n`
      teksehmazeh += `*◻️️Your Iron* : ${getBesi(m.sender)}\n`
@@ -1221,7 +1232,7 @@ if (q.includes('--help')) return reply(examkosong)
      teksehmazeh += `*🐄Cow* : ${getSapi(m.sender)}\n`
      teksehmazeh += `*🐘Elephant* : ${getGajah(m.sender)}\n\n`
      teksehmazeh += `_*${pushname}*_`
-     await LioneBotInc.send5ButImg(from, `` + '' + teksehmazeh, `© ${botname}`, LioneBotInc, [{"urlButton": {"displayText": "YouTube📍","url": `${websitex}`}}])
+     await XeonBotInc.send5ButImg(from, `` + '' + teksehmazeh, `© ${botname}`, XeonBotInc, [{"urlButton": {"displayText": "YouTube📍","url": `${websitex}`}}])
   }
   break
         case 'userlimit': 
@@ -1280,7 +1291,7 @@ if (q.includes('--help')) return reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     LioneBotInc.sendMessage(from, buttonMessage, { quoted: m })
+     XeonBotInc.sendMessage(from, buttonMessage, { quoted: m })
    
    }, 7000)  
   setTimeout( () => {
@@ -1515,7 +1526,7 @@ if (q.includes('--help')) return reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     LioneBotInc.sendMessage(from, buttonMessage, { quoted: m })      
+     XeonBotInc.sendMessage(from, buttonMessage, { quoted: m })      
   }, 5000)  
  setTimeout( () => {
   reply(`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
@@ -1542,7 +1553,7 @@ if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
-LioneBotInc.groupRevokeInvite(m.chat)
+XeonBotInc.groupRevokeInvite(m.chat)
 }
 break
 	    case 'afk': {
@@ -1590,8 +1601,8 @@ ${arr.slice(6).join('')}
 Waiting @${room.game.currentTurn.split('@')[0]}
 
 Type *surrender* to surrender and admit defeat`
-            if (room.x !== room.o) await LioneBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
-            await LioneBotInc.sendText(room.o, str, m, { mentions: parseMention(str) } )
+            if (room.x !== room.o) await XeonBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
+            await XeonBotInc.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
             room = {
             id: 'tictactoe-' + (+new Date),
@@ -1613,7 +1624,7 @@ if (isBanChat) return reply(mess.banChat)
             try {
             if (this.game) {
             delete this.game
-            LioneBotInc.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
+            XeonBotInc.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
             } else if (!this.game) {
             reply(`TicTacToe🎮 Session Does Not Exist`)
             } else reply('?')
@@ -1640,13 +1651,13 @@ if (isBanChat) return reply(mess.banChat)
 
 Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             this.suit[id] = {
-            chat: await LioneBotInc.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
+            chat: await XeonBotInc.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
             id: id,
             p: m.sender,
             p2: m.mentionedJid[0],
             status: 'wait',
             waktu: setTimeout(() => {
-            if (this.suit[id]) LioneBotInc.sendText(m.chat, `_Suit Time Out_`, m)
+            if (this.suit[id]) XeonBotInc.sendText(m.chat, `_Suit Time Out_`, m)
             delete this.suit[id]
             }, 60000), poin, poin_lose, timeout
             }
@@ -1658,19 +1669,19 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 if (!q) return replay(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
                 if (args[0] === 'mute') {
-                    LioneBotInc.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    XeonBotInc.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unmute') {
-                    LioneBotInc.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    XeonBotInc.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'archive') {
-                    LioneBotInc.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    XeonBotInc.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unarchive') {
-                    LioneBotInc.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    XeonBotInc.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'read') {
-                    LioneBotInc.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    XeonBotInc.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unread') {
-                    LioneBotInc.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    XeonBotInc.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'delete') {
-                    LioneBotInc.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    XeonBotInc.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 }
             }
             break
@@ -1686,7 +1697,7 @@ if (isBanChat) return reply(mess.banChat)
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
-                    pesan: await LioneBotInc.sendText(m.chat, hasil, m),
+                    pesan: await XeonBotInc.sendText(m.chat, hasil, m),
                     ...random,
                     terjawab: Array.from(random.jawaban, () => false),
                     hadiah: 6,
@@ -1709,80 +1720,80 @@ if (args[0] === "song") {
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
 let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
-let msg = await LioneBotInc.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
-LioneBotInc.sendText(m.chat, `What is the name of this song?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
+let msg = await XeonBotInc.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
+XeonBotInc.sendText(m.chat, `What is the name of this song?\n\nArtist : ${result.artist}\nTime : 60s`, msg).then(() => {
 tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
 console.log("Answer: " + result.jawaban)
-LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess the song' }, type: 1 }], `Time has run out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess the song' }, type: 1 }], `Time has run out\nAnswer:  ${tebaklagu[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
 delete tebaklagu[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'picture') {
 if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
-LioneBotInc.sendImage(m.chat, result.img, `Please answer the question above\n\nDescription : ${result.deskripsi}\nTime : 60s`, m).then(() => {
+XeonBotInc.sendImage(m.chat, result.img, `Please answer the question above\n\nDescription : ${result.deskripsi}\nTime : 60s`, m).then(() => {
 tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
 console.log("Answer: " + result.jawaban)
-LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess the picture' }, type: 1 }], `Time has run out\nAnswer:  ${tebakgambar[m.sender.split('@')[0]]}\n\nWant to play? press the button below`,`${global.botname}`, m)
+XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess the picture' }, type: 1 }], `Time has run out\nAnswer:  ${tebakgambar[m.sender.split('@')[0]]}\n\nWant to play? press the button below`,`${global.botname}`, m)
 delete tebakgambar[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'word') {
 if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
 let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/fungames/main/GuessTheWord.js')
 let result = anu[Math.floor(Math.random() * anu.length)]
-LioneBotInc.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
+XeonBotInc.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
 tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
 console.log("Answer: " + result.jawaban)
-LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${tebakkata[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${tebakkata[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
 delete tebakkata[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'sentence') {
 if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
 let anu = await fetchJson('https://raw.githubusercontent.com/DGXeon/fungames/main/GuessTheSentence.js')
 let result = anu[Math.floor(Math.random() * anu.length)]
-LioneBotInc.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
+XeonBotInc.sendText(m.chat, `Please answer the following question\n\n${result.soal}\nTime : 60s`, m).then(() => {
 tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
 console.log("Answer: " + result.jawaban)
-LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess the Sentence' }, type: 1 }], `Time Out\nAnswer:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess the Sentence' }, type: 1 }], `Time Out\nAnswer:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
 delete tebakkalimat[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'lyrics') {
 if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
-LioneBotInc.sendText(m.chat, `Fill the missing lyrics below : *${result.soal}*?\nTime : 60s`, m).then(() => {
+XeonBotInc.sendText(m.chat, `Fill the missing lyrics below : *${result.soal}*?\nTime : 60s`, m).then(() => {
 tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
 console.log("Answer: " + result.jawaban)
-LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `Time Out\nAnswer:  ${tebaklirik[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `Time Out\nAnswer:  ${tebaklirik[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
 delete tebaklirik[m.sender.split('@')[0]]
 }
 } else if (args[0] === 'guess saying') {
 if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
-LioneBotInc.sendText(m.chat, `*Answer the following questions :*\n${result.soal}*\nTime : 60s`, m).then(() => {
+XeonBotInc.sendText(m.chat, `*Answer the following questions :*\n${result.soal}*\nTime : 60s`, m).then(() => {
 caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 caklontong_desk[m.sender.split('@')[0]] = result.deskripsi
 })
 await sleep(60000)
 if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
 console.log("Answer: " + result.jawaban)
-LioneBotInc.sendButtonText(m.chat, [{ buttonId: 'guess saying', buttonText: { displayText: 'Guess The Saying' }, type: 1 }], `Time Out\nAnswer:  ${caklontong[m.sender.split('@')[0]]}\nDescription : ${caklontong_desk[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess saying', buttonText: { displayText: 'Guess The Saying' }, type: 1 }], `Time Out\nAnswer:  ${caklontong[m.sender.split('@')[0]]}\nDescription : ${caklontong_desk[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
 delete caklontong[m.sender.split('@')[0]]
 delete caklontong_desk[m.sender.split('@')[0]]
 }
@@ -1791,10 +1802,10 @@ delete caklontong_desk[m.sender.split('@')[0]]
 break
 		
 	case 'react': {  
-    LioneBotInc.sendMessage(from, { react: { text: `🐼`, key: m.key }})
+    XeonBotInc.sendMessage(from, { react: { text: `🐼`, key: m.key }})
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-LioneBotInc.sendMessage(m.chat, reactionMessage)} 
+XeonBotInc.sendMessage(m.chat, reactionMessage)} 
 break
 		
 		
@@ -1805,7 +1816,7 @@ if (isBanChat) return reply(mess.banChat)
                 let { genMath, modes } = require('./lib/math')
                 if (!text) return replay(`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: ${prefix}math medium`)
                 let result = await genMath(text.toLowerCase())
-                LioneBotInc.sendText(m.chat, `*What Is The Result Of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+                XeonBotInc.sendText(m.chat, `*What Is The Result Of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
                 })
                 await sleep(result.waktu)
@@ -1830,7 +1841,7 @@ if (isBanChat) return reply(mess.banChat)
             let buttons = [
                         { buttonId: '👑', buttonText: { displayText: '👑' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, jawab, LioneBotInc.user.name, m, {mentions: ments})
+                    await XeonBotInc.sendButtonText(m.chat, buttons, jawab, XeonBotInc.user.name, m, {mentions: ments})
             }
             break
             case 'couple': {
@@ -1846,7 +1857,7 @@ Cieeee, What's Going On👑🎩👀`
             let buttons = [
                         { buttonId: '👑', buttonText: { displayText: '👑' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, jawab, LioneBotInc.user.name, m, {mentions: menst})
+                    await XeonBotInc.sendButtonText(m.chat, buttons, jawab, XeonBotInc.user.name, m, {mentions: menst})
             }
             break
             case 'is':
@@ -1855,7 +1866,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
 					const apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
 					const kah = apa[Math.floor(Math.random() * apa.length)]
-LioneBotInc.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
 
 					break
 					            case 'what':
@@ -1864,7 +1875,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
 					const lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
 					const kahk = lel[Math.floor(Math.random() * lel.length)]
-LioneBotInc.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
 
 					break
 case 'can':
@@ -1873,7 +1884,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} you fuck her lol `)
 					const bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
 					const ga = bisa[Math.floor(Math.random() * bisa.length)]
-LioneBotInc.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
 
 					break
 case 'how':
@@ -1882,7 +1893,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} is my face`)
 					const gimana = [`It's Okay`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
-LioneBotInc.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
 
 					break
 case 'rate':
@@ -1891,7 +1902,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} My Dp`)
 					const ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const te = ra[Math.floor(Math.random() * ra.length)]
-LioneBotInc.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
 
 					break
   case 'handsomecheck':
@@ -1900,7 +1911,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
-LioneBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
 
 					break
 case 'beautifulcheck':
@@ -1909,7 +1920,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
-LioneBotInc.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
 					break
 					case 'charactercheck':
 					if (isBan) return reply(mess.ban)	 			
@@ -1917,7 +1928,7 @@ if (isBanChat) return reply(mess.banChat)
 					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
-					LioneBotInc.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
+					XeonBotInc.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
 				     break
                     case 'awesomecheck':
   case 'greatcheck':
@@ -1934,7 +1945,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
-LioneBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
                     case 'stupid':
       case 'foolish':
@@ -2031,7 +2042,7 @@ LioneBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${
             let buttons = [
                         { buttonId: '👀', buttonText: { displayText: '👀🎧' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
+                    await XeonBotInc.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
             break
 case 'dare':
@@ -2122,7 +2133,7 @@ case 'dare':
 ]
               const xeondare = dare[Math.floor(Math.random() * dare.length)]
               buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              LioneBotInc.sendMessage(from, { image: buffer, caption: '_You choose DARE_\n'+ xeondare }, {quoted:m})
+              XeonBotInc.sendMessage(from, { image: buffer, caption: '_You choose DARE_\n'+ xeondare }, {quoted:m})
               break
                             break
        case 'truth':
@@ -2221,7 +2232,7 @@ case 'dare':
 ]
               const xeontruth = truth[Math.floor(Math.random() * truth.length)]
               buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              LioneBotInc.sendMessage(from, { image: buffer, caption: '_You choose TRUTH_\n'+ xeontruth }, {quoted:m})
+              XeonBotInc.sendMessage(from, { image: buffer, caption: '_You choose TRUTH_\n'+ xeontruth }, {quoted:m})
               break
 case 'when':
 if (isBan) return reply(mess.ban)	 			
@@ -2229,7 +2240,7 @@ if (isBanChat) return reply(mess.banChat)
 				if (!text) return replay(`Use Text, Example : ${prefix + command} will i get married `)
 					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
-LioneBotInc.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
+XeonBotInc.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
 					break
 case 'wangy':
 if (isBan) return reply(mess.ban)	 			
@@ -2254,7 +2265,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replay(`Invalid Link!`)
                 reply(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
-                await LioneBotInc.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                await XeonBotInc.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
                                case 'leavegc': case 'leavegroup': {
@@ -2262,7 +2273,7 @@ if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
                 if (!isCreator) return replay(`${mess.owner}`)
-                await LioneBotInc.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                await XeonBotInc.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
             case 'setexif': {
@@ -2276,25 +2287,25 @@ if (isBanChat) return reply(mess.banChat)
             }
             break
 	case 'kick': { 
-    LioneBotInc.sendMessage(from, { react: { text: `😱`, key: m.key }})    
+    XeonBotInc.sendMessage(from, { react: { text: `😱`, key: m.key }})    
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await LioneBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'add': { 
-        LioneBotInc.sendMessage(from, { react: { text: `❤️`, key: m.key }})    
+        XeonBotInc.sendMessage(from, { react: { text: `❤️`, key: m.key }})    
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await LioneBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
@@ -2304,7 +2315,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await LioneBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'demote': {
@@ -2314,7 +2325,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await LioneBotInc.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'block': {
@@ -2322,16 +2333,16 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await LioneBotInc.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'unblock': { 
-            LioneBotInc.sendMessage(from, { react: { text: `😀`, key: m.key }})    
+            XeonBotInc.sendMessage(from, { react: { text: `😀`, key: m.key }})    
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return replay(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await LioneBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'setgcname': case 'setsubject': {
@@ -2341,7 +2352,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) replay(`${mess.admin}`)
                 if (!text) replay(`Where Is The Text?`)
-                await LioneBotInc.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
+                await XeonBotInc.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
           case 'setdesc': case 'setdescription': {
@@ -2351,7 +2362,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) replay(`${mess.admin}`)
                 if (!text) replay(`Where Is The Text?`)
-                await LioneBotInc.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
+                await XeonBotInc.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
           case 'setbotpp': {
@@ -2361,8 +2372,8 @@ if (isBanChat) return reply(mess.banChat)
                 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
-                await LioneBotInc.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+                await XeonBotInc.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
                 }
                 break
@@ -2374,13 +2385,13 @@ if (isBanChat) return reply(mess.banChat)
                 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
-                await LioneBotInc.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+                await XeonBotInc.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
                 }
                 break
             case 'tagall': { 
-            LioneBotInc.sendMessage(from, { react: { text: `🔥`, key: m.key }})    
+            XeonBotInc.sendMessage(from, { react: { text: `🔥`, key: m.key }})    
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2392,7 +2403,7 @@ let teks = `╚»˙·٠•${global.menumoji}♥ Tag All ♥${global.menumoji}•
                 for (let mem of participants) {
                 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
                 }
-                LioneBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
                 break
                 case 'hidetag': {
@@ -2401,7 +2412,7 @@ if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
             if (!isBotAdmins) return replay(`${mess.botAdmin}`)
             if (!isAdmins) return replay(`${mess.admin}`)
-            LioneBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+            XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
 	    case 'style': case 'styletext': {
@@ -2456,11 +2467,11 @@ let buttonsVote = [
 
             let buttonMessageVote = {
                 text: teks_vote,
-                footer: LioneBotInc.user.name,
+                footer: XeonBotInc.user.name,
                 buttons: buttonsVote,
                 headerType: 1
             }
-            LioneBotInc.sendMessage(m.chat, buttonMessageVote)
+            XeonBotInc.sendMessage(m.chat, buttonMessageVote)
 	    }
             break
                case 'upvote': {
@@ -2499,12 +2510,12 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 
             let buttonMessageUpvote = {
                 text: teks_vote,
-                footer: LioneBotInc.user.name,
+                footer: XeonBotInc.user.name,
                 buttons: buttonsUpvote,
                 headerType: 1,
                 mentions: menvote
              }
-            LioneBotInc.sendMessage(m.chat, buttonMessageUpvote)
+            XeonBotInc.sendMessage(m.chat, buttonMessageUpvote)
 	    }
              break
                 case 'devote': {
@@ -2543,12 +2554,12 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 
             let buttonMessageDevote = {
                 text: teks_vote,
-                footer: LioneBotInc.user.name,
+                footer: XeonBotInc.user.name,
                 buttons: buttonsDevote,
                 headerType: 1,
                 mentions: menvote
             }
-            LioneBotInc.sendMessage(m.chat, buttonMessageDevote)
+            XeonBotInc.sendMessage(m.chat, buttonMessageDevote)
 	}
             break
                  
@@ -2578,9 +2589,9 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 *${prefix}delvote* - To Delete Vote Session
 
 
-©${LioneBotInc.user.id}
+©${XeonBotInc.user.id}
 `
-LioneBotInc.sendTextWithMentions(m.chat, teks_vote, m)
+XeonBotInc.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
 			if (isBan) return reply(mess.ban)	 			
@@ -2598,15 +2609,15 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === 'close'){
-                    await LioneBotInc.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
+                    await XeonBotInc.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
-                    await LioneBotInc.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
+                    await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
                 } else {
                 let buttons = [
                         { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `Group Mode`, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `Group Mode`, XeonBotInc.user.name, m)
 
              }
             }
@@ -2618,22 +2629,22 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
              if (args[0] === 'open'){
-                await LioneBotInc.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Edit Group Info`)).catch((err) => reply(jsonformat(err)))
+                await XeonBotInc.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else if (args[0] === 'close'){
-                await LioneBotInc.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Edit Group Info`)).catch((err) => reply(jsonformat(err)))
+                await XeonBotInc.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else {
              let buttons = [
                         { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `Mode Edit Info`, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `Mode Edit Info`, XeonBotInc.user.name, m)
 
             }
             }
             break
 case 'autosticker':
             case 'autostiker':
-LioneBotInc.sendMessage(from, { react: { text: `🇱🇰`, key: m.key }})               
+XeonBotInc.sendMessage(from, { react: { text: `🇱🇰`, key: m.key }})               
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2654,7 +2665,7 @@ reply('auto sticker deactivated')
 break
 case 'autostickerpc':
             case 'autostikerpc':
- LioneBotInc.sendMessage(from, { react: { text: `🇱🇰`, key: m.key }})                
+ XeonBotInc.sendMessage(from, { react: { text: `🇱🇰`, key: m.key }})                
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2681,13 +2692,13 @@ if (args[0] === "on") {
 if (AntiLink) return replay('Already activated')
 ntilink.push(from)
 replay('Success in turning on group chat antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLink) return replay('Already deactivated')
 let off = ntilink.indexOf(from)
@@ -2698,7 +2709,7 @@ replay('Success in turning off group chat antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2712,13 +2723,13 @@ if (args[0] === "on") {
 if (AntiLinkYoutubeVid) return replay('Already activated')
 ntilinkytvid.push(from)
 replay('Success in turning on youtube video antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube video link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube video link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkYoutubeVid) return replay('Already deactivated')
 let off = ntilinkytvid.indexOf(from)
@@ -2729,7 +2740,7 @@ replay('Success in turning off youtube video antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2743,13 +2754,13 @@ if (args[0] === "on") {
 if (AntiLinkYoutubeChannel) return replay('Already activated')
 ntilinkytch.push(from)
 replay('Success in turning on youtube channel antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube channel link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube channel link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkYoutubeChannel) return replay('Already deactivated')
 let off = ntilinkytch.indexOf(from)
@@ -2760,7 +2771,7 @@ replay('Success in turning off youtube channel antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2774,13 +2785,13 @@ if (args[0] === "on") {
 if (AntiLinkInstagram) return replay('Already activated')
 ntilinkig.push(from)
 replay('Success in turning on instagram antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the instagram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the instagram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkInstagram) return replay('Already deactivated')
 let off = ntilinkig.indexOf(from)
@@ -2791,7 +2802,7 @@ replay('Success in turning off instagram antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2805,13 +2816,13 @@ if (args[0] === "on") {
 if (AntiLinkFacebook) return replay('Already activated')
 ntilinkfb.push(from)
 replay('Success in turning on facebook antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the facebook link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the facebook link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkFacebook) return replay('Already deactivated')
 let off = ntilinkfb.indexOf(from)
@@ -2822,7 +2833,7 @@ replay('Success in turning off facebook antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2836,13 +2847,13 @@ if (args[0] === "on") {
 if (AntiLinkTelegram) return replay('Already activated')
 ntilinktg.push(from)
 replay('Success in turning on telegram antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the telegram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the telegram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTelegram) return replay('Already deactivated')
 let off = ntilinkig.indexOf(from)
@@ -2853,7 +2864,7 @@ replay('Success in turning off telegram antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2867,13 +2878,13 @@ if (args[0] === "on") {
 if (AntiLinkTiktok) return replay('Already activated')
 ntilinktt.push(from)
 replay('Success in turning on tiktok antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the tiktok link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the tiktok link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTiktok) return replay('Already deactivated')
 let off = ntilinktt.indexOf(from)
@@ -2884,7 +2895,7 @@ replay('Success in turning off tiktok antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2898,13 +2909,13 @@ if (args[0] === "on") {
 if (AntiLinkTwitter) return replay('Already activated')
 ntilinktwt.push(from)
 replay('Success in turning on twitter antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the twitter link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the twitter link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTwitter) return replay('Already deactivated')
 let off = ntilinktwt.indexOf(from)
@@ -2915,7 +2926,7 @@ replay('Success in turning off twitter antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2929,13 +2940,13 @@ if (args[0] === "on") {
 if (AntiLinkTwitter) return replay('Already activated')
 ntilinkall.push(from)
 replay('Success in turning on all antilink in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkAll) return replay('Already deactivated')
 let off = ntilinkall.indexOf(from)
@@ -2946,7 +2957,7 @@ replay('Success in turning off all antilink in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -2960,13 +2971,13 @@ if (args[0] === "on") {
 if (antiVirtex) return replay('Already activated')
 ntvirtex.push(from)
 replay('Success in turning on antivirus in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiVirtex) return replay('Already deactivated')
 let off = ntvirtex.indexOf(from)
@@ -2977,7 +2988,7 @@ replay('Success in turning off antivirus this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntvirtex, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntvirtex, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -3001,7 +3012,7 @@ replay('Success in turning off autoreply in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonswlcm, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonswlcm, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -3015,13 +3026,13 @@ if (args[0] === "on") {
 if (antiToxic) return replay('Already activated')
 nttoxic.push(from)
 replay('Success in turning on antitoxic in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to use bad words in this group, one who uses will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to use bad words in this group, one who uses will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiToxic) return replay('Already deactivated')
 let off = nttoxic.indexOf(from)
@@ -3032,7 +3043,7 @@ replay('Success in turning off antitoxic in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsnttoxic, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsnttoxic, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -3046,13 +3057,13 @@ if (args[0] === "on") {
 if (antiWame) return replay('Already activated')
 ntwame.push(from)
 replay('Success in turning on antiwame in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send wa.me in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send wa.me in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiWame) return replay('Already deactivated')
 let off = nttoxic.indexOf(from)
@@ -3063,7 +3074,7 @@ replay('Success in turning off antiwame in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntwame, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -3077,13 +3088,13 @@ if (args[0] === "on") {
 if (AntiNsfw) return replay('Already activated')
 ntnsfw.push(from)
 replay('Success in turning on nsfw in this group')
-var groupe = await LioneBotInc.groupMetadata(from)
+var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-LioneBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiNsfw) return replay('Already deactivated')
 let off = ntnsfw.indexOf(from)
@@ -3094,7 +3105,7 @@ replay('Success in turning off nsfw in this group')
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await LioneBotInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
   break
@@ -3107,17 +3118,17 @@ if (isBanChat) return reply(mess.banChat)
                 if (args[0] === "on") {
                 if (db.data.chats[m.chat].mute) return reply(`Previously Active`)
                 db.data.chats[m.chat].mute = true
-                reply(`${LioneBotInc.user.name} Has Been Muted In This Group !`)
+                reply(`${XeonBotInc.user.name} Has Been Muted In This Group !`)
                 } else if (args[0] === "off") {
                 if (!db.data.chats[m.chat].mute) return reply(`Previously Inactive`)
                 db.data.chats[m.chat].mute = false
-                reply(`${LioneBotInc.user.name} Has Been Unmuted In This Group!`)
+                reply(`${XeonBotInc.user.name} Has Been Unmuted In This Group!`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'mute off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `Mute Bot`, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `Mute Bot`, XeonBotInc.user.name, m)
                 }
              }
              break
@@ -3128,8 +3139,8 @@ if (!isCreator) return replay(mess.owner)
 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
-await LioneBotInc.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+await XeonBotInc.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
 replay(mess.success)
 }
 break
@@ -3137,8 +3148,8 @@ break
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
-                let response = await LioneBotInc.groupInviteCode(m.chat)
-                LioneBotInc.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\n${groupMetadata.subject} Group Link`, m, { detectLink: true })
+                let response = await XeonBotInc.groupInviteCode(m.chat)
+                XeonBotInc.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\n${groupMetadata.subject} Group Link`, m, { detectLink: true })
             }
             break
             case 'ephemeral': {
@@ -3149,9 +3160,9 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (!text) return replay(`Enter The enable/disable Values`)
                 if (args[0] === 'enable') {
-                    await LioneBotInc.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    await XeonBotInc.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'disable') {
-                    await LioneBotInc.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                    await XeonBotInc.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 }
             }
             break
@@ -3183,7 +3194,7 @@ if (isBanChat) return reply(mess.banChat)
                    }
                         sections.push(yy)
                     }
-                    const sendm =  LioneBotInc.sendMessage(
+                    const sendm =  XeonBotInc.sendMessage(
       from, 
       {
        text: "Group Settings",
@@ -3202,7 +3213,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!m.quoted) reply(false)
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`)
-                LioneBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+                XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
       case 'bcgc': case 'bcgroup': {
@@ -3210,7 +3221,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
 if (!args.join(" ")) return replay(`Where as the text?\n\nExample : ${prefix + command} ${global.ownername}`)
-let getGroups = await LioneBotInc.groupFetchAllParticipating()
+let getGroups = await XeonBotInc.groupFetchAllParticipating()
 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
 let anu = groups.map(v => v.id)
 replay(`Send broadcast to ${anu.length} group chat, time's up ${anu.length * 1.5} second`)
@@ -3243,7 +3254,7 @@ id: 'owner'
 }
 }]
 let txt = `*「 ${global.ownername}'s Broadcast」*\n\n${text}`
-LioneBotInc.send5ButImg(i, txt, `${global.botname}`, log0, btn, thum)
+XeonBotInc.send5ButImg(i, txt, `${global.botname}`, log0, btn, thum)
 }
 replay(`Successfully Sent Broadcast To ${anu.length} Group`)
 }
@@ -3284,7 +3295,7 @@ id: 'owner'
 }
 }]
 let txt = `*「 ${global.ownername}'s Broadcast」*\n\n${text}`
-LioneBotInc.send5ButImg(yoi, txt, `${global.botname}`, log0, btn, thum)
+XeonBotInc.send5ButImg(yoi, txt, `${global.botname}`, log0, btn, thum)
 }
 replay('Broadcast Success')
 }
@@ -3295,7 +3306,7 @@ if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
                 if (!/video/.test(mime) && !/image/.test(mime) && !/audio/.test(mime)) return reply(`*Send/Reply Video/Audio/Image You Want to Broadcast With Caption* ${prefix + command}`)
                 let anu = await store.chats.all().map(v => v.id)
-                let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 999999999,status: 200, thumbnail: fs.readFileSync('./Blue-Lione-media/theme/cheemspic.jpg'), surface: 200, message: `${ownername}'s Broadcast`, orderTitle: `${botname}`, sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 999999999,status: 200, thumbnail: fs.readFileSync('./Blue-Lione-MD/theme/cheemspic.jpg'), surface: 200, message: `${ownername}'s Broadcast`, orderTitle: `${botname}`, sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 reply(`*Send Broadcast To* ${anu.length} *Group Chat, Time ${anu.length * 1.5} secs*`)
                 for (let i of anu) {
                     await sleep(1500)
@@ -3325,18 +3336,18 @@ displayText: 'Owner 👑',
 id: 'owner'
 }
 }]
-                    let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
+                    let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
                     let buffer = fs.readFileSync(media)
                     if (/webp/.test(mime)) {
-                    LioneBotInc.sendMessage(i, { sticker: { url: media } }, { quoted: ftroli })
+                    XeonBotInc.sendMessage(i, { sticker: { url: media } }, { quoted: ftroli })
                     } else if (/image/.test(mime)) {
                     let DGXeon = `*「 ${global.ownername}'s Broadcast」*${text ? '\n\n' + text : ''}`
-                    LioneBotInc.send5ButImg(i, DGXeon, `${global.botname}`, buffer, butoon)
+                    XeonBotInc.send5ButImg(i, DGXeon, `${global.botname}`, buffer, butoon)
                     } else if (/video/.test(mime)) {
                     let DGXeon = `*「 ${global.ownername}'s Broadcast」*${text ? '\n\n' + text : ''}`
-                    LioneBotInc.sendMessage(i, {video: buffer, caption: `${DGXeon}`}, { quoted: ftroli })
+                    XeonBotInc.sendMessage(i, {video: buffer, caption: `${DGXeon}`}, { quoted: ftroli })
                     } else if (/audio/.test(mime)) {
-                    LioneBotInc.sendMessage(i, {audio: buffer, mimetype: 'audio/mpeg'}, { quoted : ftroli })
+                    XeonBotInc.sendMessage(i, {audio: buffer, mimetype: 'audio/mpeg'}, { quoted : ftroli })
                     } else {
                     reply(`*Send/Reply Video/Audio/Image You Want to Broadcast With Caption* ${prefix + command}`)
                     }
@@ -3356,7 +3367,7 @@ if (!isCreator) return replay(mess.owner)
 	     	for (let yoi of anu) {
 	     	await sleep(1500)
 		    var button = [{ buttonId: `${prefix}ho`, buttonText: { displayText: `${melo2}` }, type: 1 }]              
-            LioneBotInc.sendMessage(yoi, { caption: `${melo}`, location: { jpegThumbnail: await getBuffer(picak+`${ownername}'s Broadcast`) }, buttons: button, footer: `${botname}`, mentions: [m.sender] })
+            XeonBotInc.sendMessage(yoi, { caption: `${melo}`, location: { jpegThumbnail: await getBuffer(picak+`${ownername}'s Broadcast`) }, buttons: button, footer: `${botname}`, mentions: [m.sender] })
 		}		
             }
             break
@@ -3374,14 +3385,14 @@ let waktu = read ? read : unread
 teks += `${global.themeemoji} @${i.userJid.split('@')[0]}\n`
 teks += ` ┗━${global.themeemoji} *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ${global.themeemoji} *Status :* ${read ? 'Read' : 'Sent'}\n\n`
 }
-LioneBotInc.sendTextWithMentions(m.chat, teks, m)
+XeonBotInc.sendTextWithMentions(m.chat, teks, m)
 }
 break
 case 'q': case 'quoted': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) return replay('Reply Message!!')
-let wokwol = await LioneBotInc.serializeM(await m.getQuotedObj())
+let wokwol = await XeonBotInc.serializeM(await m.getQuotedObj())
 if (!wokwol.quoted) return replay('The message you replied to does not contain a reply')
 await wokwol.quoted.copyNForward(m.chat, true)
 }
@@ -3394,7 +3405,7 @@ let teks = `     「 Personal Chat List 」\n\nThere are ${anu.length} users usi
 for (let i of anu) {
  teks += `\n\nProfile : @${i.id.split('@')[0]}\nChat : ${i.unreadCount}\nLastchat : ${moment(i.conversationTimestamp * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`
 }
-LioneBotInc.sendTextWithMentions(m.chat, teks, m)
+XeonBotInc.sendTextWithMentions(m.chat, teks, m)
 }
 break
 case 'listgc': {
@@ -3403,7 +3414,7 @@ if (isBanChat) return reply(mess.banChat)
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
 let teks = `     「 Group Chat 」\n\nThere are ${anu.length} users using bot in group chat`
 for (let i of anu) {
- let metadata = await LioneBotInc.groupMetadata(i)
+ let metadata = await XeonBotInc.groupMetadata(i)
  if (metadata.owner === "undefined") {
  loldd = false
  } else {
@@ -3411,7 +3422,7 @@ for (let i of anu) {
  }
  teks += `\n\nName : ${metadata.subject ? metadata.subject : "undefined"}\nOwner : ${loldd ? '@' + loldd.split("@")[0] : "undefined"}\nID : ${metadata.id ? metadata.id : "undefined"}\nMade : ${metadata.creation ? moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss') : "undefined"}\nMember : ${metadata.participants.length ? metadata.participants.length : "undefined"}`
 }
-LioneBotInc.sendTextWithMentions(m.chat, teks, m)
+XeonBotInc.sendTextWithMentions(m.chat, teks, m)
 }
 break
 case 'listonline': case 'listaktif': {
@@ -3421,7 +3432,7 @@ if (!m.isGroup) return replay(mess.group)
 let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
 let online = [...Object.keys(store.presences[id]), botNumber]
 let liston = 1
-LioneBotInc.sendText(m.chat, '     「 Online List 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+XeonBotInc.sendText(m.chat, '     「 Online List 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 }
 break
 case 'patrick':
@@ -3431,7 +3442,7 @@ case 'patricksticker': {
 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await LioneBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await XeonBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
@@ -3439,7 +3450,7 @@ break
 		   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`Example : ${prefix + command} text`)
-           await LioneBotInc.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
+           await XeonBotInc.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
 
          }
          break
@@ -3447,14 +3458,14 @@ case 'attp': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) reply(`Use ${prefix}attp hello\n*Example : ${prefix + command} ${ownername}*` )
-           await LioneBotInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
+           await XeonBotInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
          }
          break
 case 'ttp': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`*Example : ${prefix + command} hello*`)
-           await LioneBotInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/texttopng2?teks=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
+           await XeonBotInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/texttopng2?teks=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
          
                      }
                      break
@@ -3470,8 +3481,8 @@ if (isBanChat) return reply(mess.banChat)
                     txt += `*${themeemoji}Url Source :* ${data.url}\n\n`
                     txt += `*${botname}*`
                 buf = await getBuffer(data.thumbnail)   
-                LioneBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m }).catch((err) => reply(mess.error))    
-                LioneBotInc.sendMessage(m.chat, { audio: { url: data.medias[0].url }, mimetype: 'audio/mpeg', fileName: data.title+'.m4a' }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m }).catch((err) => reply(mess.error))    
+                XeonBotInc.sendMessage(m.chat, { audio: { url: data.medias[0].url }, mimetype: 'audio/mpeg', fileName: data.title+'.m4a' }, { quoted: m })
                 }).catch((err) => {
                     reply(mess.error)
                 })
@@ -3485,7 +3496,7 @@ case 'dogestick':
 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await LioneBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await XeonBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
@@ -3496,7 +3507,7 @@ case 'lovestick' :{
 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await LioneBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await XeonBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
@@ -3507,7 +3518,7 @@ case 'gurastick':{
 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await LioneBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await XeonBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 await fs.unlinkSync(encmedia)
 }
 break
@@ -3516,12 +3527,12 @@ break
 if (isBanChat) return reply(mess.banChat)
 if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await LioneBotInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await XeonBotInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
 let media = await quoted.download()
-let encmedia = await LioneBotInc.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await XeonBotInc.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
@@ -3536,16 +3547,16 @@ const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
 if (m.quoted.isAnimated === true) {
-LioneBotInc.downloadAndSaveMediaMessage(quoted, "gifee")
-LioneBotInc.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
+XeonBotInc.downloadAndSaveMediaMessage(quoted, "gifee")
+XeonBotInc.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
 } else if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await LioneBotInc.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: global.atnm })
+let encmedia = await XeonBotInc.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: global.atnm })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
 let media = await quoted.download()
-let encmedia = await LioneBotInc.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await XeonBotInc.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
@@ -3560,10 +3571,10 @@ if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 reply(mess.wait)
-mee = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
+mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-memek = await LioneBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(memek)
 }
 break
@@ -3592,7 +3603,7 @@ if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 teks = `Here you go!`
 buffer = `https://api.dapuhy.xyz/api/randomimage/batues?apikey=0gly81wDky`
-LioneBotInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+XeonBotInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
 break
 case 'wallneon': case 'wallrandom': case 'wallcode': case 'wallpubg': case 'wallml': 	
 try{
@@ -3601,7 +3612,7 @@ try{
 reply(mess.wait)						
 nyz2 = await fetchJson(`https://myselfff.herokuapp.com/docs/wallpaper/${command}`) 
 nyz3 = await getBuffer(nyz2.list.gambar)
-LioneBotInc.sendMessage(from, {image : nyz3, caption:`By ${global.botname}`}, {quoted:m}) 						
+XeonBotInc.sendMessage(from, {image : nyz3, caption:`By ${global.botname}`}, {quoted:m}) 						
 } catch (e) {
 error("Error!")
 }
@@ -3629,7 +3640,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3644,7 +3655,7 @@ try{
 reply(mess.wait)
 NoHorny = await fetchJson(`https://myselfff.herokuapp.com/docs/nsfw/${command}`)
 YesHorny = await getBuffer(NoHorny.result)
-LioneBotInc.sendMessage(from, {image:YesHorny},{quoted:m})
+XeonBotInc.sendMessage(from, {image:YesHorny},{quoted:m})
 } catch (e) {error("Error")}	
 break
    case 'spank':
@@ -3656,7 +3667,7 @@ reply(mess.wait)
 spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
   let spbuff = await getBuffer(spankd.data.url)
 let spgif = await GIFBufferToVideoBuffer(spbuff)   
-        await LioneBotInc.sendMessage(m.chat,{video: spgif, gifPlayback:true},{ quoted:m }).catch(err => {
+        await XeonBotInc.sendMessage(m.chat,{video: spgif, gifPlayback:true},{ quoted:m }).catch(err => {
                     return reply('Error!')
                                     })
 break
@@ -3669,7 +3680,7 @@ reply(mess.wait)
 bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
   let bjf = await getBuffer(bjd.data.url)
 let bjif = await GIFBufferToVideoBuffer(bjf)   
-        await LioneBotInc.sendMessage(m.chat,{video: bjif, gifPlayback:true},{ quoted:m }).catch(err => {
+        await XeonBotInc.sendMessage(m.chat,{video: bjif, gifPlayback:true},{ quoted:m }).catch(err => {
                     return reply('error..')
                                     })
 break
@@ -3681,7 +3692,7 @@ if (!AntiNsfw) return reply(mess.nsfw)
                 reply(mess.wait)
                 anu = await hentai()
                 result912 = anu[Math.floor(Math.random(), anu.length)]
-                LioneBotInc.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
             }
             break
 case 'trap' :
@@ -3700,7 +3711,7 @@ reply(mess.wait)
   buttons: trapbot,
   headerType: 1
   }     
-            await LioneBotInc.sendMessage(m.chat, button2Messages, { quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button2Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3720,7 +3731,7 @@ if (!AntiNsfw) return reply(mess.nsfw)
   buttons: hnekobot,
   headerType: 1
   }      
-            await LioneBotInc.sendMessage(m.chat, button3Messages, { quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button3Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3741,7 +3752,7 @@ reply(mess.wait)
   buttons: nwaifubot,
   headerType: 1
   }      
-            await LioneBotInc.sendMessage(m.chat, button4Messages, { quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button4Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3761,7 +3772,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break   
@@ -3780,7 +3791,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3799,7 +3810,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break   
@@ -3817,7 +3828,7 @@ if (!m.isGroup) return replay(mess.group)
   buttons: xxhnekobot,
   headerType: 1
   }      
-            await LioneBotInc.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3836,7 +3847,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3855,7 +3866,7 @@ reply(mess.wait)
       buttons: wbutsss,
       headerType: 4
       }
-            await LioneBotInc.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
                     return('Error!')
                 })               
                 break
@@ -3874,7 +3885,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonsosMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonsosMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break   
@@ -3893,7 +3904,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, btutttonssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, btutttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3912,7 +3923,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, xxbuttonssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, xxbuttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3931,7 +3942,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonsTsMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonsTsMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3950,7 +3961,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonussMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonussMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3969,7 +3980,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, bxxuttonssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, bxxuttonssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -3988,7 +3999,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttoxnssMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttoxnssMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4007,7 +4018,7 @@ reply(mess.wait)
       buttons: wbuttsss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonssxMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonssxMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4026,7 +4037,7 @@ reply(mess.wait)
       buttons: wbutt1sss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, button1ssxMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button1ssxMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4045,7 +4056,7 @@ reply(mess.wait)
       buttons: wbuttszzss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsxMessages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsxMessages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4064,7 +4075,7 @@ reply(mess.wait)
       buttons: wbuttszz12ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx12Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx12Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4083,7 +4094,7 @@ reply(mess.wait)
       buttons: wbuttszz123ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx123Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx123Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4102,7 +4113,7 @@ reply(mess.wait)
       buttons: wbuttszz124ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx124Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx124Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4121,7 +4132,7 @@ reply(mess.wait)
       buttons: wbuttszz125ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx125Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx125Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4140,7 +4151,7 @@ reply(mess.wait)
       buttons: wbuttszz126ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx126Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx126Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4159,7 +4170,7 @@ reply(mess.wait)
       buttons: wbuttszz127ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx127Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx127Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4178,7 +4189,7 @@ reply(mess.wait)
       buttons: wbuttszz128ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx128Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx128Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4197,7 +4208,7 @@ reply(mess.wait)
       buttons: wbuttszz129ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx129Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx129Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4216,7 +4227,7 @@ reply(mess.wait)
       buttons: wbuttszz1210ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1210Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1210Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4235,7 +4246,7 @@ reply(mess.wait)
       buttons: wbuttszz1211ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1211Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1211Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4254,7 +4265,7 @@ reply(mess.wait)
       buttons: wbuttszz1212ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1212Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1212Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4273,7 +4284,7 @@ reply(mess.wait)
       buttons: wbuttszz1213ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1213Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1213Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4292,7 +4303,7 @@ reply(mess.wait)
       buttons: wbuttszz1214ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1214Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1214Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4311,7 +4322,7 @@ reply(mess.wait)
       buttons: wbuttszz1215ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1215Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1215Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4330,7 +4341,7 @@ reply(mess.wait)
       buttons: wbuttszz1216ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1216Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1216Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4349,7 +4360,7 @@ reply(mess.wait)
       buttons: wbuttszz1217ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1217Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1217Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4368,7 +4379,7 @@ reply(mess.wait)
       buttons: wbuttszz1218ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1218Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1218Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4387,7 +4398,7 @@ reply(mess.wait)
       buttons: wbuttszz1219ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1219Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1219Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4406,7 +4417,7 @@ reply(mess.wait)
       buttons: wbuttszz1220ss,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, buttonszzsx1220Messages,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, buttonszzsx1220Messages,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4425,7 +4436,7 @@ var wbutsss = [
           buttons: wbutsss,
      headerType: 4
                       }
-await LioneBotInc.sendMessage(m.chat,buttonsesMessage, { quoted:m }).catch(err => {
+await XeonBotInc.sendMessage(m.chat,buttonsesMessage, { quoted:m }).catch(err => {
      return('Error!')
     })               
 break
@@ -4444,7 +4455,7 @@ var wbutsss = [
           buttons: wbutsss,
      headerType: 4
                       }
-await LioneBotInc.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
+await XeonBotInc.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
      return('Error!')
     })               
 break     
@@ -4463,7 +4474,7 @@ reply(mess.wait)
   buttons: wbuttsss,
   headerType: 2
   }       
-            await LioneBotInc.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
@@ -4490,17 +4501,17 @@ var walb = [
       buttons: walb,
       headerType: 4
       }     
-            await LioneBotInc.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
+            await XeonBotInc.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
                     return('Error!')
                 })
-//LioneBotInc.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
+//XeonBotInc.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
 break
 case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
 					.then(({data}) => {
-						LioneBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+						XeonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
 case 'waifu': case 'loli':
@@ -4509,7 +4520,7 @@ case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
 					.then(({data}) => {
-					LioneBotInc.sendImage(m.chat, data.url, mess.success, m)
+					XeonBotInc.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
 case 'naruto':
@@ -4519,7 +4530,7 @@ case 'naruto':
 			    var query = ["naruto hd","naruto boruto","naruto sasuke", "naruto aesthetic", "naruto aesthetic"]
                 var data = await pinterest(pickRandom(query))
 				var but = [{buttonId: `naruto`, buttonText: { displayText: "Next🔜" }, type: 1 }]
-				LioneBotInc.sendMessage(from, { caption: `Here you go!`, image: { url: pickRandom(data.result) }, buttons: but, footer: `${botname}` }, { quoted: m })
+				XeonBotInc.sendMessage(from, { caption: `Here you go!`, image: { url: pickRandom(data.result) }, buttons: but, footer: `${botname}` }, { quoted: m })
  			    break
 case 'yaoi':
 			if (isBan) return reply(mess.ban)
@@ -4528,7 +4539,7 @@ case 'yaoi':
 			    var query = ["yaoi","yaoi aesthetic","yaoi hd","yaoi ganteng"]
                 var data = await pinterest(pickRandom(query))
 				var but = [{buttonId: `${command}`, buttonText: { displayText: "Next🔜" }, type: 1 }]
-				LioneBotInc.sendMessage(from, { caption: "Here you go!", image: { url: pickRandom(data.result) }, buttons: but, footer: `${botname}` }, { quoted: m })
+				XeonBotInc.sendMessage(from, { caption: "Here you go!", image: { url: pickRandom(data.result) }, buttons: but, footer: `${botname}` }, { quoted: m })
  			    break
 case 'coffee': case 'kopi': {
 	if (isBan) return reply(mess.ban)	 			
@@ -4543,7 +4554,7 @@ if (isBanChat) return reply(mess.banChat)
                     buttons: buttons,
                     headerType: 4
                 }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 case 'zippyshare': {
@@ -4554,7 +4565,7 @@ if (!isUrl(args[0]) && !args[0].includes('zippyshare.com')) return reply(`The li
 anu = await fetchJson(`https://violetics.pw/api/downloader/zippyshare?apikey=df7d-425a-3bc8&url=${text}`)
 m.reply(`*${util.format(anu)}*`)
 linkyke = await getBuffer(anu.result.dlink)
-LioneBotInc.sendMessage(m.chat, {document: linkyke, mimetype: 'application/zip', fileName: `${anu.result.filename}`}, {quoted:m}).catch ((err) => reply(mess.error))     
+XeonBotInc.sendMessage(m.chat, {document: linkyke, mimetype: 'application/zip', fileName: `${anu.result.filename}`}, {quoted:m}).catch ((err) => reply(mess.error))     
 }
 break
 case 'savefrom': {
@@ -4577,7 +4588,7 @@ if (isBanChat) return reply(mess.banChat)
      }
      sections.push(list)   
      }
-  const sendm =  LioneBotInc.sendMessage(
+  const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
        text: `${data.meta.title} *Here is the list of videos, click the button below to choose*`,
@@ -4596,10 +4607,10 @@ case 'jail': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwe
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)                
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/${command}?url=${anu}`)
-                LioneBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
                 }
                 break
 case 'gayeffect': {
@@ -4607,10 +4618,10 @@ case 'gayeffect': {
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)                
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/gay?url=${anu}`)
-                LioneBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
                 }
                 break
 case 'deleteeffect': {
@@ -4618,10 +4629,10 @@ case 'deleteeffect': {
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)                
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/delete?url=${anu}`)
-                LioneBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
                 }
                 break
 case 'framed': {
@@ -4629,10 +4640,10 @@ case 'framed': {
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)                
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/fotojatoh?url=${anu}`)
-                LioneBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
                 }
                 break
 case 'beautifuleffect': {
@@ -4640,10 +4651,10 @@ case 'beautifuleffect': {
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)                
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/beautiful?url=${anu}`)
-                LioneBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
                 }
                 break
             case 'readmore': {
@@ -4659,11 +4670,11 @@ case 'toviewonce': case 'toonce': {
 if (isBanChat) return reply(mess.banChat)
         if (!quoted) return reply(`Reply image`)
         if (/image/.test(mime)) {
-anu = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
-LioneBotInc.sendMessage(m.chat, {image: {url: anu},viewOnce : true},{quoted: m })
+anu = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+XeonBotInc.sendMessage(m.chat, {image: {url: anu},viewOnce : true},{quoted: m })
         } else if (/video/.test(mime)) {
-        anu = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
-        LioneBotInc.sendMessage(m.chat, {video: {url: anu},viewOnce : true},{quoted: m })
+        anu = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+        XeonBotInc.sendMessage(m.chat, {video: {url: anu},viewOnce : true},{quoted: m })
         }
         }
         break
@@ -4712,331 +4723,331 @@ replay(`🌐Translate : ${Detek}\n📃Results : ${Infoo}`)
 }
 break
 case 'sound1':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound2':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound3':
- LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+ XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound4':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound5':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound6':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound7':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound8':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound9':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound10':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound11':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound12':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound13':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound14':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound15':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound16':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound17':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound18':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound19':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound20':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound21':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound22':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound23':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound24':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound25':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound26':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound27':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound28':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound29':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound30':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound31':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound32':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound33':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound34':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound35':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound36':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound37':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound38':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound39':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound40':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound41':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound42':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound43':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound44':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound45':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound46':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound47':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound48':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound49':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound50':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound51':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound52':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound53':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound54':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})  
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})  
 case 'sound55':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound56':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound57':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound58':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound59':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound60':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound61':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound62':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound63':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound64':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound65':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound66':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound67':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound68':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound69':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound70':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound71':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound72':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound73':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound74':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound75':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound76':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound77':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound78':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound79':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound80':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound81':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound82':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound83':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound84':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound85':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound86':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound87':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound88':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound89':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound90':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound91':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound92':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound93':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound94':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound95':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound96':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound97':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound98':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound99':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound100':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound101':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound102':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound103':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound104':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound105':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound106':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound107':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound108':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound109':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound110':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound111':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound112':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound113':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound114':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound115':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound116':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound117':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound118':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound119':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})   
 case 'sound120':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})    
 case 'sound121':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound122':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound123':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound124':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound125':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound126':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound127':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound128':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound129':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound130':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound131':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound132':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound133':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound134':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound135':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound136':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound137':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound138':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound139':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound140':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound141':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound142':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound143':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound144':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound145':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound146':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound147':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound148':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound149':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound150':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound151':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound152':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound153':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound154':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound155':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound156':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound157':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound158':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound159':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound160':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 case 'sound161':
-LioneBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `🎙️`, key: m.key }})
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 xeony_buffer = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
-await LioneBotInc.sendMessage(m.chat, { audio: xeony_buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+await XeonBotInc.sendMessage(m.chat, { audio: xeony_buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 break
 case'glitch3':
    if (isBan) return reply(mess.ban)	 			
@@ -5047,7 +5058,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5058,7 +5069,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
     `${q}`,])
-.then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
 
@@ -5070,7 +5081,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
  maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
      `${q}`,])
-    .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+    .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
     .catch((err) => console.log(err));
      break
 
@@ -5082,7 +5093,7 @@ if (isBanChat) return reply(mess.banChat)
   reply(mess.wait)
   maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
       `${q}`,])
-     .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+     .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
      .catch((err) => console.log(err));
      break
 
@@ -5094,7 +5105,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-art-paper-cut-text-effect-online-1022.html", [
 `${q}`,])
-         .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -5106,7 +5117,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
 `${q}`,])
-.then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
    
@@ -5120,7 +5131,7 @@ if (isBanChat) return reply(mess.banChat)
        teks2 = q.split("|")[1]
        maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
  `${teks1}`,`${teks2}`])
- .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+ .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
  .catch((err) => console.log(err));
  break
 
@@ -5132,7 +5143,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
 `${q}`,])
-         .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -5144,7 +5155,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5156,7 +5167,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5168,7 +5179,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -5180,7 +5191,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    case 'blackpinkneon':
@@ -5190,7 +5201,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-neon-light-blackpink-logo-text-effect-online-1081.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5204,7 +5215,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5219,7 +5230,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5232,7 +5243,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5243,7 +5254,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5258,7 +5269,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5273,7 +5284,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5288,7 +5299,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5303,7 +5314,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5316,7 +5327,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5329,7 +5340,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-text-effect-online-879.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5342,7 +5353,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -5355,7 +5366,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -5368,7 +5379,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5383,7 +5394,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5398,7 +5409,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5412,7 +5423,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5424,7 +5435,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -5435,7 +5446,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-summer-neon-light-text-effect-online-1076.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5446,7 +5457,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5457,7 +5468,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -5468,7 +5479,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break 
 
@@ -5479,7 +5490,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -5490,7 +5501,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => LioneBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => XeonBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
  
@@ -5567,7 +5578,7 @@ if (isBanChat) return reply(mess.banChat)
              if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
                 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'           
              let anu = await maker.textpro(link, q)
-                LioneBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname}` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname}` }, { quoted: m })
              }
              break
 
@@ -5578,11 +5589,11 @@ if (args.length < 1) return reply(`Example :\n${prefix + command} <name>`)
 if (args[0] === 'glitch') {
 if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]} ${global.ownername}`)
 let teds = await thiccysapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [args[1]])
-LioneBotInc.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
+XeonBotInc.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
 } else if (args[0] === 'glow') {
 if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]} ${global.ownername}`)
 let teds = await thiccysapi.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", [args[1]])
-LioneBotInc.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
+XeonBotInc.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
 } else {
 reply(`*Text Maker List :*\n•> glitch\n•> glow`)
 }
@@ -5596,7 +5607,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
   case 'whitebear':{
@@ -5606,7 +5617,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'thunder2':{
@@ -5616,7 +5627,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'blackpink':{
@@ -5626,7 +5637,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'neon':{
@@ -5636,7 +5647,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'matrix2':{
@@ -5646,7 +5657,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sky':{
@@ -5656,7 +5667,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 
@@ -5667,7 +5678,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sand':{
@@ -5677,7 +5688,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'pencil':{
@@ -5687,7 +5698,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'graffiti':{
@@ -5697,7 +5708,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'metallic':{
@@ -5707,7 +5718,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'steel':{
@@ -5717,7 +5728,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'harrypotter':{
@@ -5727,7 +5738,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'underwater':{
@@ -5737,7 +5748,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'luxury':{
@@ -5747,7 +5758,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'glue2':{
@@ -5757,7 +5768,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'fabric':{
@@ -5767,7 +5778,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'neonlight':{
@@ -5777,7 +5788,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'lava':{
@@ -5787,7 +5798,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'toxic':{
@@ -5797,7 +5808,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'ancient':{
@@ -5807,7 +5818,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'christmas2':{
@@ -5817,7 +5828,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sci_fi':{
@@ -5827,7 +5838,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'rainbow':{
@@ -5837,7 +5848,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'classic':{
@@ -5847,7 +5858,7 @@ let link = `https://textpro.me/video-game-classic-8-bit-text-effect-1037.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'watercolor2':{
@@ -5857,7 +5868,7 @@ let link = `https://textpro.me/create-a-free-online-watercolor-text-effect-1017.
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'halloween2':{
@@ -5867,7 +5878,7 @@ let link = `https://textpro.me/create-a-spooky-halloween-text-effect-online-1046
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'halloweenfire':{
@@ -5877,7 +5888,7 @@ let link = `https://textpro.me/halloween-fire-text-effect-940.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'writing':{
@@ -5887,7 +5898,7 @@ let link = `https://textpro.me/sand-writing-text-effect-online-990.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'foggy':{
@@ -5897,7 +5908,7 @@ let link = `https://textpro.me/write-text-on-foggy-window-online-free-1015.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'marvel':{
@@ -5907,7 +5918,7 @@ let link = `https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.ht
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'skeleton2':{
@@ -5917,7 +5928,7 @@ let link = `https://textpro.me/create-halloween-skeleton-text-effect-online-1047
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sketch':{
@@ -5927,7 +5938,7 @@ let link = `https://textpro.me/create-a-sketch-text-effect-online-1044.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'wonderful':{
@@ -5937,7 +5948,7 @@ let link = `https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.ht
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'cool':{
@@ -5947,7 +5958,7 @@ let link = `https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'collwall':{
@@ -5957,7 +5968,7 @@ let link = `https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'multicolor2':{
@@ -5967,7 +5978,7 @@ let link = `https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.h
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'batman':{
@@ -5977,7 +5988,7 @@ let link = `https://textpro.me/make-a-batman-logo-online-free-1066.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'juice':{
@@ -5987,7 +5998,7 @@ let link = `https://textpro.me/fruit-juice-text-effect-861.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    LioneBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    XeonBotInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'pornhub':{
@@ -6001,7 +6012,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-LioneBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+XeonBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'retro':{
@@ -6015,7 +6026,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/create-3d-retro-text-effect-online-free-1065.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-LioneBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+XeonBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'horror':{
@@ -6029,7 +6040,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/create-a-cinematic-horror-text-effect-1045.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-LioneBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+XeonBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
 case '8bit':{
@@ -6043,7 +6054,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-LioneBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+XeonBotInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'emoji': {
@@ -6051,8 +6062,8 @@ case 'emoji': {
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply('Where is the emoji?')
 emoji.get(args.join(" ")).then(async(emoji) => {
-let mese = await LioneBotInc.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Made by ${global.botname}`}, {quoted:m})
-await LioneBotInc.sendMessage(from, {text:"reply #s to this image to make sticker"}, {quoted:mese})
+let mese = await XeonBotInc.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Made by ${global.botname}`}, {quoted:m})
+await XeonBotInc.sendMessage(from, {text:"reply #s to this image to make sticker"}, {quoted:mese})
 })
 }
 break
@@ -6079,7 +6090,7 @@ case 'wamod': case 'mod': {
             }
             sections.push(list)   
             }
-            const sendm =  LioneBotInc.sendMessage(
+            const sendm =  XeonBotInc.sendMessage(
             m.chat, 
            {
        text: ` _ඔයාට ඕන mod එක තෝරන්න 🪀_
@@ -6094,7 +6105,7 @@ case 'wamod': case 'mod': {
       
      break
 case 'modwh': {
-    LioneBotInc.sendMessage(from, { react: { text: `🪀`, key: m.key }})
+    XeonBotInc.sendMessage(from, { react: { text: `🪀`, key: m.key }})
 if (!text) return reply(mess.linkm)
 if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return reply(`Cant Download This Mod`)
 const baby1 = await mediafireDl(text)
@@ -6104,7 +6115,7 @@ const result4 = `  *Mod Whatsapp Downloder By Nipuna*
 _Mod Name :_ *${baby1[0].nama}*
 _Size :_ *${baby1[0].size}*`
 reply(`${result4}`)
-LioneBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+XeonBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
 }
 break
 
@@ -6204,7 +6215,7 @@ if (!q) reply(`*Example :* ${prefix + command} 🦄+🤣`)
 let [emoji1, emoji2] = q.split`+`
 let kuntuh = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 for (let res of kuntuh.results) {
-let encmedia = await LioneBotInc.sendImageAsSticker(from, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+let encmedia = await XeonBotInc.sendImageAsSticker(from, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
 await fs.unlinkSync(encmedia)
 }
 }
@@ -6215,13 +6226,13 @@ if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
-let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
+let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 let ran = await getRandom('.png')
 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 fs.unlinkSync(media)
 if (err) throw err
 let buffer = fs.readFileSync(ran)
-LioneBotInc.sendMessage(m.chat, { image: buffer }, { quoted: m})
+XeonBotInc.sendMessage(m.chat, { image: buffer }, { quoted: m})
 fs.unlinkSync(ran)
 })
 }
@@ -6233,9 +6244,9 @@ if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
 let { webp2mp4File } = require('./lib/uploader')
-let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
+let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
-await LioneBotInc.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Video' } }, { quoted: m })
+await XeonBotInc.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Video' } }, { quoted: m })
 await fs.unlinkSync(media)
 }
 break
@@ -6248,7 +6259,7 @@ reply(mess.wait)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
-LioneBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
+XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
 }
 break
 case 'tomp3': {
@@ -6261,7 +6272,7 @@ reply(mess.wait)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
-LioneBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${LioneBotInc.user.name} (${m.id}).mp3`}, { quoted : m })
+XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${XeonBotInc.user.name} (${m.id}).mp3`}, { quoted : m })
 }
 break
 case 'tovn': case 'toptt': {
@@ -6273,7 +6284,7 @@ reply(mess.wait)
 let media = await quoted.download()
 let { toPTT } = require('./lib/converter')
 let audio = await toPTT(media, 'mp4')
-LioneBotInc.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
 }
 break
 case 'togif': {
@@ -6283,9 +6294,9 @@ if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
 let { webp2mp4File } = require('./lib/uploader')
-let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
+let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
-await LioneBotInc.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Gif' }, gifPlayback: true }, { quoted: m })
+await XeonBotInc.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Gif' }, gifPlayback: true }, { quoted: m })
 await fs.unlinkSync(media)
 }
 break
@@ -6294,7 +6305,7 @@ break
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
 let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
-let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
+let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 if (/image/.test(mime)) {
 let anu = await TelegraPh(media)
 reply(util.format(anu))
@@ -6313,7 +6324,7 @@ break
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
 	    hmm = await './src/remobg-'+getRandom('')
-	    localFile = await LioneBotInc.downloadAndSaveMediaMessage(quoted, hmm)
+	    localFile = await XeonBotInc.downloadAndSaveMediaMessage(quoted, hmm)
 	    outputFile = await './src/hremo-'+getRandom('.png')
 	    reply(mess.wait)
 	    remobg.removeBackgroundFromImageFile({
@@ -6324,14 +6335,14 @@ break
 	      scale: "100%",
 	      outputFile 
 	    }).then(async result => {
-	    LioneBotInc.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
+	    XeonBotInc.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
 	    await fs.unlinkSync(localFile)
 	    await fs.unlinkSync(outputFile)
 	    })
 	    }
 	    break
 	case 'yts': case 'ytsearch': { 
-    LioneBotInc.sendMessage(from, { react: { text: `🙈`, key: m.key }})  
+    XeonBotInc.sendMessage(from, { react: { text: `🙈`, key: m.key }})  
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
@@ -6342,7 +6353,7 @@ let no = 1
 for (let i of search.all) {
 teks += `${global.themeemoji} No : ${no++}\n${global.themeemoji} Type : ${i.type}\n${global.themeemoji} Video ID : ${i.videoId}\n${global.themeemoji} Title : ${i.title}\n${global.themeemoji} Views : ${i.views}\n${global.themeemoji} Duration : ${i.timestamp}\n${global.themeemoji} Uploaded : ${i.ago}\n${global.themeemoji} Author : ${i.author.name}\n${global.themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
 }
-LioneBotInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+XeonBotInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
 break
 case 'google': {
@@ -6362,7 +6373,7 @@ reply(teks)
 }
 break
 case 'gimage': case 'googleimage': { 
-LioneBotInc.sendMessage(from, { react: { text: `🌹`, key: m.key }})  
+XeonBotInc.sendMessage(from, { react: { text: `🌹`, key: m.key }})  
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply("What picture are you looking for??")
@@ -6391,7 +6402,7 @@ mediaUrl: `${global.websitex}`,
 sourceUrl: `{global.websitex}`
 }}
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
@@ -6425,7 +6436,7 @@ footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4
 }
-LioneBotInc.sendMessage(from, buttonMessage, {quoted:m})
+XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 })
 } catch (err) {
 reply(String(err))
@@ -6440,14 +6451,14 @@ if (isBan) return reply(mess.ban)
 	            hx.igstory(urlnya)
 	            .then(async(result) => {
 		        var halo = 0		
-	            LioneBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM STORY 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Media :* ${result.medias.length}\n*${themeemoji} Bio :* ${result.user.biography}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
+	            XeonBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM STORY 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Media :* ${result.medias.length}\n*${themeemoji} Bio :* ${result.user.biography}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
 		        for(let i of result.medias) {
 			    if(i.url.includes('mp4')){
 				let link = await getBuffer(i.url)
-                LioneBotInc.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m }) 
+                XeonBotInc.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m }) 
                 } else {
                     let link = await getBuffer(i.url)
-                  LioneBotInc.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m })                  
+                  XeonBotInc.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Story ${i.type}*` }, { quoted: m })                  
                 }
             }
             }).catch((err) => reply(`Sorry username ${text} was not found or maybe he/she has no story uploaded in her id`))
@@ -6462,14 +6473,14 @@ case 'ig2': case 'igdl2': case 'instagram2': {
 	            hx.igdl(urlnya)
 	            .then(async(result) => {	  
 	            var halo = 0		
-	            LioneBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM DOWNLOADER 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Jumlah Media :* ${result.medias.length}\n*${themeemoji} Url :* ${text}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
+	            XeonBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM DOWNLOADER 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Jumlah Media :* ${result.medias.length}\n*${themeemoji} Url :* ${text}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
 		        for(let i of result.medias) {		
 		        if(i.url.includes('mp4')){		           			    				
 				let link = await getBuffer(i.url)
-                LioneBotInc.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Instagram ${i.type}*` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { video: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Instagram ${i.type}*` }, { quoted: m })
                 } else {
                 let link = await getBuffer(i.url)
-                LioneBotInc.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Instagram ${i.type}*` }, { quoted: m })                      
+                XeonBotInc.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Instagram ${i.type}*` }, { quoted: m })                      
                }
               }
             }).catch((err) => reply(mess.error))
@@ -6505,7 +6516,7 @@ footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4
 }
-LioneBotInc.sendMessage(from, buttonMessage, {quoted:m})
+XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 })
 } catch (err) {
 reply(String(err))
@@ -6516,9 +6527,9 @@ case 'ig': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args[0] === "mp4") {
-LioneBotInc.sendMessage(from, {video:{url:args[1]}, caption:'Done!', mimetype:'video/mp4'}, {quoted:m})
+XeonBotInc.sendMessage(from, {video:{url:args[1]}, caption:'Done!', mimetype:'video/mp4'}, {quoted:m})
 } else if (args[0] === "jpg") {
-LioneBotInc.sendMessage(from, {image:{url:args[1]}, caption:'Done!'}, {quoted:m})
+XeonBotInc.sendMessage(from, {image:{url:args[1]}, caption:'Done!'}, {quoted:m})
 } else {
 reply("Error! ")
 }
@@ -6529,7 +6540,7 @@ case 'mp4' : {
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(`Where's the link ?`)
 try {
-LioneBotInc.sendMessage(from, {video:{url:args[0]}, caption:"Succes", contextInfo:{externalAdReply:{
+XeonBotInc.sendMessage(from, {video:{url:args[0]}, caption:"Succes", contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`${global.ownername}`,
 thumbnail: log0,
@@ -6547,7 +6558,7 @@ case 'jpeg': {
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(`Where's the link?`)
 try {
-LioneBotInc.sendMessage(from, {image:{url:args[0]}, caption:"Success", contextInfo:{externalAdReply:{
+XeonBotInc.sendMessage(from, {image:{url:args[0]}, caption:"Success", contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`${global.ownername}`,
 thumbnail: log0,
@@ -6568,7 +6579,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply('*The link you provided is not valid*')
                 instagramdlv3(`${text}`).then(async (data) => {            
                 var buf = await getBuffer(data[0].thumbnail)        
-                LioneBotInc.sendMessage(m.chat, { video: { url: data[0].url }, jpegThumbnail:buf, caption: `${botname}`}, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { video: { url: data[0].url }, jpegThumbnail:buf, caption: `${botname}`}, { quoted: m })
                 }).catch((err) => {
                     reply(mess.error)
                 })
@@ -6589,9 +6600,9 @@ if (isBanChat) return reply(mess.banChat)
                     txt += `*${themeemoji}URL :* ${data.url}\n\n`
                     txt += `*${botname}*`
                 buf = await getBuffer(data.thumbnail)    
-                LioneBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })
                 for (let i of data.medias) {
-                LioneBotInc.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*${text}*`}, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*${text}*`}, { quoted: m })
                 }
                 }).catch((err) => {
                     reply(mess.error)
@@ -6604,7 +6615,7 @@ if (isBanChat) return reply(mess.banChat)
              if (!text) return reply(`Where is the link?`)
                 if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(`*The link you provided is not valid*`)
                 xeonkey.Twitter(`${text}`).then(async (data) => {
-                LioneBotInc.sendMessage(m.chat, { audio: { url: data.medias[1].url }, mimetype: 'audio/mp4'}, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { audio: { url: data.medias[1].url }, mimetype: 'audio/mp4'}, { quoted: m })
                 }).catch((err) => {
                     reply(mess.reply)
                 })
@@ -6643,7 +6654,7 @@ mediaUrl: args[0],
 sourceUrl: args[0]
 }}
 }
-LioneBotInc.sendMessage(from, buttonMessage, {quoted:m})
+XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 } catch {
 reply("Error link!")
 }
@@ -6670,59 +6681,59 @@ mediaUrl: args[0],
 sourceUrl: args[0]
 }}
 }
-LioneBotInc.sendMessage(from, buttonMessage, {quoted:m})
+XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 }
 break
 case 'fb' :
     case 'facebook' :
-        LioneBotInc.sendMessage(from, { react: { text: `💛`, key: m.key }})
+        XeonBotInc.sendMessage(from, { react: { text: `💛`, key: m.key }})
     try {
-   if (!q) return await LioneBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )      
+   if (!q) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )      
    const isfb = q.includes('facebook.com')? q.includes('facebook.com') : q.includes('fb.watch')? q.includes('fb.watch') : ''
-       if (!isfb) return await LioneBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )  
+       if (!isfb) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )  
   const msg = '*NIPUNA* MD FB Downloder\n\n*📥Quality එක තෝරන්න්න📤*'
 const buttons = [
 {buttonId: 'fbsd ' + q, buttonText: {displayText: '480p'}, type: 1},
 {buttonId: 'fbhd ' + q, buttonText: {displayText: '720p'}, type: 1},
 ]
-await LioneBotInc.sendMessage(from, {  text: msg , footer: `📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ` , buttons: buttons , headerType: 4} , { quoted: m } )  
+await XeonBotInc.sendMessage(from, {  text: msg , footer: `📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ` , buttons: buttons , headerType: 4} , { quoted: m } )  
 
     } catch(e) {
-  await LioneBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )      
+  await XeonBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )      
     }      
     break
 
     case 'fbhd' : 
         try {
-  if (!q) return await LioneBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
+  if (!q) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
   const data = await axios.get('https://api-bobiz.herokuapp.com/api/fb?url=' + q)
   const file = data.data[0]
 
-const fileup = await LioneBotInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
-await LioneBotInc.sendMessage(from, { delete: fileup.key })
-const filedown = await LioneBotInc.sendMessage(from , { text: 'Uploading...' }, { quoted: m } )
-const doc = await LioneBotInc.sendMessage(from , { video : { url : file.url  } ,  caption : `${global.cap}` } , { quoted: m })
-await LioneBotInc.sendMessage(from, { delete: filedown.key })	
+const fileup = await XeonBotInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
+await XeonBotInc.sendMessage(from, { delete: fileup.key })
+const filedown = await XeonBotInc.sendMessage(from , { text: 'Uploading...' }, { quoted: m } )
+const doc = await XeonBotInc.sendMessage(from , { video : { url : file.url  } ,  caption : `${global.cap}` } , { quoted: m })
+await XeonBotInc.sendMessage(from, { delete: filedown.key })	
   } 
   catch(e) {
-      await LioneBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )
+      await XeonBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )
   }
         break
 
           case 'fbsd' : 
         try {
-  if (!q) return await LioneBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
+  if (!q) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
   const data = await axios.get('https://api-bobiz.herokuapp.com/api/fb?url=' + q)
   const file = data.data[1]
 
-const fileup = await LioneBotInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
-await LioneBotInc.sendMessage(from, { delete: fileup.key })
-const filedown = await LioneBotInc.sendMessage(from , { text: 'Uploading...' }, { quoted: m } )
-const doc = await LioneBotInc.sendMessage(from , { video : { url : file.url  } ,  caption : `${global.cap}` } , { quoted: m })
-await LioneBotInc.sendMessage(from, { delete: filedown.key })	
+const fileup = await XeonBotInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
+await XeonBotInc.sendMessage(from, { delete: fileup.key })
+const filedown = await XeonBotInc.sendMessage(from , { text: 'Uploading...' }, { quoted: m } )
+const doc = await XeonBotInc.sendMessage(from , { video : { url : file.url  } ,  caption : `${global.cap}` } , { quoted: m })
+await XeonBotInc.sendMessage(from, { delete: filedown.key })	
   } 
   catch(e) {
-      await LioneBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )
+      await XeonBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )
   }
         break
             case 'pinterest2': {
@@ -6732,7 +6743,7 @@ if (isBanChat) return reply(mess.banChat)
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                LioneBotInc.sendMessage(m.chat, { image: { url: result }, caption: '${themeemoji} Media Url : '+result }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: result }, caption: '${themeemoji} Media Url : '+result }, { quoted: m })
             }
             break
 case 'webtonsearch': case 'webtoon':
@@ -6768,7 +6779,7 @@ if (isBanChat) return reply(mess.banChat)
             capt += ` Chapter: ${bab}\n`
             capt += ` Url: ${url}\n`
             capt += ` Description: ${description}`
-            LioneBotInc.sendImage(m.chat, thumb, capt, m)
+            XeonBotInc.sendImage(m.chat, thumb, capt, m)
             }
             break
 case 'apk': case 'apkmod': case 'apkdl': {      
@@ -6790,7 +6801,7 @@ if (isBan) return reply(mess.ban)
      }
      sections.push(list)   
      }
-  const sendm =  LioneBotInc.sendMessage(
+  const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
        text: `${ucapannya2} ${pushname} *Search Results From ${text} Click the button below to choose*`,
@@ -6814,8 +6825,8 @@ if (isBan) return reply(mess.ban)
            if (anu[0].size.split('MB')[0] >= 150) return reply('*File Over Limit* '+util.format(anu))
            for (let i of anu) {    
            linkye = `*APK DOWNLOAD*\n\n*Title:* ${i.title}\n*Updated:* ${i.up}\n*Version:* ${i.vers}\n*Size:* ${i.size}\n*Url:* \n*Desc:* ${i.desc}`         
-                LioneBotInc.sendMessage(m.chat, { image: await getBuffer(i.thumb), jpegThumbnail: await getBuffer(i.thumb), caption: `${linkye}` }, { quoted: m })
-                LioneBotInc.sendMessage(m.chat, {document: await getBuffer(i.link), mimetype: `application/vnd.android.package-archive`, fileName: `${i.title}`}, {quoted:m})  
+                XeonBotInc.sendMessage(m.chat, { image: await getBuffer(i.thumb), jpegThumbnail: await getBuffer(i.thumb), caption: `${linkye}` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, {document: await getBuffer(i.link), mimetype: `application/vnd.android.package-archive`, fileName: `${i.title}`}, {quoted:m})  
                 }  
                 }).catch((err) => {
                     reply(mess.error)
@@ -6825,7 +6836,7 @@ if (isBan) return reply(mess.ban)
 case 'tagme': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-LioneBotInc.sendMessage(m.chat, {text:`@${m.sender.split("@")[0]}`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+XeonBotInc.sendMessage(m.chat, {text:`@${m.sender.split("@")[0]}`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 }
 break
            case 'git': case 'gitclone':
@@ -6839,7 +6850,7 @@ break
     repo = repo.replace(/.git$/, '')
     let url = `https://api.github.com/repos/${user}/${repo}/zipball`
     let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-    LioneBotInc.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => reply(mess.error))
+    XeonBotInc.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => reply(mess.error))
 			break
 
 case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas':
@@ -6915,7 +6926,7 @@ if (isBanChat) return reply(mess.banChat)
              if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
                 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
              let anu = await maker.textpro(link, q)
-                LioneBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname},For my Darling ` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname},For my Darling ` }, { quoted: m })
              }
              break
             case 'drakorxxx':
@@ -6950,7 +6961,7 @@ if (isBanChat) return reply(mess.banChat)
             capt += `${themeemoji} Url: ${i.url}\n`
             capt += `${themeemoji} Thumbnail Url: ${i.thumbnail}\n\n──────────────────────\n`
             }
-            LioneBotInc.sendImage(m.chat, res.result[0].thumbnail, capt, m)
+            XeonBotInc.sendImage(m.chat, res.result[0].thumbnail, capt, m)
             }
             break
             case 'animexxx':{
@@ -6973,7 +6984,7 @@ if (isBanChat) return reply(mess.banChat)
 						}
 					}
 				]
-				await LioneBotInc.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await XeonBotInc.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -7000,7 +7011,7 @@ if (isBanChat) return reply(mess.banChat)
 						}
 					}
 				]
-				await LioneBotInc.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await XeonBotInc.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -7026,7 +7037,7 @@ if (isBanChat) return reply(mess.banChat)
 						}
 					}
 				]
-				await LioneBotInc.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await XeonBotInc.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -7074,7 +7085,7 @@ const { Anime } =require("@shineiichijo/marika")
       /\[Written by MAL Rewrite]/g,
       ""
     )}`
-LioneBotInc.sendMessage(m.chat,{image:{url:result.images.jpg.large_image_url},caption:details},{quoted:m})   
+XeonBotInc.sendMessage(m.chat,{image:{url:result.images.jpg.large_image_url},caption:details},{quoted:m})   
 break
 case 'manga':
    if (isBan) return reply(mess.ban)
@@ -7107,7 +7118,7 @@ let srh = await manga.searchManga(q)
       /\[Written by MAL Rewrite]/g,
       ""
     )}`;
-LioneBotInc.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
+XeonBotInc.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
 break
             break
 case 'lyrics': {
@@ -7132,7 +7143,7 @@ const tres = await Gempa()
 var { Waktu, Lintang, Bujur, Magnitude, Kedalaman, Wilayah, Map } = tres.result
 console.log(Map)
 const captt = `Time : ${Waktu}\nLatitude : ${Lintang}\nLongitude : ${Bujur}\nRegion : ${Wilayah}`
-LioneBotInc.sendMessage(from, { image : { url : Map }, caption : captt})
+XeonBotInc.sendMessage(from, { image : { url : Map }, caption : captt})
 break
 case 'covidindo':
 case 'covid':
@@ -7140,7 +7151,7 @@ if (isBan) return reply(mess.ban)
 if (isBanChat) return reply(mess.banChat)
 const c = await covid()
 var { kasus, kematian, sembuh } = c[0]
-LioneBotInc.sendMessage(from, {text : `Case : ${kasus}\n\nDead : ${kematian}\n\nHealed : ${sembuh}`}, m)
+XeonBotInc.sendMessage(from, {text : `Case : ${kasus}\n\nDead : ${kematian}\n\nHealed : ${sembuh}`}, m)
 break
 case 'tvschedule':
 if (isBan) return reply(mess.ban)	 			
@@ -7174,7 +7185,7 @@ xeonkey.Film(q)
 			    for (let i of data) {
                 krl += (`\n────────────────────\n\n *📍Title :* ${i.judul}\n *💸 Quality :* ${i.quality}\n *⛓️ Type : ${i.type}*\n *⌛ Uploaded :* ${i.upload}\n *🎈 Source :* ${i.link}`)
                 }
-               LioneBotInc.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
+               XeonBotInc.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
 });
 break
 case 'img':
@@ -7185,7 +7196,7 @@ case 'image': {
 		let { pinterest } = require('./lib/scraperW')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                LioneBotInc.sendMessage(m.chat, { image: { url: result }, caption: ` ${themeemoji} Media Url : `+result }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: result }, caption: ` ${themeemoji} Media Url : `+result }, { quoted: m })
             }
             break
 case 'mcserver': case 'mcquery': {
@@ -7234,7 +7245,7 @@ footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
@@ -7259,7 +7270,7 @@ footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
@@ -7286,7 +7297,7 @@ footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
@@ -7310,7 +7321,7 @@ footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
@@ -7349,7 +7360,7 @@ case "darkjoke":
 if (isBanChat) return reply(mess.banChat)
 var res = await Darkjokes()
 teks = "\nDarkjokes*"
-LioneBotInc.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
 break
 case 'cnn-news':
    if (isBan) return reply(mess.ban)	 			
@@ -7398,7 +7409,7 @@ teks += `Upload: ${i.berita_diupload}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7417,7 +7428,7 @@ teks += `Type: ${i.berita_jenis}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 })
 break
 case 'indozone-news':
@@ -7435,7 +7446,7 @@ teks += `Type: ${i.berita_jenis}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 })
 break
 case 'kompas-news':
@@ -7454,7 +7465,7 @@ teks += `Type: ${i.berita_jenis}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7473,7 +7484,7 @@ teks += `Upload: ${i.berita_diupload}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7491,7 +7502,7 @@ teks += `News: ${i.berita}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7530,7 +7541,7 @@ teks += `Upload: ${i.berita_diupload}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7568,7 +7579,7 @@ teks += `Upload: ${i.berita_diupload}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7588,7 +7599,7 @@ teks += `Type: ${i.berita_jenis}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7609,7 +7620,7 @@ if (isBanChat) return reply(mess.banChat)
       teks += `Link: ${i.berita_url}\n`
     }
     teks += "══════════════════"
-    LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+    XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
   })
   break
@@ -7628,7 +7639,7 @@ if (isBanChat) return reply(mess.banChat)
       teks += `Link: ${i.berita_url}\n`
     }
     teks += "══════════════════"
-    LioneBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+    XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
   })
   break
@@ -7641,7 +7652,7 @@ teks = "══════════════════"
 teks += "\nLaughing out loud?🥴\n"
 teks += `\nSource: ${res}\n`
 teks += "══════════════════"
-LioneBotInc.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
 break
             case 'cinemaschedule': {
             	            	if (isBan) return reply(mess.ban)
@@ -7654,7 +7665,7 @@ break
             capt += ` Thumbnail: ${i.thumb}\n`
             capt += ` Url: ${i.url}\n\n──────────────────────\n`
             }
-            LioneBotInc.sendImage(m.chat, res.result[0].thumb, capt, m)
+            XeonBotInc.sendImage(m.chat, res.result[0].thumb, capt, m)
             }
             break
 case 'shortstoryx':{
@@ -7706,8 +7717,8 @@ if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                LioneBotInc.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: m })
-                LioneBotInc.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
             }
 	    break
             case 'animequotes': case 'animequote': {
@@ -7725,7 +7736,7 @@ if (isBanChat) return reply(mess.banChat)
                     buttons: buttons,
                     headerType: 2
                 }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 case 'wallpaper': case 'animewallpaper': case 'animewall': {
@@ -7745,7 +7756,7 @@ if (isBanChat) return reply(mess.banChat)
                     buttons: buttons,
                     headerType: 4
                 }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 
@@ -7753,11 +7764,11 @@ case 'wiki': case 'wikipedia':
  	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 if (args.length < 1) return reply('What Are You Looking For?? ')
-const res2 = await LioneBotIncWiki(q).catch(e => {
+const res2 = await XeonBotIncWiki(q).catch(e => {
 return reply('_[ ! ] Error Result Not Found_') 
 }) 
 const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
-LioneBotInc.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
+XeonBotInc.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
 break
             case 'wikimedia': {
             	 	if (isBan) return reply(mess.ban)
@@ -7772,11 +7783,11 @@ break
                 let buttonMessage = {
                     image: { url: result.image },
                     caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.image}`,
-                    footer: LioneBotInc.user.name,
+                    footer: XeonBotInc.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'quotesanime': case 'animequotes': case 'animequote': case 'quoteanime': {
@@ -7794,7 +7805,7 @@ break
                     buttons: buttons,
                     headerType: 2
                 }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 	        case 'nomerhoki': case 'nomorhoki': {
@@ -7803,7 +7814,7 @@ break
                 if (!Number(text)) return reply(`Example : ${prefix + command} 916909137213`)
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Phone Number :* ${anu.message.nomer_hp}\n${themeemoji} *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n${themeemoji} *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n${themeemoji} *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Phone Number :* ${anu.message.nomer_hp}\n${themeemoji} *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n${themeemoji} *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n${themeemoji} *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
@@ -7812,7 +7823,7 @@ break
                 if (!text) return reply(`Example : ${prefix + command} belanja`)
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Dream :* ${anu.message.mimpi}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Solution :* ${anu.message.solusi}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Dream :* ${anu.message.mimpi}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Solution :* ${anu.message.solusi}`, m)
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
@@ -7822,7 +7833,7 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Your Name :* ${anu.message.nama_anda.nama}\n${themeemoji} *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan.nama}\n${themeemoji} *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Your Name :* ${anu.message.nama_anda.nama}\n${themeemoji} *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan.nama}\n${themeemoji} *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
@@ -7832,7 +7843,7 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Your Name :* ${anu.message.nama_anda.nama}\n${themeemoji} *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan.nama}\n${themeemoji} *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Your Name :* ${anu.message.nama_anda.nama}\n${themeemoji} *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan.nama}\n${themeemoji} *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'suamiistri': {
@@ -7842,7 +7853,7 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Husband's Name :* ${anu.message.suami.nama}\n${themeemoji} *Husband Born :* ${anu.message.suami.tgl_lahir}\n${themeemoji} *Wife's Name :* ${anu.message.istri.nama}\n${themeemoji} *Born Wife :* ${anu.message.istri.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Husband's Name :* ${anu.message.suami.nama}\n${themeemoji} *Husband Born :* ${anu.message.suami.tgl_lahir}\n${themeemoji} *Wife's Name :* ${anu.message.istri.nama}\n${themeemoji} *Born Wife :* ${anu.message.istri.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
@@ -7852,7 +7863,7 @@ break
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Your Name :* ${anu.message.nama_anda.nama}\n${themeemoji} *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan.nama}\n${themeemoji} *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n${themeemoji} *Positive Side :* ${anu.message.sisi_positif}\n${themeemoji} *Negative Side :* ${anu.message.sisi_negatif}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Your Name :* ${anu.message.nama_anda.nama}\n${themeemoji} *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan.nama}\n${themeemoji} *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n${themeemoji} *Positive Side :* ${anu.message.sisi_positif}\n${themeemoji} *Negative Side :* ${anu.message.sisi_negatif}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'artinama': {
@@ -7861,7 +7872,7 @@ break
                 if (!text) return reply(`Example : ${prefix + command} Dika Ardianta`)
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
@@ -7871,7 +7882,7 @@ break
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Life Path :* ${anu.message.life_path}\n${themeemoji} *Destiny :* ${anu.message.destiny}\n${themeemoji} *Destiny Desire :* ${anu.message.destiny_desire}\n${themeemoji} *Personality :* ${anu.message.personality}\n${themeemoji} *Percentage :* ${anu.message.persentase_kecocokan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Life Path :* ${anu.message.life_path}\n${themeemoji} *Destiny :* ${anu.message.destiny}\n${themeemoji} *Destiny Desire :* ${anu.message.destiny_desire}\n${themeemoji} *Personality :* ${anu.message.personality}\n${themeemoji} *Percentage :* ${anu.message.persentase_kecocokan}`, m)
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
@@ -7881,7 +7892,7 @@ break
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendImage(m.chat,  anu.message.gambar, `${themeemoji} *Your Name :* ${anu.message.nama_anda}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan}\n${themeemoji} *Positive Side :* ${anu.message.sisi_positif}\n${themeemoji} *Negative Side :* ${anu.message.sisi_negatif}`, m)
+                XeonBotInc.sendImage(m.chat,  anu.message.gambar, `${themeemoji} *Your Name :* ${anu.message.nama_anda}\n${themeemoji} *Couple Name :* ${anu.message.nama_pasangan}\n${themeemoji} *Positive Side :* ${anu.message.sisi_positif}\n${themeemoji} *Negative Side :* ${anu.message.sisi_negatif}`, m)
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
@@ -7891,7 +7902,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Wedding Date :* ${anu.message.tanggal}\n${themeemoji} *Characteristics :* ${anu.message.karakteristik}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Wedding Date :* ${anu.message.tanggal}\n${themeemoji} *Characteristics :* ${anu.message.karakteristik}`, m)
             }
             break
             case 'sifatusaha': {
@@ -7901,7 +7912,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.hari_lahir}\n${themeemoji} *Business :* ${anu.message.usaha}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.hari_lahir}\n${themeemoji} *Business :* ${anu.message.usaha}`, m)
             }
             break
             case 'rejeki': case 'rezeki': {
@@ -7911,7 +7922,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.hari_lahir}\n${themeemoji} *Sustenance :* ${anu.message.rejeki}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.hari_lahir}\n${themeemoji} *Sustenance :* ${anu.message.rejeki}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'pekerjaan': case 'kerja': {
@@ -7921,7 +7932,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.hari_lahir}\n?? *Profession :* ${anu.message.pekerjaan}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.hari_lahir}\n?? *Profession :* ${anu.message.pekerjaan}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
@@ -7931,7 +7942,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Analysis :* ${anu.message.analisa}\n${themeemoji} *Root Number :* ${anu.message.angka_akar}\n${themeemoji} *Nature :* ${anu.message.sifat}\n${themeemoji} *Element :* ${anu.message.elemen}\n${themeemoji} *Lucky Numbers :* ${anu.message.angka_keberuntungan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Analysis :* ${anu.message.analisa}\n${themeemoji} *Root Number :* ${anu.message.angka_akar}\n${themeemoji} *Nature :* ${anu.message.sifat}\n${themeemoji} *Element :* ${anu.message.elemen}\n${themeemoji} *Lucky Numbers :* ${anu.message.angka_keberuntungan}`, m)
             }
             break
             case 'potensipenyakit': case 'penyakit': {
@@ -7941,7 +7952,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Analysis :* ${anu.message.analisa}\n${themeemoji} *Sector :* ${anu.message.sektor}\n?? *Element :* ${anu.message.elemen}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Analysis :* ${anu.message.analisa}\n${themeemoji} *Sector :* ${anu.message.sektor}\n?? *Element :* ${anu.message.elemen}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'artitarot': case 'tarot': {
@@ -7951,7 +7962,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendImage(m.chat, anu.message.image, `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Tarot Symbol :* ${anu.message.simbol_tarot}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendImage(m.chat, anu.message.image, `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Tarot Symbol :* ${anu.message.simbol_tarot}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'fengshui': {
@@ -7961,7 +7972,7 @@ break
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tahun_lahir}\n${themeemoji} *Gender :* ${anu.message.jenis_kelamin}\n${themeemoji} *Kua Number :* ${anu.message.angka_kua}\n${themeemoji} *Group :* ${anu.message.kelompok}\n${themeemoji} *Character :* ${anu.message.karakter}\n${themeemoji} *Good Sector :* ${anu.message.sektor_baik}\n${themeemoji} *Bad Sector :* ${anu.message.sektor_buruk}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tahun_lahir}\n${themeemoji} *Gender :* ${anu.message.jenis_kelamin}\n${themeemoji} *Kua Number :* ${anu.message.angka_kua}\n${themeemoji} *Group :* ${anu.message.kelompok}\n${themeemoji} *Character :* ${anu.message.karakter}\n${themeemoji} *Good Sector :* ${anu.message.sektor_baik}\n${themeemoji} *Bad Sector :* ${anu.message.sektor_buruk}`, m)
             }
             break
             case 'haribaik': {
@@ -7971,7 +7982,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *When Challenged :* ${anu.message.kala_tinantang}\n${themeemoji} *Info :* ${anu.message.info}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *When Challenged :* ${anu.message.kala_tinantang}\n${themeemoji} *Info :* ${anu.message.info}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'harisangar': case 'taliwangke': {
@@ -7981,7 +7992,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Info :* ${anu.message.info}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Info :* ${anu.message.info}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'harinaas': case 'harisial': {
@@ -7989,7 +8000,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Day Of Birth :* ${anu.message.hari_lahir}\n${themeemoji} *Date Of Birth :* ${anu.message.tgl_lahir}\n${themeemoji} *Fateful Day :* ${anu.message.hari_naas}\n${themeemoji} *Info :* ${anu.message.catatan}\n${themeemoji} *Notes :* ${anu.message.info}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Day Of Birth :* ${anu.message.hari_lahir}\n${themeemoji} *Date Of Birth :* ${anu.message.tgl_lahir}\n${themeemoji} *Fateful Day :* ${anu.message.hari_naas}\n${themeemoji} *Info :* ${anu.message.catatan}\n${themeemoji} *Notes :* ${anu.message.info}`, m)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -7999,7 +8010,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Day Of Birth :* ${anu.message.hari_lahir}\n${themeemoji} *Date Of Birth :* ${anu.message.tgl_lahir}\n${themeemoji} *Dragon Day Direction :* ${anu.message.arah_naga_hari}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Day Of Birth :* ${anu.message.hari_lahir}\n${themeemoji} *Date Of Birth :* ${anu.message.tgl_lahir}\n${themeemoji} *Dragon Day Direction :* ${anu.message.arah_naga_hari}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -8009,7 +8020,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Day Of Birth :* ${anu.message.hari_lahir}\n${themeemoji} *Date Of Birth :* ${anu.message.tgl_lahir}\n${themeemoji} *Sustenance Direction :* ${anu.message.arah_rejeki}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Day Of Birth :* ${anu.message.hari_lahir}\n${themeemoji} *Date Of Birth :* ${anu.message.tgl_lahir}\n${themeemoji} *Sustenance Direction :* ${anu.message.arah_rejeki}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'peruntungan': {
@@ -8019,7 +8030,7 @@ break
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Fortune Of The Year :* ${anu.message.peruntungan_tahun}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Fortune Of The Year :* ${anu.message.peruntungan_tahun}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'weton': case 'wetonjawa': {
@@ -8029,7 +8040,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Date :* ${anu.message.tanggal}\n${themeemoji} *Number Of Neptune :* ${anu.message.jumlah_neptu}\n${themeemoji} *Day Character :* ${anu.message.watak_hari}\n${themeemoji} *Dragon Day :* ${anu.message.naga_hari}\n${themeemoji} *Good Hour :* ${anu.message.jam_baik}\n${themeemoji} *Birth Character :* ${anu.message.watak_kelahiran}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Date :* ${anu.message.tanggal}\n${themeemoji} *Number Of Neptune :* ${anu.message.jumlah_neptu}\n${themeemoji} *Day Character :* ${anu.message.watak_hari}\n${themeemoji} *Dragon Day :* ${anu.message.naga_hari}\n${themeemoji} *Good Hour :* ${anu.message.jam_baik}\n${themeemoji} *Birth Character :* ${anu.message.watak_kelahiran}`, m)
             }
             break
             case 'sifat': case 'karakter': {
@@ -8039,7 +8050,7 @@ break
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Lifeline :* ${anu.message.garis_hidup}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Lifeline :* ${anu.message.garis_hidup}`, m)
             }
             break
             case 'keberuntungan': {
@@ -8049,7 +8060,7 @@ break
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Name :* ${anu.message.nama}\n${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Results :* ${anu.message.result}`, m)
             }
             break
             case 'memancing': {
@@ -8059,7 +8070,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Date :* ${anu.message.tgl_memancing}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Date :* ${anu.message.tgl_memancing}\n${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'masasubur': {
@@ -8069,7 +8080,7 @@ break
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Results :* ${anu.message.result}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'zodiak': case 'zodiac': {
@@ -8106,7 +8117,7 @@ break
                 
                 let anu = await primbon.zodiak(zodiac)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Zodiac :* ${anu.message.zodiak}\n${themeemoji} *Number :* ${anu.message.nomor_keberuntungan}\n${themeemoji} *Aroma :* ${anu.message.aroma_keberuntungan}\n${themeemoji} *Planet :* ${anu.message.planet_yang_mengitari}\n${themeemoji} *Flower :* ${anu.message.bunga_keberuntungan}\n${themeemoji} *Color :* ${anu.message.warna_keberuntungan}\n${themeemoji} *Stone :* ${anu.message.batu_keberuntungan}\n${themeemoji} *Element :* ${anu.message.elemen_keberuntungan}\n${themeemoji} *Zodiac Couple :* ${anu.message.pasangan_zodiak}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Zodiac :* ${anu.message.zodiak}\n${themeemoji} *Number :* ${anu.message.nomor_keberuntungan}\n${themeemoji} *Aroma :* ${anu.message.aroma_keberuntungan}\n${themeemoji} *Planet :* ${anu.message.planet_yang_mengitari}\n${themeemoji} *Flower :* ${anu.message.bunga_keberuntungan}\n${themeemoji} *Color :* ${anu.message.warna_keberuntungan}\n${themeemoji} *Stone :* ${anu.message.batu_keberuntungan}\n${themeemoji} *Element :* ${anu.message.elemen_keberuntungan}\n${themeemoji} *Zodiac Couple :* ${anu.message.pasangan_zodiak}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'shio': {
@@ -8115,29 +8126,29 @@ break
                 if (!text) return reply(`Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`)
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return reply(anu.message)
-                LioneBotInc.sendText(m.chat, `${themeemoji} *Results :* ${anu.message}`, m)
+                XeonBotInc.sendText(m.chat, `${themeemoji} *Results :* ${anu.message}`, m)
             }
             break
             case "tiktok" : 
-            LioneBotInc.sendMessage(from, { react: { text: `🧸`, key: m.key }})
+            XeonBotInc.sendMessage(from, { react: { text: `🧸`, key: m.key }})
           try {
-          if (!q) return await LioneBotInc.sendMessage(from , { text: 'need tiktok link' }, { quoted: mek } )
-          if (!q.includes('tiktok')) return await LioneBotInc.sendMessage(from , { text: 'need tiktok link' }, { quoted: mek } )
+          if (!q) return await XeonBotInc.sendMessage(from , { text: 'need tiktok link' }, { quoted: mek } )
+          if (!q.includes('tiktok')) return await XeonBotInc.sendMessage(from , { text: 'need tiktok link' }, { quoted: mek } )
           const data = await axios.get('https://api-bobiz.herokuapp.com/api/tiktok?url=' + q)
           const file = data.data
-    const fileup = await LioneBotInc.sendMessage(from , { text: 'downloading...' }, { quoted: mek } )
-    await LioneBotInc.sendMessage(from, { delete: fileup.key })
-    const filedown = await LioneBotInc.sendMessage(from , { text: 'uploading...' }, { quoted: mek } )
-    const doc = await LioneBotInc.sendMessage(from , { video : { url : file.no_watermark  } , caption : `${global.cap}` } , { quoted: mek })
-    await LioneBotInc.sendMessage(from, { delete: filedown.key })	
+    const fileup = await XeonBotInc.sendMessage(from , { text: 'downloading...' }, { quoted: mek } )
+    await XeonBotInc.sendMessage(from, { delete: fileup.key })
+    const filedown = await XeonBotInc.sendMessage(from , { text: 'uploading...' }, { quoted: mek } )
+    const doc = await XeonBotInc.sendMessage(from , { video : { url : file.no_watermark  } , caption : `${global.cap}` } , { quoted: mek })
+    await XeonBotInc.sendMessage(from, { delete: filedown.key })	
           } 
           catch(e) {
-              await LioneBotInc.sendMessage(from , { text: 'cant download' + e }, { quoted: mek } )
+              await XeonBotInc.sendMessage(from , { text: 'cant download' + e }, { quoted: mek } )
           }
                 
             break  
 	    case 'play': case 'yt': { 
-        LioneBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key }})    
+        XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key }})    
             if (!text) return reply(`Example : ${prefix + command} lelena`)
 let yts = require("yt-search")
 let search = await yts(text)
@@ -8169,11 +8180,11 @@ footer: `📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 `,
 buttons: buttons,
 headerType: 4,
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 case 'song': { 
-LioneBotInc.sendMessage(from, { react: { text: `🎧`, key: m.key }})    
+XeonBotInc.sendMessage(from, { react: { text: `🎧`, key: m.key }})    
     if (!text) return reply(`Example : ${prefix + command} lelena`)
 let yts = require("yt-search")
 let search = await yts(text)
@@ -8205,7 +8216,7 @@ footer: `📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 `,
 buttons: buttons,
 headerType: 4,
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 case 'ytdl': {
@@ -8307,7 +8318,7 @@ listMessage :{
 listType: 1
 }
 }), {})
-LioneBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
+XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
 }
 break
 case 'ytdoc': {	    
@@ -8318,11 +8329,11 @@ case 'ytdoc': {
     let media = await yta(text, quality)
     if (media.filesize >= 999999) return reply('*File Over Limit* '+util.format(media))                
     buf = await getBuffer(media.thumb) 
-    const auddown = await LioneBotInc.sendMessage(from , { text: '📥 Downloading Your Song...' }, { quoted: m } )
-    await LioneBotInc.sendMessage(from, { delete: auddown.key })
-    const audup = await LioneBotInc.sendMessage(from , { text: '📤 Uploading Your Song...' }, { quoted: m } )
-    const aud = await LioneBotInc.sendMessage(m.chat, {document:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`}, { quoted: m }) .catch((err) => reply(mess.error))
-    await LioneBotInc.sendMessage(from, { delete: audup.key })               
+    const auddown = await XeonBotInc.sendMessage(from , { text: '📥 Downloading Your Song...' }, { quoted: m } )
+    await XeonBotInc.sendMessage(from, { delete: auddown.key })
+    const audup = await XeonBotInc.sendMessage(from , { text: '📤 Uploading Your Song...' }, { quoted: m } )
+    const aud = await XeonBotInc.sendMessage(m.chat, {document:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`}, { quoted: m }) .catch((err) => reply(mess.error))
+    await XeonBotInc.sendMessage(from, { delete: audup.key })               
     }
 break
             case 'ytmp4': {
@@ -8333,11 +8344,11 @@ break
                                 let media = await ytv(text, quality)
                                 if (media.filesize >= 999999) return reply('*File Over Limit* '+util.format(media))
                                 var buf = await getBuffer(media.thumb)
-                                const viddown = await LioneBotInc.sendMessage(from , { text: '📥 Downloading Your Video...' }, { quoted: m } )
-                                await LioneBotInc.sendMessage(from, { delete: viddown.key })
-                                const vidup = await LioneBotInc.sendMessage(from , { text: '📤 Uploading Your Video...' }, { quoted: m } )
-                                const vid = await LioneBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, jpegThumbnail:buf, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `${global.cap}` }, { quoted: m }).catch((err) => reply(mess.error))
-                                await LioneBotInc.sendMessage(from, { delete: vidup.key }) 
+                                const viddown = await XeonBotInc.sendMessage(from , { text: '📥 Downloading Your Video...' }, { quoted: m } )
+                                await XeonBotInc.sendMessage(from, { delete: viddown.key })
+                                const vidup = await XeonBotInc.sendMessage(from , { text: '📤 Uploading Your Video...' }, { quoted: m } )
+                                const vid = await XeonBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, jpegThumbnail:buf, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `${global.cap}` }, { quoted: m }).catch((err) => reply(mess.error))
+                                await XeonBotInc.sendMessage(from, { delete: vidup.key }) 
                             }
                             break
                             case 'ytmp3': {	    
@@ -8348,15 +8359,15 @@ break
                      let media = await yta(text, quality)
                      if (media.filesize >= 999999) return reply('*File Over Limit* '+util.format(media))                
                      buf = await getBuffer(media.thumb) 
-                     const auddown = await LioneBotInc.sendMessage(from , { text: '📥 Downloading Your Song...' }, { quoted: m } )
-                     await LioneBotInc.sendMessage(from, { delete: auddown.key })
-                     const audup = await LioneBotInc.sendMessage(from , { text: '📤 Uploading Your Song...' }, { quoted: m } )
-                     const aud = await LioneBotInc.sendMessage(m.chat, {audio:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`}, { quoted: m }) .catch((err) => reply(mess.error))
-                     await LioneBotInc.sendMessage(from, { delete: audup.key })               
+                     const auddown = await XeonBotInc.sendMessage(from , { text: '📥 Downloading Your Song...' }, { quoted: m } )
+                     await XeonBotInc.sendMessage(from, { delete: auddown.key })
+                     const audup = await XeonBotInc.sendMessage(from , { text: '📤 Uploading Your Song...' }, { quoted: m } )
+                     const aud = await XeonBotInc.sendMessage(m.chat, {audio:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`}, { quoted: m }) .catch((err) => reply(mess.error))
+                     await XeonBotInc.sendMessage(from, { delete: audup.key })               
                      }
                  break
 	case 'video': { 
-    LioneBotInc.sendMessage(from, { react: { text: `🎥`, key: m.key }})    
+    XeonBotInc.sendMessage(from, { react: { text: `🎥`, key: m.key }})    
         if (!text) return reply(`Example : ${prefix + command} lelena`)
  let yts = require("yt-search")
  let search = await yts(text)
@@ -8389,7 +8400,7 @@ break
  buttons: buttons,
  headerType: 4,
  }
- LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+ XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
  }
  break
 	  case 'pinterest': case 'pin': {
@@ -8417,7 +8428,7 @@ mediaUrl: `${global.websitex}`,
 sourceUrl: `${global.websitex}`
 }}
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }).catch(_ => _)
 } catch {
 reply("Error")
@@ -8438,7 +8449,7 @@ const result4 = `*MEDIAFIRE DOWNLOADER*
 *Mime* : ${baby1[0].mime}
 *Link* : ${baby1[0].link}`
 reply(`${result4}`)
-LioneBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+XeonBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
 }
 break
             case 'umma': case 'ummadl': {
@@ -8466,10 +8477,10 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 			buttons,
 			headerType: 4
 		    }
-		    LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+		    XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        LioneBotInc.sendMessage(m.chat, { image: { url }, caption: `${themeemoji} Title : ${anu.title}\n${themeemoji} Author : ${anu.author.name}\n${themeemoji} Like : ${anu.like}\n${themeemoji} Caption : ${anu.caption}` }, { quoted: m })
+		        XeonBotInc.sendMessage(m.chat, { image: { url }, caption: `${themeemoji} Title : ${anu.title}\n${themeemoji} Author : ${anu.author.name}\n${themeemoji} Like : ${anu.like}\n${themeemoji} Caption : ${anu.caption}` }, { quoted: m })
 		    })
 		}
 	    }
@@ -8481,21 +8492,21 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
-		LioneBotInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+		XeonBotInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
 case 'tempo': {
 if (isBan) return reply(mess.ban)
 if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
 var req = args.join(' ')
-media = await LioneBotInc.downloadAndSaveMediaMessage(quoted, "tempo")
+media = await XeonBotInc.downloadAndSaveMediaMessage(quoted, "tempo")
 if (isQuotedAudio) {
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a "atempo=1.0,asetrate=${req}" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-LioneBotInc.sendMessage(from, {audio:hah, mimetype:'audio/mp4', ptt:true}, {quoted:m})
+XeonBotInc.sendMessage(from, {audio:hah, mimetype:'audio/mp4', ptt:true}, {quoted:m})
 fs.unlinkSync(ran)
 })
 } else if (isQuotedVideo) {
@@ -8504,7 +8515,7 @@ exec(`ffmpeg -i ${media} -filter:a "atempo=1.0,asetrate=${req}" ${ran}`, (err, s
 fs.unlinkSync(media)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-LioneBotInc.sendMessage(from, {video:hah, mimetype:'video/mp4'}, {quoted:m})
+XeonBotInc.sendMessage(from, {video:hah, mimetype:'video/mp4'}, {quoted:m})
 fs.unlinkSync(ran)
 })
 } else {
@@ -8516,14 +8527,14 @@ case 'volume': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`Example: ${prefix + command} 10`)
-media = await LioneBotInc.downloadAndSaveMediaMessage(quoted, "volume")
+media = await XeonBotInc.downloadAndSaveMediaMessage(quoted, "volume")
 if (isQuotedAudio) {
 rname = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
 if (err) return reply('Error!')
 jadie = fs.readFileSync(rname)
-LioneBotInc.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
+XeonBotInc.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
 fs.unlinkSync(rname)
 })
 } else if (isQuotedVideo) {
@@ -8532,7 +8543,7 @@ exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, st
 fs.unlinkSync(media)
 if (err) return reply('Error!')
 jadie = fs.readFileSync(rname)
-LioneBotInc.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
+XeonBotInc.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
 fs.unlinkSync(rname)
 })
 } else {
@@ -8559,13 +8570,13 @@ break
                 if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
                 reply(mess.wait)
-                let media = await LioneBotInc.downloadAndSaveMediaMessage(quoted)
+                let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
                 if (err) return reply(err)
                 let buff = fs.readFileSync(ran)
-                LioneBotInc.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                XeonBotInc.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
                 } else reply(`Reply To The Audio You Want To Change With Caption *${prefix + command}*`)
@@ -8613,7 +8624,7 @@ break
 Info: *bold* hash is Locked
 ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
 `.trim()
-                LioneBotInc.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
+                XeonBotInc.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
             }
             break
             case 'lockcmd': {
@@ -8649,7 +8660,7 @@ View List Of Messages With ${prefix}listmsg`)
                 if (!text) return reply(`Example : ${prefix + command} file name\n\nView Message List With ${prefix}listmsg`)
                 let msgs = global.db.data.database
                 if (!(text.toLowerCase() in msgs)) return reply(`'${text}' Not Listed In The Message List`)
-                LioneBotInc.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+                XeonBotInc.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
             case 'listmsg': {
@@ -8681,7 +8692,7 @@ View List Of Messages With ${prefix}listmsg`)
 				let buttons = [
                     { buttonId: 'Start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                 ]
-                LioneBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await LioneBotInc.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, LioneBotInc.user.name, m)
+                XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await XeonBotInc.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, XeonBotInc.user.name, m)
             }
 			break
             case 'keluar': case 'leave': {
@@ -8694,12 +8705,12 @@ View List Of Messages With ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``)
                    reply(false)
                 }
                 reply('Ok')
                 let other = room.other(m.sender)
-                if (other) await LioneBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                if (other) await XeonBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[room.id]
                 if (command === 'leave') break
             }
@@ -8712,7 +8723,7 @@ View List Of Messages With ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, XeonBotInc.user.name, m)
                     reply(false)
                 }
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
@@ -8721,10 +8732,10 @@ View List Of Messages With ${prefix}listmsg`)
                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await LioneBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -8742,7 +8753,7 @@ View List Of Messages With ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m)
                 }
                 break
             }
@@ -8756,11 +8767,11 @@ View List Of Messages With ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
                     reply(false)
                 }
                 let other = romeo.other(m.sender)
-                if (other) await LioneBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                if (other) await XeonBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[romeo.id]
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
                 if (room) {
@@ -8768,10 +8779,10 @@ View List Of Messages With ${prefix}listmsg`)
                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await LioneBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -8789,7 +8800,7 @@ View List Of Messages With ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
-                    await LioneBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, LioneBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m)
                 }
                 break
             }
@@ -8797,7 +8808,7 @@ View List Of Messages With ${prefix}listmsg`)
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-                LioneBotInc.public = true
+                XeonBotInc.public = true
                 reply('Successful Change To Public Usage')
             }
             break
@@ -8805,7 +8816,7 @@ View List Of Messages With ${prefix}listmsg`)
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-                LioneBotInc.public = false
+                XeonBotInc.public = false
                 reply('Successful Change To Self Usage')
             }
             break
@@ -8814,7 +8825,7 @@ case 'setbio':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply('Send orders *#setbio text*')
-LioneBotInc.setStatus(`${q}`)
+XeonBotInc.setStatus(`${q}`)
 reply(mess.success)
 break
 case 'antitag': {
@@ -8904,7 +8915,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'owner': case 'creator': {
-                LioneBotInc.sendContact(m.chat, global.vcardowner, m)
+                XeonBotInc.sendContact(m.chat, global.vcardowner, m)
             }
             break
   case 'setmenu': {
@@ -8960,7 +8971,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 ]
                 },
                 ]
-                LioneBotInc.sendListMsg(m.chat, `Please select the menu you want to change!`, ` `, LioneBotInc.user.name, `Click Here`, sections, m)
+                XeonBotInc.sendListMsg(m.chat, `Please select the menu you want to change!`, ` `, XeonBotInc.user.name, `Click Here`, sections, m)
                 }
             }
             break
@@ -8972,16 +8983,16 @@ teks = `*| REQUEST |*`
 teks1 = `\n\nNumber : @${m.sender.split("@")[0]}\nRequest : ${args.join(" ")}`
 teks2 = `\n\nSuccessfully sent to owner`
 for (let i of owner) {
-LioneBotInc.sendMessage(i + "@s.whatsapp.net", {text: teks + teks1, mentions:[m.sender]}, {quoted:m})
+XeonBotInc.sendMessage(i + "@s.whatsapp.net", {text: teks + teks1, mentions:[m.sender]}, {quoted:m})
 }
-LioneBotInc.sendMessage(m.chat, {text: teks + teks2 + teks1, mentions:[m.sender]}, {quoted:m})
+XeonBotInc.sendMessage(m.chat, {text: teks + teks2 + teks1, mentions:[m.sender]}, {quoted:m})
 }
 break
                     case 'bug': case 'report': {
                     	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
-                    	LioneBotInc.sendMessage(`${owner}@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	XeonBotInc.sendMessage(`${owner}@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
@@ -9003,222 +9014,45 @@ headerType: 4,
 contextInfo:{externalAdReply:{
 title:"I deserve something for my hardwork",
 body: "Click to donate", 
-thumbnail: fs.readFileSync("Blue-Lione-media/theme/cheemspic.jpg"),
+thumbnail: fs.readFileSync("Blue-Lione-MD/theme/cheemspic.jpg"),
 mediaType:1,
 mediaUrl: 'https://telegra.ph/file/8737b098fd5702daeb7e0.jpg',
 sourceUrl: "https://telegra.ph/file/8737b098fd5702daeb7e0.jpg"
 }}
 }
-LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 case 'alive': {
-    LioneBotInc.sendMessage(from, { react: { text: `💖`, key: m.key }}) 
+    XeonBotInc.sendMessage(from, { react: { text: `💖`, key: m.key }}) 
     let buttons = [
     {buttonId: `menu`, buttonText: {displayText: 'MENU'}, type: 1},
     {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
     ]
     let buttonMessage = {
-    image: { url: `${global.alive}`},
+    video : { url: `${global.alive}`},
     caption: `│「 Hi 👋 」
     └┬❖ 「 ${pushname} 」
     ┌┤✑ i am ${global.botname} bot
     │└───────────────┈ ⳹
     │ 「 BOT INFO 」
-    │🚀𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-    │🕐𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-    │🧞‍♂️ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
-    │😎 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-    │🐱‍🏍 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
-    │🐱‍👤 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-    │👩‍👩‍👧‍👧 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
+    │✙ 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
+    │✙ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+    │✙ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
+    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
+    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
+    │✙ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+    │✙ 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
     └┬──────────────┈ ⳹`,
     footer: `📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶`,
     buttons: buttons,
     headerType: 4,
     }
-    LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+    XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
     }
 break   
 case 'menu': {
-    let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-    listMessage :{
-    title: `hi`,
-    description: `│「 Hi 👋 」
-    └┬❖ 「 ${pushname} 」
-    ┌┤✑ i am ${global.botname} bot
-    │└───────────────┈ ⳹
-    │ 「 BOT INFO 」
-    │🚀𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-    │🕐𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-    │🧞‍♂️ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
-    │😎 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-    │🐱‍🏍 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
-    │🐱‍👤 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-    │👩‍👩‍👧‍👧 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
-    └┬──────────────┈ ⳹`,
-                        buttonText: "Menu",
-                        footerText: `${global.botname}`,
-                        listType: "SINGLE_SELECT",
-                        sections: [{
-                                    "title": "Main Features",
-                                    "rows": [
-                                        {
-                                            "title": "Main Menu",
-                                            "description": "Displays The List Of Main Features",
-                                            "rowId": `${prefix}mainmenu`
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "Bot Features",
-                                    "rows": [
-                                        {
-                                            "title": "All Menu",
-                                            "description": "Displays The List Of All The Features!",
-                                            "rowId": `${prefix}allmenu`
-                                        },
-                                        {
-                                            "title": "Owner Menu",
-                                            "description": "Displays The List Of Owner Features",
-                                            "rowId": `${prefix}ownermenu`
-                                            },
-                                        {
-                                            "title": "Group Menu",
-                                            "description": "Displays The List Of Main Features",
-                                            "rowId": `${prefix}groupmenu`
-                                            },
-                                        {
-                                            "title": "Meker Menu",
-                                            "description": "Displays The List Of Rpg Features",
-                                            "rowId": `${prefix}Mekermenu`
-                                        },
-                                        {
-                                            "title": "Download Menu",
-                                            "description": "Displays The List Of Download Features",
-                                            "rowId": `${prefix}downloadmenu`
-                                        },
-                                        {
-                                            "title": "Search Menu",
-                                            "description": "Displays The List Of Searching Features",
-                                            "rowId": `${prefix}searchmenu`
-                                        },
-                                        {
-                                                "title": "Random Menu",
-                                            "description": "Displays The List Of Random Features",
-                                            "rowId": `${prefix}randommenu`
-                                            },
-                                            {
-                                                "title": "Random Anime Menu",
-                                            "description": "Displays The List Of Random Anime Features",
-                                            "rowId": `${prefix}randomanimemenu`
-                                            },
-                                            {
-                                                "title": "Fun Menu",
-                                            "description": "Displays The List Of Fun Features",
-                                            "rowId": `${prefix}funmenu`
-                                            },
-                                            {
-                                                "title": "Convert Menu",
-                                            "description": "Displays The List Of Convert Features",
-                                            "rowId": `${prefix}convertmenu`
-                                            },
-                                            {
-                                                "title": "Img Effect Menu",
-                                            "description": "Displays The List Of Img Effect Features",
-                                            "rowId": `${prefix}Imgeffectmenu`
-                                            },
-                                            {
-                                                "title": "Random Img Menu",
-                                            "description": "Displays The List Of Random Img Features",
-                                            "rowId": `${prefix}randomImgmenu`
-                                            },
-                                            {
-                                                "title": "EMOTE Menu ",
-                                            "description": "Displays The List Of EMOTE Features",
-                                            "rowId": `${prefix}EMOTEmenu`
-                                            },
-                                            {
-                                                "title": "ANIME Menu ",
-                                            "description": "Displays The List Of ANIME Features",
-                                            "rowId": `${prefix}ANIMEmenu`
-                                            },
-                                            {
-                                                "title": " STICKER Menu ",
-                                            "description": "Displays The List Of STICKE Features",
-                                            "rowId": `${prefix}STICKERmenu`
-                                            },
-                                            {
-                                                "title": " ANIME STICKER MENU ",
-                                            "description": "Displays The List Of ANIME STICKER Features",
-                                            "rowId": `${prefix}ANIMESTICKERmenu`
-                                            },
-                                            {
-                                                "title": " NSFW MENU ",
-                                            "description": "Displays The List Of NSFW Features",
-                                            "rowId": `${prefix}NSFWmenu`
-                                            },
-                                            {
-                                                "title": " Sound MENU ",
-                                            "description": "Displays The List Of SoundFeatures",
-                                            "rowId": `${prefix}Soundmenu`
-                                            },
-                                            {
-                                                "title": "Database Menu",
-                                            "description": "Displays The List Of Database Features",
-                                            "rowId": `${prefix}databasemenu`
-                                            },
-                                            {
-                                                "title": "Games Menu",
-                                            "description": "Displays The List Of Games Features",
-                                            "rowId": `${prefix}Gamesmenu`
-                                            },
-                                            {
-                                                "title": "Voice Changer Menu",
-                                            "description": "Displays The List Of Voice Changing Features",
-                                            "rowId": `${prefix}voicechangermenu`
-                                            },
-                                            {
-                                                "title": "ANONYMOUS CHAT Menu",
-                                            "description": "Displays The List Of ANONYMOUS CHAT Features",
-                                            "rowId": `${prefix}ANONYMOUSCHATmenu`
-                                            },
-                                            {
-                                                "title": "lNDO Menu",
-                                            "description": "Displays The List Of lNDO Features",
-                                            "rowId": `${prefix}lNDOmenu`
-                                            },
-                                            {
-                                                "title": "INDO Horoscope Menu",
-                                            "description": "Displays The List Of Horoscope Features",
-                                            "rowId": `${prefix}INDOhoroscopemenu`
-                                            },
-                                            {
-                                                "title": "Other Menu",
-                                            "description": "Displays The List Of Other Features",
-                                            "rowId": `${prefix}othermenu`
-                                            },
-                                    ]
-                                },
-                                {
-                                    "title": "Credit",
-                                    "rows": [
-                                        {
-                                            "title": "Thanks To",
-                                            "description": "Displays The List Of Credit Of The Bot !!",
-                                            "rowId": `${prefix}tqtt`
-                                        }
-                                    ]
-                                }
-                            ],
-              listType: 1
-                    }
-                }), {})
-                LioneBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
-                }
-break  
-case 'allmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
+    XeonBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
     let buttons = [
     {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
     {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
@@ -10118,1221 +9952,17 @@ case 'allmenu': {
     buttons: buttons,
     headerType: 4,
     }
-    LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+    XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
     }
 break
-case'mainmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`═════ 👽 Nipuna ═════*
-    ╠${global.menumoji}
-    ╠═════📛「 DOWNLOAD 」	
-    ╠${global.menumoji} ${prefix}instagram [url]
-    ╠${global.menumoji} ${prefix}igtv [url]
-    ╠${global.menumoji} ${prefix}igstory [username]
-    ╠${global.menumoji} ${prefix}facebook [url]
-    ╠${global.menumoji} ${prefix}fbmp3 [url]
-    ╠${global.menumoji} ${prefix}twitter [url]
-    ╠${global.menumoji} ${prefix}twittermp3 [url]
-    ╠${global.menumoji} ${prefix}tiktok [url]
-    ╠${global.menumoji} ${prefix}tiktokaudio[url]
-    ╠${global.menumoji} ${prefix}tiktoknowm [url]
-    ╠${global.menumoji} ${prefix}mediafire [url]
-    ╠${global.menumoji} ${prefix}ytmp3 [url|quality]
-    ╠${global.menumoji} ${prefix}ytmp4 [url|quality]
-    ╠${global.menumoji} ${prefix}getmusic [yt link]
-    ╠${global.menumoji} ${prefix}getvideo [yt link]
-    ╠${global.menumoji} ${prefix}gitclone [repo link]
-    ╠${global.menumoji} ${prefix}soundcloud [url]
-    ╠${global.menumoji} ${prefix}zippyshare [url]
-    ╠${global.menumoji} ${prefix}whatsapp
-    ╠${global.menumoji} ${prefix}wamod
-    ╠${global.menumoji} ${prefix}wa
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯
-
-
-
-   *╔═════ 👽 Nipuna ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 SEARCH 」	
-    ╠${global.menumoji} ${prefix}play [query]
-    ╠${global.menumoji} ${prefix}song [query]
-    ╠${global.menumoji} ${prefix}yts [query]
-    ╠${global.menumoji} ${prefix}lyrics [query]
-    ╠${global.menumoji} ${prefix}google [query]
-    ╠${global.menumoji} ${prefix}playstore [query]
-    ╠${global.menumoji} ${prefix}gtitle [query]
-    ╠${global.menumoji} ${prefix}pinterest [query]
-    ╠${global.menumoji} ${prefix}image [query]
-    ╠${global.menumoji} ${prefix}film [query]
-    ╠${global.menumoji} ${prefix}wallpaper [query]
-    ╠${global.menumoji} ${prefix}searchgc [query]
-    ╠${global.menumoji} ${prefix}happymod [query]
-    ╠${global.menumoji} ${prefix}servermc
-    ╠${global.menumoji} ${prefix}mcpedl [query]
-    ╠${global.menumoji} ${prefix}tvsearch [query]
-    ╠${global.menumoji} ${prefix}wikimedia [query]
-    ╠${global.menumoji} ${prefix}ytsearch [query]
-    ╠${global.menumoji} ${prefix}ringtone [query]
-    ╠${global.menumoji} ${prefix}webtoon [query]
-    ╠${global.menumoji} ${prefix}anime [query]
-    ╠${global.menumoji} ${prefix}animestory [query]
-    ╠${global.menumoji} ${prefix}manga [query]
-    ╠${global.menumoji} ${prefix}wattpad [query]
-    ╠${global.menumoji} ${prefix}mcserver [ip|port]
-    ╠${global.menumoji} ${prefix}drakor [query]
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'groupmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption: `╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 GROUP 」	        
-    ╠${global.menumoji} ${prefix}grousetting
-    ╠${global.menumoji} ${prefix}grouplink
-    ╠${global.menumoji} ${prefix}ephemeral [option]
-    ╠${global.menumoji} ${prefix}setgcpp [image]
-    ╠${global.menumoji} ${prefix}setname [text]
-    ╠${global.menumoji} ${prefix}setdesc [text]
-    ╠${global.menumoji} ${prefix}group 
-    ╠${global.menumoji} ${prefix}resetgrouplink
-    ╠${global.menumoji} ${prefix}editinfo [option]
-    ╠${global.menumoji} ${prefix}add [user]
-    ╠${global.menumoji} ${prefix}kick [reply/tag]
-    ╠${global.menumoji} ${prefix}hidetag [text]
-    ╠${global.menumoji} ${prefix}tagall [text]
-    ╠${global.menumoji} ${prefix}antilinkgc [on/off]
-    ╠${global.menumoji} ${prefix}antilinktg [on/off]
-    ╠${global.menumoji} ${prefix}antilinktt [on/off]
-    ╠${global.menumoji} ${prefix}antilinkytch [on/off]
-    ╠${global.menumoji} ${prefix}antilinkytvid [on/off]
-    ╠${global.menumoji} ${prefix}antilinkig [on/off]
-    ╠${global.menumoji} ${prefix}antilinkfb [on/off]
-    ╠${global.menumoji} ${prefix}antilinktwit [on/off]
-    ╠${global.menumoji} ${prefix}antilinkall [on/off]
-    ╠${global.menumoji} ${prefix}antivirus [on/off]
-    ╠${global.menumoji} ${prefix}antitoxic [on/off]
-    ╠${global.menumoji} ${prefix}antiwame [on/off]
-    ╠${global.menumoji} ${prefix}autoreply [on/off]
-    ╠${global.menumoji} ${prefix}nsfw [on/off]
-    ╠${global.menumoji} ${prefix}promote [reply/tag]
-    ╠${global.menumoji} ${prefix}demote [reply/tag]
-    ╠${global.menumoji} ${prefix}react [reply emoji]
-    ╠${global.menumoji} ${prefix}vote
-    ╠${global.menumoji} ${prefix}devote
-    ╠${global.menumoji} ${prefix}upvote
-    ╠${global.menumoji} ${prefix}checkvote
-    ╠${global.menumoji} ${prefix}delvote
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-    buttons: buttons,
-    headerType: 4,
-    }
-    LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-break
-case'searchmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 SEARCH 」	
-    ╠${global.menumoji} ${prefix}play [query]
-    ╠${global.menumoji} ${prefix}song [query]
-    ╠${global.menumoji} ${prefix}yts [query]
-    ╠${global.menumoji} ${prefix}lyrics [query]
-    ╠${global.menumoji} ${prefix}google [query]
-    ╠${global.menumoji} ${prefix}playstore [query]
-    ╠${global.menumoji} ${prefix}gtitle [query]
-    ╠${global.menumoji} ${prefix}pinterest [query]
-    ╠${global.menumoji} ${prefix}image [query]
-    ╠${global.menumoji} ${prefix}film [query]
-    ╠${global.menumoji} ${prefix}wallpaper [query]
-    ╠${global.menumoji} ${prefix}searchgc [query]
-    ╠${global.menumoji} ${prefix}happymod [query]
-    ╠${global.menumoji} ${prefix}servermc
-    ╠${global.menumoji} ${prefix}mcpedl [query]
-    ╠${global.menumoji} ${prefix}tvsearch [query]
-    ╠${global.menumoji} ${prefix}wikimedia [query]
-    ╠${global.menumoji} ${prefix}ytsearch [query]
-    ╠${global.menumoji} ${prefix}ringtone [query]
-    ╠${global.menumoji} ${prefix}webtoon [query]
-    ╠${global.menumoji} ${prefix}anime [query]
-    ╠${global.menumoji} ${prefix}animestory [query]
-    ╠${global.menumoji} ${prefix}manga [query]
-    ╠${global.menumoji} ${prefix}wattpad [query]
-    ╠${global.menumoji} ${prefix}mcserver [ip|port]
-    ╠${global.menumoji} ${prefix}drakor [query]
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'Gamesmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═══════📛「 OWNER 」	
-    ╠${global.menumoji}  ${prefix}self
-    ╠${global.menumoji}  ${prefix}public
-    ╠${global.menumoji}  ${prefix}antitag
-    ╠${global.menumoji}  ${prefix}rentbot [add/del]
-    ╠${global.menumoji}  ${prefix}rentlist
-    ╠${global.menumoji}  ${prefix}ban [add/del]
-    ╠${global.menumoji}  ${prefix}banchat [on/off]
-    ╠${global.menumoji}  ${prefix}join [link]
-    ╠${global.menumoji}  ${prefix}leavegc
-    ╠${global.menumoji}  ${prefix}setbio
-    ╠${global.menumoji}  ${prefix}bcgroup [text]
-    ╠${global.menumoji}  ${prefix}bcall [text]
-    ╠${global.menumoji}  ${prefix}bctitle [image]
-    ╠${global.menumoji}  ${prefix}bcvideo [video]
-    ╠${global.menumoji}  ${prefix}bcaudio [audio]
-    ╠${global.menumoji}  ${prefix}bcloc [text]
-    ╠${global.menumoji}  ${prefix}setppbot [image]
-    ╠${global.menumoji}  ${prefix}setexif
-    ╠${global.menumoji}  ${prefix}block [tag/number]
-    ╠${global.menumoji}  ${prefix}unblock [tag/number]
-    ╠${global.menumoji}  ${prefix}coowner [add/del]
-    ╠${global.menumoji}             
-    ╚═══❖📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶❯`,
-    footer: `${global.botname}`,
-    buttons: buttons,
-    headerType: 4,
-    }
-    LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-break
-case'mekermenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 MAKER 」
-    ╠${global.menumoji} ${prefix}candy
-    ╠${global.menumoji} ${prefix}blackpinkneon
-    ╠${global.menumoji} ${prefix}deepsea
-    ╠${global.menumoji} ${prefix}scifi
-    ╠${global.menumoji} ${prefix}fiction
-    ╠${global.menumoji} ${prefix}berry
-    ╠${global.menumoji} ${prefix}fruitjuice
-    ╠${global.menumoji} ${prefix}biscuit
-    ╠${global.menumoji} ${prefix}wood
-    ╠${global.menumoji} ${prefix}chocolate
-    ╠${global.menumoji} ${prefix}matrix
-    ╠${global.menumoji} ${prefix}blood
-    ╠${global.menumoji} ${prefix}halloween
-    ╠${global.menumoji} ${prefix}wicker
-    ╠${global.menumoji} ${prefix}darkgold
-    ╠${global.menumoji} ${prefix}firework
-    ╠${global.menumoji} ${prefix}skeleton
-    ╠${global.menumoji} ${prefix}sand
-    ╠${global.menumoji} ${prefix}glue
-    ╠${global.menumoji} ${prefix}leaves
-    ╠${global.menumoji} ${prefix}magma
-    ╠${global.menumoji} ${prefix}lava
-    ╠${global.menumoji} ${prefix}rock
-    ╠${global.menumoji} ${prefix}bloodglas
-    ╠${global.menumoji} ${prefix}underwater
-    ╠${global.menumoji} ${prefix}textmaker
-    ╠${global.menumoji} ${prefix}honey
-    ╠${global.menumoji} ${prefix}ice
-    ╠${global.menumoji} ${prefix}watercolor
-    ╠${global.menumoji} ${prefix}multicolor
-    ╠${global.menumoji} ${prefix}snow
-    ╠${global.menumoji} ${prefix}harrypot
-    ╠${global.menumoji} ${prefix}harrypotter
-    ╠${global.menumoji} ${prefix}brokenglass
-    ╠${global.menumoji} ${prefix}waterpipe
-    ╠${global.menumoji} ${prefix}spooky
-    ╠${global.menumoji} ${prefix}circuit
-    ╠${global.menumoji} ${prefix}metallic
-    ╠${global.menumoji} ${prefix}demon
-    ╠${global.menumoji} ${prefix}sparklechristmas
-    ╠${global.menumoji} ${prefix}christmas
-    ╠${global.menumoji} ${prefix}3dchristmas
-    ╠${global.menumoji} ${prefix}3dbox
-    ╠${global.menumoji} ${prefix}waterdrop
-    ╠${global.menumoji} ${prefix}lion2
-    ╠${global.menumoji} ${prefix}papercut
-    ╠${global.menumoji} ${prefix}transformer
-    ╠${global.menumoji} ${prefix}neondevil
-    ╠${global.menumoji} ${prefix}3davengers
-    ╠${global.menumoji} ${prefix}3dstone
-    ╠${global.menumoji} ${prefix}3dstone2
-    ╠${global.menumoji} ${prefix}summertime
-    ╠${global.menumoji} ${prefix}thunder
-    ╠${global.menumoji} ${prefix}window
-    ╠${global.menumoji} ${prefix}graffiti
-    ╠${global.menumoji} ${prefix}pornhub
-    ╠${global.menumoji} ${prefix}glitch
-    ╠${global.menumoji} ${prefix}blackpink
-    ╠${global.menumoji} ${prefix}glitch2
-    ╠${global.menumoji} ${prefix}glitch3
-    ╠${global.menumoji} ${prefix}3dspace
-    ╠${global.menumoji} ${prefix}lion
-    ╠${global.menumoji} ${prefix}3dneon
-    ╠${global.menumoji} ${prefix}greenneon
-    ╠${global.menumoji} ${prefix}bokeh
-    ╠${global.menumoji} ${prefix}holographic
-    ╠${global.menumoji} ${prefix}bear
-    ╠${global.menumoji} ${prefix}wolf
-    ╠${global.menumoji} ${prefix}joker
-    ╠${global.menumoji}  ${prefix}dropwater
-    ╠${global.menumoji}  ${prefix}dropwater2
-    ╠${global.menumoji}  ${prefix}thewall
-    ╠${global.menumoji}  ${prefix}neonlight
-    ╠${global.menumoji}  ${prefix}natural
-    ╠${global.menumoji}  ${prefix}carbon
-    ╠${global.menumoji}  ${prefix}pencil
-    ╠${global.menumoji}  ${prefix}blackpink2
-    ╠${global.menumoji}  ${prefix}neon
-    ╠${global.menumoji}  ${prefix}neonlight2
-    ╠${global.menumoji}  ${prefix}toxic
-    ╠${global.menumoji}  ${prefix}strawberry
-    ╠${global.menumoji}  ${prefix}discovery
-    ╠${global.menumoji}  ${prefix}1917
-    ╠${global.menumoji}  ${prefix}sci_fi
-    ╠${global.menumoji}  ${prefix}ancient
-    ╠${global.menumoji}  ${prefix}fabric
-    ╠${global.menumoji}  ${prefix}hoorror
-    ╠${global.menumoji}  ${prefix}whitebear
-    ╠${global.menumoji}  ${prefix}juice
-    ╠${global.menumoji}  ${prefix}batman
-    ╠${global.menumoji}  ${prefix}multicolor
-    ╠${global.menumoji}  ${prefix}collwall
-    ╠${global.menumoji}  ${prefix}wonderful
-    ╠${global.menumoji}  ${prefix}cool
-    ╠${global.menumoji}  ${prefix}sketch
-    ╠${global.menumoji}  ${prefix}marvel
-    ╠${global.menumoji}  ${prefix}foggy
-    ╠${global.menumoji}  ${prefix}writing
-    ╠${global.menumoji}  ${prefix}halloweenfire
-    ╠${global.menumoji}  ${prefix}halloween
-    ╠${global.menumoji}  ${prefix}watercolor
-    ╠${global.menumoji}  ${prefix}classic
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-    buttons: buttons,
-    headerType: 4,
-    }
-    LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-break
-case'downloadmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═════📛「 DOWNLOAD 」	
-    ╠${global.menumoji} ${prefix}instagram [url]
-    ╠${global.menumoji} ${prefix}igtv [url]
-    ╠${global.menumoji} ${prefix}igstory [username]
-    ╠${global.menumoji} ${prefix}facebook [url]
-    ╠${global.menumoji} ${prefix}fbmp3 [url]
-    ╠${global.menumoji} ${prefix}twitter [url]
-    ╠${global.menumoji} ${prefix}twittermp3 [url]
-    ╠${global.menumoji} ${prefix}tiktok [url]
-    ╠${global.menumoji} ${prefix}tiktokaudio[url]
-    ╠${global.menumoji} ${prefix}tiktoknowm [url]
-    ╠${global.menumoji} ${prefix}mediafire [url]
-    ╠${global.menumoji} ${prefix}ytmp3 [url|quality]
-    ╠${global.menumoji} ${prefix}ytmp4 [url|quality]
-    ╠${global.menumoji} ${prefix}getmusic [yt link]
-    ╠${global.menumoji} ${prefix}getvideo [yt link]
-    ╠${global.menumoji} ${prefix}gitclone [repo link]
-    ╠${global.menumoji} ${prefix}soundcloud [url]
-    ╠${global.menumoji} ${prefix}zippyshare [url]
-    ╠${global.menumoji} ${prefix}whatsapp
-    ╠${global.menumoji} ${prefix}wamod
-    ╠${global.menumoji} ${prefix}wa
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 `,
-    footer: `${global.botname}`,
-    buttons: buttons,
-    headerType: 4,
-    }
-    LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-    }
-break
-case'convertmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 CONVERT 」
-    ╠${global.menumoji} ${prefix}totitle [reply stick]
-    ╠${global.menumoji} ${prefix}sticker [reply img|gif]
-    ╠${global.menumoji} ${prefix}take [reply img|gif|stik]
-    ╠${global.menumoji} ${prefix}smeme [reply img]
-    ╠${global.menumoji} ${prefix}emoji [emoji]
-    ╠${global.menumoji} ${prefix}tovideo [reply img]
-    ╠${global.menumoji} ${prefix}togif [reply stick]
-    ╠${global.menumoji} ${prefix}tourl [reply img]
-    ╠${global.menumoji} ${prefix}tovn [reply aud]
-    ╠${global.menumoji} ${prefix}tomp3 [reply vn]
-    ╠${global.menumoji} ${prefix}toaudio [reply vid]
-    ╠${global.menumoji} ${prefix}ebinary [reply txt]
-    ╠${global.menumoji} ${prefix}dbinary [reply txt]
-    ╠${global.menumoji} ${prefix}tinyurl [link]
-    ╠${global.menumoji} ${prefix}styletext [text]
-    ╠${global.menumoji} ${prefix}volume [reply aud]
-    ╠${global.menumoji} ${prefix}tempo [reply aud]
-    ╠${global.menumoji} ${prefix}bass [reply aud]
-    ╠${global.menumoji} ${prefix}blown [reply aud]
-    ╠${global.menumoji} ${prefix}deep [reply aud]
-    ╠${global.menumoji} ${prefix}earrape [reply aud]
-    ╠${global.menumoji} ${prefix}fast [reply aud]
-    ╠${global.menumoji} ${prefix}fat [reply aud]
-    ╠${global.menumoji} ${prefix}nightcore [reply aud]
-    ╠${global.menumoji} ${prefix}reverse [reply aud]
-    ╠${global.menumoji} ${prefix}robot [reply aud]
-    ╠${global.menumoji} ${prefix}slow [reply aud]
-    ╠${global.menumoji} ${prefix}squirrel [reply aud]
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'Imgeffectmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 IMG EFFECT 」
-    ╠${global.menumoji} ${prefix}wanted
-    ╠${global.menumoji} ${prefix}blur
-    ╠${global.menumoji} ${prefix}framed
-    ╠${global.menumoji} ${prefix}gayeffect
-    ╠${global.menumoji} ${prefix}titlesketch
-    ╠${global.menumoji} ${prefix}invert
-    ╠${global.menumoji} ${prefix}burn
-    ╠${global.menumoji} ${prefix}triggeredwebp
-    ╠${global.menumoji} ${prefix}shit
-    ╠${global.menumoji} ${prefix}rip
-    ╠${global.menumoji} ${prefix}jail
-    ╠${global.menumoji} ${prefix}beautifuleffect
-    ╠${global.menumoji} ${prefix}deleteeffect
-    ╠${global.menumoji} ${prefix}pixelate
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'arandomImgmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 RANDOM IMG 」
-    ╠${global.menumoji} ${prefix}coffee
-    ╠${global.menumoji} ${prefix}bts
-    ╠${global.menumoji} ${prefix}woof
-    ╠${global.menumoji} ${prefix}meow
-    ╠${global.menumoji} ${prefix}lizard
-    ╠${global.menumoji} ${prefix}wallneon
-    ╠${global.menumoji} ${prefix}wallpubg
-    ╠${global.menumoji} ${prefix}wallml
-    ╠${global.menumoji} ${prefix}wallrandom
-    ╠${global.menumoji} ${prefix}wallcode
-    ╠${global.menumoji} ${prefix}animewall [query]
-    ╠${global.menumoji}  ${prefix}animewall2 [query]
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'EMOTEmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 EMOTE 」
-    ╠${global.menumoji} ${prefix}instagramemoji
-    ╠${global.menumoji} ${prefix}facebookemoji
-    ╠${global.menumoji} ${prefix}iphoneemoji
-    ╠${global.menumoji} ${prefix}samsungemoji
-    ╠${global.menumoji} ${prefix}joyemoji
-    ╠${global.menumoji} ${prefix}skypeemoji
-    ╠${global.menumoji} ${prefix}twitteremoji
-    ╠${global.menumoji} ${prefix}whatsappemoji
-    ╠${global.menumoji} ${prefix}microsoftemoji
-    ╠${global.menumoji} ${prefix}googleemoji
-    ╠${global.menumoji} ${prefix}pediaemoji
-    ╠${global.menumoji} ${prefix}microsoftemoji
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'ANIMEmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 ANIME 」
-    ╠${global.menumoji} ${prefix}naruto
-    ╠${global.menumoji} ${prefix}yaoi
-    ╠${global.menumoji} ${prefix}neko2
-    ╠${global.menumoji} ${prefix}waifu
-    ╠${global.menumoji} ${prefix}waifu2
-    ╠${global.menumoji} ${prefix}awoo2
-    ╠${global.menumoji} ${prefix}shinobu
-    ╠${global.menumoji} ${prefix}waifu3
-    ╠${global.menumoji} ${prefix}foxgirl
-    ╠${global.menumoji} ${prefix}megumin2
-    ╠${global.menumoji} ${prefix}loli
-    ╠${global.menumoji} ${prefix}8ball
-    ╠${global.menumoji} ${prefix}animenom
-    ╠${global.menumoji} ${prefix}goose
-    ╠${global.menumoji} ${prefix}avatar
-    ╠${global.menumoji} ${prefix}tickle
-    ╠${global.menumoji} ${prefix}gecg
-    ╠${global.menumoji} ${prefix}feed
-    ╠${global.menumoji} ${prefix}animeslap
-    ╠${global.menumoji} ${prefix}animespank
-    ╠${global.menumoji} ${prefix}animepat
-    ╠${global.menumoji} ${prefix}animeneko
-    ╠${global.menumoji} ${prefix}animekiss
-    ╠${global.menumoji} ${prefix}animewlp
-    ╠${global.menumoji} ${prefix}animecuddle
-    ╠${global.menumoji} ${prefix}animecry
-    ╠${global.menumoji} ${prefix}animekill
-    ╠${global.menumoji} ${prefix}animelick
-    ╠${global.menumoji} ${prefix}animebite
-    ╠${global.menumoji} ${prefix}animeyeet
-    ╠${global.menumoji} ${prefix}animebully
-    ╠${global.menumoji} ${prefix}animebonk
-    ╠${global.menumoji} ${prefix}animewink
-    ╠${global.menumoji} ${prefix}animepoke
-    ╠${global.menumoji} ${prefix}animesmile
-    ╠${global.menumoji} ${prefix}animewave
-    ╠${global.menumoji} ${prefix}animeawoo
-    ╠${global.menumoji} ${prefix}animeblush
-    ╠${global.menumoji} ${prefix}animesmug
-    ╠${global.menumoji} ${prefix}animeglomp
-    ╠${global.menumoji} ${prefix}animehappy
-    ╠${global.menumoji} ${prefix}animedance
-    ╠${global.menumoji} ${prefix}animecringe
-    ╠${global.menumoji} ${prefix}animehighfive
-    ╠${global.menumoji} ${prefix}animehandhold
-    ╠${global.menumoji} ${prefix}animemegumin
-    ╠${global.menumoji} ${prefix}smug2
-    ╠${global.menumoji} ${prefix}couplepp
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'STICKERmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji} 
-    ╠══════📛「 STICKER 」
-    ╠${global.menumoji}  ${prefix}patrick
-    ╠${global.menumoji}  ${prefix}emoji
-    ╠${global.menumoji}  ${prefix}emojimix
-    ╠${global.menumoji}  ${prefix}attp
-    ╠${global.menumoji}  ${prefix}ttp
-    ╠${global.menumoji}  ${prefix}doge
-    ╠${global.menumoji}  ${prefix}lovesticker
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'ANIMESTICKERmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠════📛「 ANIME STICKER 」
-    ╠${global.menumoji} ${prefix}loli
-    ╠${global.menumoji} ${prefix}bully
-    ╠${global.menumoji} ${prefix}cuddle
-    ╠${global.menumoji} ${prefix}cry
-    ╠${global.menumoji} ${prefix}hug
-    ╠${global.menumoji} ${prefix}awoo
-    ╠${global.menumoji} ${prefix}kiss
-    ╠${global.menumoji} ${prefix}lick
-    ╠${global.menumoji} ${prefix}pat
-    ╠${global.menumoji} ${prefix}smug
-    ╠${global.menumoji} ${prefix}bonk
-    ╠${global.menumoji} ${prefix}yeet
-    ╠${global.menumoji} ${prefix}blush
-    ╠${global.menumoji} ${prefix}smile
-    ╠${global.menumoji} ${prefix}wave
-    ╠${global.menumoji} ${prefix}highfive
-    ╠${global.menumoji} ${prefix}handhold
-    ╠${global.menumoji} ${prefix}nom
-    ╠${global.menumoji} ${prefix}glomp
-    ╠${global.menumoji} ${prefix}bite
-    ╠${global.menumoji} ${prefix}slap
-    ╠${global.menumoji} ${prefix}kill
-    ╠${global.menumoji} ${prefix}happy
-    ╠${global.menumoji} ${prefix}wink
-    ╠${global.menumoji} ${prefix}poke
-    ╠${global.menumoji} ${prefix}dance
-    ╠${global.menumoji} ${prefix}cringe
-    ╠${global.menumoji} ${prefix}neko
-    ╠${global.menumoji} ${prefix}gura
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'NSFWmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji} 
-    ╠═══════📛「 NSFW 」
-    ╠${global.menumoji} ${prefix}hentaivideo
-    ╠${global.menumoji} ${prefix}yuri
-    ╠${global.menumoji} ${prefix}masturbation
-    ╠${global.menumoji} ${prefix}thighs
-    ╠${global.menumoji} ${prefix}pussy
-    ╠${global.menumoji} ${prefix}panties
-    ╠${global.menumoji} ${prefix}orgy
-    ╠${global.menumoji} ${prefix}ahegao
-    ╠${global.menumoji} ${prefix}ass
-    ╠${global.menumoji} ${prefix}bdsm
-    ╠${global.menumoji} ${prefix}blowjob
-    ╠${global.menumoji} ${prefix}cuckold
-    ╠${global.menumoji} ${prefix}ero
-    ╠${global.menumoji} ${prefix}gasm
-    ╠${global.menumoji} ${prefix}cum
-    ╠${global.menumoji} ${prefix}femdom
-    ╠${global.menumoji} ${prefix}foot
-    ╠${global.menumoji} ${prefix}gangbang
-    ╠${global.menumoji} ${prefix}glasses
-    ╠${global.menumoji} ${prefix}jahy
-    ╠${global.menumoji} ${prefix}trap
-    ╠${global.menumoji} ${prefix}blowjobgif
-    ╠${global.menumoji} ${prefix}spank
-    ╠${global.menumoji} ${prefix}hneko
-    ╠${global.menumoji} ${prefix}nwaifu
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'funmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠═══════📛「 FUN 」
-    ╠${global.menumoji}  ${prefix}how [text
-    ╠${global.menumoji}  ${prefix}when [text]
-    ╠${global.menumoji}  ${prefix}where [text]
-    ╠${global.menumoji}  ${prefix}is [text]
-    ╠${global.menumoji}  ${prefix}what [text]
-    ╠${global.menumoji}  ${prefix}can [text]
-    ╠${global.menumoji}  ${prefix}rate [text]
-    ╠${global.menumoji}  ${prefix}wangy [text]
-    ╠${global.menumoji}  ${prefix}beautifulcheck [tag]
-    ╠${global.menumoji}  ${prefix}awesomecheck [tag]
-    ╠${global.menumoji}  ${prefix}prettycheck [tag]
-    ╠${global.menumoji}  ${prefix}lesbiancheck [tag]
-    ╠${global.menumoji}  ${prefix}gaycheck [tag]
-    ╠${global.menumoji}  ${prefix}cutecheck [tag]
-    ╠${global.menumoji}  ${prefix}uglycheck [tag]
-    ╠${global.menumoji}  ${prefix}hornycheck [tag]
-    ╠${global.menumoji}  ${prefix}charactercheck [tag]
-    ╠${global.menumoji}  ${prefix}lovelycheck [tag]
-    ╠${global.menumoji}  ${prefix}couple
-    ╠${global.menumoji}  ${prefix}mysoulmate
-    ╠${global.menumoji}  ${prefix}hot
-    ╠${global.menumoji}  ${prefix}sexy
-    ╠${global.menumoji}  ${prefix}kind
-    ╠${global.menumoji}  ${prefix}idiot
-    ╠${global.menumoji}  ${prefix}handsome
-    ╠${global.menumoji}  ${prefix}beautiful
-    ╠${global.menumoji}  ${prefix}cute
-    ╠${global.menumoji}  ${prefix}pretty
-    ╠${global.menumoji}  ${prefix}lesbian
-    ╠${global.menumoji}  ${prefix}noob
-    ╠${global.menumoji}  ${prefix}bastard
-    ╠${global.menumoji}  ${prefix}foolish
-    ╠${global.menumoji}  ${prefix}nerd
-    ╠${global.menumoji}  ${prefix}asshole
-    ╠${global.menumoji}  ${prefix}gay
-    ╠${global.menumoji}  ${prefix}smart
-    ╠${global.menumoji}  ${prefix}stubble
-    ╠${global.menumoji}  ${prefix}dog
-    ╠${global.menumoji}  ${prefix}horny
-    ╠${global.menumoji}  ${prefix}cunt
-    ╠${global.menumoji}  ${prefix}wibu
-    ╠${global.menumoji}  ${prefix}noobra
-    ╠${global.menumoji}  ${prefix}nibba
-    ╠${global.menumoji}  ${prefix}nibbi
-    ╠${global.menumoji}  ${prefix}comrade
-    ╠${global.menumoji}  ${prefix}mumu
-    ╠${global.menumoji}  ${prefix}rascal
-    ╠${global.menumoji}  ${prefix}scumbag
-    ╠${global.menumoji}  ${prefix}nuts
-    ╠${global.menumoji}  ${prefix}fagot
-    ╠${global.menumoji}  ${prefix}scoundrel
-    ╠${global.menumoji}  ${prefix}ditch
-    ╠${global.menumoji}  ${prefix}dope
-    ╠${global.menumoji}  ${prefix}gucci
-    ╠${global.menumoji}  ${prefix}lit
-    ╠${global.menumoji}  ${prefix}dumbass
-    ╠${global.menumoji}  ${prefix}crackhead
-    ╠${global.menumoji}  ${prefix}mf
-    ╠${global.menumoji}  ${prefix}motherfucker
-    ╠${global.menumoji}  ${prefix}sucker
-    ╠${global.menumoji}  ${prefix}fuckboy
-    ╠${global.menumoji}  ${prefix}playboy
-    ╠${global.menumoji}  ${prefix}fuckgirl
-    ╠${global.menumoji}  ${prefix}plygirl
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'Soundmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠══════📛「 SOUND 」
-    ╠${global.menumoji}  ${prefix}sound1
-    ╠${global.menumoji} ${prefix}sound2
-    ╠${global.menumoji} ${prefix}sound3
-    ╠${global.menumoji} ${prefix}sound4
-    ╠${global.menumoji} ${prefix}sound5
-    ╠${global.menumoji} ${prefix}sound6
-    ╠${global.menumoji} ${prefix}sound7
-    ╠${global.menumoji} ${prefix}sound8
-    ╠${global.menumoji} ${prefix}sound9
-    ╠${global.menumoji} ${prefix}sound10
-    ╠${global.menumoji} ${prefix}sound11
-    ╠${global.menumoji} ${prefix}sound12
-    ╠${global.menumoji} ${prefix}sound13
-    ╠${global.menumoji} ${prefix}sound14
-    ╠${global.menumoji} ${prefix}sound15
-    ╠${global.menumoji} ${prefix}sound16
-    ╠${global.menumoji} ${prefix}sound17
-    ╠${global.menumoji} ${prefix}sound18
-    ╠${global.menumoji} ${prefix}sound19
-    ╠${global.menumoji} ${prefix}sound20
-    ╠${global.menumoji} ${prefix}sound21
-    ╠${global.menumoji} ${prefix}sound22
-    ╠${global.menumoji} ${prefix}sound23
-    ╠${global.menumoji} ${prefix}sound24
-    ╠${global.menumoji} ${prefix}sound25
-    ╠${global.menumoji} ${prefix}sound26
-    ╠${global.menumoji} ${prefix}sound27
-    ╠${global.menumoji} ${prefix}sound28
-    ╠${global.menumoji} ${prefix}sound29
-    ╠${global.menumoji} ${prefix}sound30
-    ╠${global.menumoji} ${prefix}sound31
-    ╠${global.menumoji} ${prefix}sound32
-    ╠${global.menumoji} ${prefix}sound33
-    ╠${global.menumoji} ${prefix}sound34
-    ╠${global.menumoji} ${prefix}sound35
-    ╠${global.menumoji} ${prefix}sound36
-    ╠${global.menumoji} ${prefix}sound37
-    ╠${global.menumoji} ${prefix}sound38
-    ╠${global.menumoji} ${prefix}sound39
-    ╠${global.menumoji} ${prefix}sound40
-    ╠${global.menumoji} ${prefix}sound41
-    ╠${global.menumoji} ${prefix}sound42
-    ╠${global.menumoji} ${prefix}sound43
-    ╠${global.menumoji} ${prefix}sound44
-    ╠${global.menumoji} ${prefix}sound45
-    ╠${global.menumoji} ${prefix}sound46
-    ╠${global.menumoji} ${prefix}sound47
-    ╠${global.menumoji} ${prefix}sound48
-    ╠${global.menumoji} ${prefix}sound49
-    ╠${global.menumoji} ${prefix}sound50
-    ╠${global.menumoji} ${prefix}sound51
-    ╠${global.menumoji} ${prefix}sound52
-    ╠${global.menumoji} ${prefix}sound53
-    ╠${global.menumoji} ${prefix}sound54
-    ╠${global.menumoji} ${prefix}sound55
-    ╠${global.menumoji} ${prefix}sound56
-    ╠${global.menumoji} ${prefix}sound57
-    ╠${global.menumoji} ${prefix}sound58
-    ╠${global.menumoji} ${prefix}sound59
-    ╠${global.menumoji} ${prefix}sound60
-    ╠${global.menumoji} ${prefix}sound61
-    ╠${global.menumoji} ${prefix}sound62
-    ╠${global.menumoji} ${prefix}sound63
-    ╠${global.menumoji} ${prefix}sound64
-    ╠${global.menumoji} ${prefix}sound65
-    ╠${global.menumoji} ${prefix}sound66
-    ╠${global.menumoji} ${prefix}sound67
-    ╠${global.menumoji} ${prefix}sound68
-    ╠${global.menumoji} ${prefix}sound69
-    ╠${global.menumoji} ${prefix}sound70
-    ╠${global.menumoji} ${prefix}sound71
-    ╠${global.menumoji} ${prefix}sound72
-    ╠${global.menumoji} ${prefix}sound73
-    ╠${global.menumoji} ${prefix}sound74
-    ╠${global.menumoji} ${prefix}sound75
-    ╠${global.menumoji} ${prefix}sound76
-    ╠${global.menumoji} ${prefix}sound77
-    ╠${global.menumoji} ${prefix}sound78
-    ╠${global.menumoji} ${prefix}sound79
-    ╠${global.menumoji} ${prefix}sound80
-    ╠${global.menumoji} ${prefix}sound81
-    ╠${global.menumoji} ${prefix}sound82
-    ╠${global.menumoji} ${prefix}sound83
-    ╠${global.menumoji} ${prefix}sound84
-    ╠${global.menumoji} ${prefix}sound85
-    ╠${global.menumoji} ${prefix}sound86
-    ╠${global.menumoji} ${prefix}sound87
-    ╠${global.menumoji} ${prefix}sound88
-    ╠${global.menumoji} ${prefix}sound89
-    ╠${global.menumoji} ${prefix}sound90
-    ╠${global.menumoji} ${prefix}sound91
-    ╠${global.menumoji} ${prefix}sound92
-    ╠${global.menumoji} ${prefix}sound93
-    ╠${global.menumoji} ${prefix}sound94
-    ╠${global.menumoji} ${prefix}sound95
-    ╠${global.menumoji} ${prefix}sound96
-    ╠${global.menumoji} ${prefix}sound97
-    ╠${global.menumoji} ${prefix}sound98
-    ╠${global.menumoji} ${prefix}sound99
-    ╠${global.menumoji} ${prefix}sound100
-    ╠${global.menumoji} ${prefix}sound101
-    ╠${global.menumoji} ${prefix}sound102
-    ╠${global.menumoji} ${prefix}sound103
-    ╠${global.menumoji} ${prefix}sound104
-    ╠${global.menumoji} ${prefix}sound105
-    ╠${global.menumoji} ${prefix}sound106
-    ╠${global.menumoji} ${prefix}sound107
-    ╠${global.menumoji} ${prefix}sound108
-    ╠${global.menumoji} ${prefix}sound109
-    ╠${global.menumoji} ${prefix}sound110
-    ╠${global.menumoji} ${prefix}sound111
-    ╠${global.menumoji} ${prefix}sound112
-    ╠${global.menumoji} ${prefix}sound113
-    ╠${global.menumoji} ${prefix}sound114
-    ╠${global.menumoji} ${prefix}sound115
-    ╠${global.menumoji} ${prefix}sound116
-    ╠${global.menumoji} ${prefix}sound117
-    ╠${global.menumoji} ${prefix}sound118
-    ╠${global.menumoji} ${prefix}sound119
-    ╠${global.menumoji} ${prefix}sound120
-    ╠${global.menumoji} ${prefix}sound121
-    ╠${global.menumoji} ${prefix}sound122
-    ╠${global.menumoji} ${prefix}sound123
-    ╠${global.menumoji} ${prefix}sound124
-    ╠${global.menumoji} ${prefix}sound125
-    ╠${global.menumoji} ${prefix}sound126
-    ╠${global.menumoji} ${prefix}sound127
-    ╠${global.menumoji} ${prefix}sound128
-    ╠${global.menumoji} ${prefix}sound129
-    ╠${global.menumoji} ${prefix}sound130
-    ╠${global.menumoji} ${prefix}sound131
-    ╠${global.menumoji} ${prefix}sound132
-    ╠${global.menumoji} ${prefix}sound133
-    ╠${global.menumoji} ${prefix}sound134
-    ╠${global.menumoji} ${prefix}sound135
-    ╠${global.menumoji} ${prefix}sound136
-    ╠${global.menumoji} ${prefix}sound137
-    ╠${global.menumoji} ${prefix}sound138
-    ╠${global.menumoji} ${prefix}sound139
-    ╠${global.menumoji} ${prefix}sound140
-    ╠${global.menumoji} ${prefix}sound141
-    ╠${global.menumoji} ${prefix}sound142
-    ╠${global.menumoji} ${prefix}sound143
-    ╠${global.menumoji} ${prefix}sound144
-    ╠${global.menumoji} ${prefix}sound145
-    ╠${global.menumoji} ${prefix}sound146
-    ╠${global.menumoji} ${prefix}sound148
-    ╠${global.menumoji} ${prefix}sound149
-    ╠${global.menumoji} ${prefix}sound150
-    ╠${global.menumoji} ${prefix}sound151
-    ╠${global.menumoji} ${prefix}sound152
-    ╠${global.menumoji} ${prefix}sound153
-    ╠${global.menumoji} ${prefix}sound154
-    ╠${global.menumoji} ${prefix}sound155
-    ╠${global.menumoji} ${prefix}sound156
-    ╠${global.menumoji} ${prefix}sound157
-    ╠${global.menumoji} ${prefix}sound158
-    ╠${global.menumoji} ${prefix}sound159
-    ╠${global.menumoji} ${prefix}sound160
-    ╠${global.menumoji} ${prefix}sound161
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'Gamesmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠══════📛「 GAME 」
-    ╠${global.menumoji} ${prefix}truth
-    ╠${global.menumoji} ${prefix}dare
-    ╠${global.menumoji} ${prefix}tictactoe
-    ╠${global.menumoji} ${prefix}delttt
-    ╠${global.menumoji} ${prefix}guess [option]
-    ╠${global.menumoji} ${prefix}math [mode]
-    ╠${global.menumoji} ${prefix}suitpvp [tag]
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'ANONYMOUSCHATmenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠══📛「 ANONYMOUS CHAT 」
-    ╠${global.menumoji} ${prefix}anonymous
-    ╠${global.menumoji} ${prefix}start
-    ╠${global.menumoji} ${prefix}next
-    ╠${global.menumoji} ${prefix}leave
-    ╠══════📛「 TOOL 」
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯
-     
-
-
-
-   *╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠${global.menumoji} ${prefix}translate [text]
-    ╠${global.menumoji} ${prefix}fliptext [text]
-    ╠${global.menumoji} ${prefix}toletter [number]
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'databasemenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠══════📛「 DATABASE 」
-    ╠${global.menumoji} ${prefix}setcmd
-    ╠${global.menumoji} ${prefix}listcmd
-    ╠${global.menumoji} ${prefix}delcmd
-    ╠${global.menumoji} ${prefix}lockcmd
-    ╠${global.menumoji} ${prefix}addmsg
-    ╠${global.menumoji} ${prefix}listmsg
-    ╠${global.menumoji} ${prefix}getmsg
-    ╠${global.menumoji} ${prefix}delmsg
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'lNDO': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠══════📛「 lNDO 」
-    ╠${global.menumoji} ${prefix}darkjoke
-    ╠${global.menumoji} ${prefix}quotes
-    ╠${global.menumoji} ${prefix}animequotes
-    ╠${global.menumoji} ${prefix}jalantikus-meme
-    ╠${global.menumoji} ${prefix}merdeka-news 
-    ╠${global.menumoji} ${prefix}kontan-news 
-    ╠${global.menumoji} ${prefix}cnbc-news 
-    ╠${global.menumoji} ${prefix}tribun-news 
-    ╠${global.menumoji} ${prefix}indozone-news 
-    ╠${global.menumoji} ${prefix}kompas-news 
-    ╠${global.menumoji} ${prefix}detik-news 
-    ╠${global.menumoji} ${prefix}daily-news 
-    ╠${global.menumoji} ${prefix}inews-news 
-    ╠${global.menumoji} ${prefix}okezone-news 
-    ╠${global.menumoji} ${prefix}sindo-news 
-    ╠${global.menumoji} ${prefix}tempo-news 
-    ╠${global.menumoji} ${prefix}antara-news 
-    ╠${global.menumoji} ${prefix}cnn-news 
-    ╠${global.menumoji} ${prefix}fajar-news 
-    ╠${global.menumoji} ${prefix}cinemaschedule
-    ╠${global.menumoji} ${prefix}wiki
-    ╠${global.menumoji} ${prefix}covidindo
-    ╠${global.menumoji} ${prefix}earthquake
-    ╠${global.menumoji} ${prefix}tvschedule 
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'INDOhoroscopemenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠══════📛「 INDO HSCOPE 」
-    ╠${global.menumoji} ${prefix}nomorhoki
-    ╠${global.menumoji} ${prefix}artimimpi 
-    ╠${global.menumoji} ${prefix}artinama 
-    ╠${global.menumoji} ${prefix}ramaljodoh 
-    ╠${global.menumoji} ${prefix}ramaljodohbali 
-    ╠${global.menumoji} ${prefix}suamiistri 
-    ╠${global.menumoji} ${prefix}ramalcinta 
-    ╠${global.menumoji} ${prefix}cocoknama 
-    ╠${global.menumoji} ${prefix}pasangan 
-    ╠${global.menumoji} ${prefix}jadiannikah 
-    ╠${global.menumoji} ${prefix}sifatusaha 
-    ╠${global.menumoji} ${prefix}rezeki 
-    ╠${global.menumoji} ${prefix}pekerjaan 
-    ╠${global.menumoji} ${prefix}nasib 
-    ╠${global.menumoji} ${prefix}penyakit 
-    ╠${global.menumoji} ${prefix}tarot 
-    ╠${global.menumoji} ${prefix}fengshui 
-    ╠${global.menumoji} ${prefix}haribaik 
-    ╠${global.menumoji} ${prefix}harisangar 
-    ╠${global.menumoji} ${prefix}harisial
-    ╠${global.menumoji} ${prefix}nagahari
-    ╠${global.menumoji} ${prefix}arahrezeki
-    ╠${global.menumoji} ${prefix}peruntungan 
-    ╠${global.menumoji} ${prefix}weton 
-    ╠${global.menumoji} ${prefix}karakter
-    ╠${global.menumoji} ${prefix}keberuntungan
-    ╠${global.menumoji} ${prefix}memancing
-    ╠${global.menumoji} ${prefix}masasubur
-    ╠${global.menumoji} ${prefix}zodiak
-    ╠${global.menumoji} ${prefix}shio
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case'othermenu': {
-    LioneBotInc.sendMessage(from, { react: { text: `💌`, key: m.key }}) 
-    let buttons = [
-    {buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1},
-    {buttonId: `ping`, buttonText: {displayText: 'PING'}, type: 1}
-    ]
-    let buttonMessage = {
-    image: { url: `${global.menuimg}` },
-    caption:`╔═════ ${global.ownername} ═════*
-    ╠${global.menumoji}
-    ╠══════📛「 OTHER 」
-    ╠${global.menumoji}  ${prefix}afk
-    ╠${global.menumoji}  ${prefix}readmore [text]
-    ╠${global.menumoji}  ${prefix}toviewonce
-    ╠${global.menumoji}  ${prefix}chatinfo
-    ╠${global.menumoji}  ${prefix}alive
-    ╠${global.menumoji}  ${prefix}script
-    ╠${global.menumoji}  ${prefix}speedtest
-    ╠${global.menumoji}  ${prefix}ping
-    ╠${global.menumoji}  ${prefix}owner
-    ╠${global.menumoji}  ${prefix}menu
-    ╠${global.menumoji}  ${prefix}delete
-    ╠${global.menumoji}  ${prefix}chatinfo
-    ╠${global.menumoji}  ${prefix}quoted
-    ╠${global.menumoji}  ${prefix}listpc
-    ╠${global.menumoji}  ${prefix}listgc
-    ╠${global.menumoji}  ${prefix}donate
-    ╠${global.menumoji}  ${prefix}request
-    ╠${global.menumoji} ${prefix}report [bug]
-    ╠${global.menumoji}             
-    ╚═══❖  📶 𝘽𝙡𝙪𝙚 𝙇𝙞𝙤𝙣𝙚 📶 ❯`,
-    footer: `${global.botname}`,
-                buttons: buttons,
-                headerType: 4,
-                }
-                LioneBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-                }
-break
-case '.spam': {
-            	if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-                if (!isCreator) return replay(`${mess.owner}`)
-                reply('Successful Change To Public Usage')
-            }
-            break
 case 'tqtt': 
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(`Thanks to
-Kumuthu & Vihanga
-NIPUNA & kavish`)
+Kumuthu & Vihanga & Kavisha
+NIPUNA (Me)
+My family
+And all friends who helped assemble this script !!!`)
 break
             default:
                 if (budy.startsWith('=>')) {
@@ -11397,25 +10027,25 @@ if (listTag.includes(partiNum)) {
 if (antitags === false) return
 if (!m.isGroup) return
 if (m.key.fromMe) return
-sendNye = fs.readFileSync('./Blue-Lione-media/theme/yourtag.webp')
-LioneBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
-LioneBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
+sendNye = fs.readFileSync('./Blue-Lione-MD/theme/yourtag.webp')
+XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
+XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
 }
 //anti-tag 3
 if (budy.includes(`${global.ownertag}`)) {
 if (antitags === false) return
 if (!m.isGroup) return
 if (m.key.fromMe) return
-sendNye = fs.readFileSync('./Blue-Lione-media/theme/yourtag.webp')
-LioneBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
-LioneBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
+sendNye = fs.readFileSync('./Blue-Lione-MD/theme/yourtag.webp')
+XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
+XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
 }
 		if (isCmd && budy.toLowerCase() != undefined) {
 		    if (m.chat.endsWith('broadcast')) return
 		    if (m.isBaileys) return
 		    let msgs = global.db.data.database
 		    if (!(budy.toLowerCase() in msgs)) return
-		    LioneBotInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+		    XeonBotInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 		}
         }
         
