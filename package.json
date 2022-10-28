@@ -1,11 +1,11 @@
 {
-  "name": "CheemsBot-MD",
-  "version": "4.0.0",
+  "name": "Blue_lione-MD",
+  "version": "1.0.0",
   "description": "Automated whatsapp md bot created using nodejs",
-  "main": "xeon.js",
+  "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node xeon.js"
+    "start": "node index.js"
   },
   "keywords": [
     "termux",
@@ -17,7 +17,7 @@
     "bot-md",
     "multi-device"
   ],
-  "author": "Xeon",
+  "author": "nipuna",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "^4.1.0",
@@ -75,10 +75,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DGXeon/CheemsBot-MD4.git"
+    "url": "git+https://github.com/Nipuna-apps/Blue-Lione-Bot.git"
   },
   "bugs": {
-    "url": "https://github.com/DGXeon/CheemsBot-MD4/issues"
+    "url": "https://github.com/Nipuna-apps/Blue-Lione-Bot/issues"
   },
-  "homepage": "https://github.com/DGXeon/CheemsBot-MD4#readme"
+  "homepage": "https://github.com/Nipuna-apps/Blue-Lione-Bot#readme"
 }
