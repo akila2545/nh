@@ -6683,7 +6683,6 @@ sourceUrl: args[0]
 }
 BluelioneInc.sendMessage(from, buttonMessage, {quoted:m})
 }
-break
 case 'fb' :
     case 'facebook' :
         BluelioneInc.sendMessage(from, { react: { text: `💛`, key: m.key }})
@@ -6702,11 +6701,10 @@ await BluelioneInc.sendMessage(from, {  text: msg , footer: `📶 𝘽𝙡𝙪�
   await BluelioneInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )      
     }      
     break
-
-    case 'fbhd' : 
+        case 'fbhd' : 
         try {
   if (!q) return await BluelioneInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
-  const data = await axios.get('https://api-bobiz.herokuapp.com/api/fb?url=' + q)
+  const data = await axios.get(`https://sanuw-api.herokuapp.com/docs/download/facebook?url=${q}&apikey=sanuwa`)
   const file = data.data[0]
 
 const fileup = await BluelioneInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
@@ -6723,7 +6721,7 @@ await BluelioneInc.sendMessage(from, { delete: filedown.key })
           case 'fbsd' : 
         try {
   if (!q) return await BluelioneInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
-  const data = await axios.get('https://api-bobiz.herokuapp.com/api/fb?url=' + q)
+  const data = await axios.get(`https://sanuw-api.herokuapp.com/docs/download/facebook?url=${q}&apikey=sanuwa`)
   const file = data.data[1]
 
 const fileup = await BluelioneInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
@@ -6736,6 +6734,8 @@ await BluelioneInc.sendMessage(from, { delete: filedown.key })
       await BluelioneInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )
   }
         break
+        
+        
             case 'pinterest2': {
             	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
