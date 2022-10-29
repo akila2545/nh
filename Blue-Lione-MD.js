@@ -176,7 +176,7 @@ let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'));
 const _autostick = JSON.parse(fs.readFileSync('./database/autostickpc.json'));
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
 let banchat = JSON.parse(fs.readFileSync('./database/banChat.json'));
-let bad = JSON.parse(fs.readFileSync('./ai/toxic/bad.json'))
+let bad = JSON.parse(fs.readFileSync('./Ai/toxic/bad.json'))
 
 //read database\\
 let tebaklagu = db.data.game.tebaklagu = []
@@ -5880,9 +5880,9 @@ break
 	    let remobg = require('remove.bg')
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
-	    hmm = await './ai/remobg-'+getRandom('')
+	    hmm = await './Ai/remobg-'+getRandom('')
 	    localFile = await BluelioneInc.downloadAndSaveMediaMessage(quoted, hmm)
-	    outputFile = await './ai/hremo-'+getRandom('.png')
+	    outputFile = await './Ai/hremo-'+getRandom('.png')
 	    reply(mess.wait)
 	    remobg.removeBackgroundFromImageFile({
 	      path: localFile,
@@ -8450,29 +8450,6 @@ _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
                 `.trim()
                 reply(respon)
-            }
-            break
-            case 'speedtest': {
-            	   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-            reply('Testing Speed...')
-            let cp = require('child_process')
-            let { promisify } = require('util')
-            let exec = promisify(cp.exec).bind(cp)
-          let o
-          try {
-          o = await exec('python speed.py')
-          } catch (e) {
-          o = e
-         } finally {
-        let { stdout, stderr } = o
-        if (stdout.trim()) reply(stdout)
-        if (stderr.trim()) reply(stderr)
-            }
-            }
-            break
-            case 'owner': case 'creator': {
-                BluelioneInc.sendContact(m.chat, global.vcardowner, m)
             }
             break
   case 'setmenu': {
