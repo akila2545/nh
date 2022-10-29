@@ -4,4 +4,4 @@
 
 [![Only](https://i.ibb.co/FJcrYJw/Screenshot-2022-10-08-192010.jpg)](https://heroku.com/deploy) 
 
- (https://railway.app/brand/logotype-light.png)]()
+ (https://railway.app/brand/logotype-light.png)](https://heroku.com/deploy)
