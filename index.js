@@ -27,19 +27,19 @@ const chalk = require('chalk')
 const FileType = require('file-type')
 const path = require('path')
 const PhoneNumber = require('awesome-phonenumber')
-const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./plugins/exif')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./plugins/myfunc')
 const moment = require('moment-timezone')
 
 var low
 try {
   low = require('lowdb')
 } catch (e) {
-  low = require('./lib/lowdb')
+  low = require('./plugins/lowdb')
 }
 
 const { Low, JSONFile } = low
-const mongoDB = require('./lib/mongoDB')
+const mongoDB = require('./plugins/mongoDB')
 
 global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 
@@ -507,7 +507,7 @@ BluelioneInc.sendMessage(anu.id, buttonMessage)
        let type = '', mimetype = mime, pathFile = filename
        if (options.asDocument) type = 'document'
        if (options.asSticker || /webp/.test(mime)) {
-        let { writeExif } = require('./lib/exif')
+        let { writeExif } = require('./plugins/exif')
         let media = { mimetype: mime, data }
         pathFile = await writeExif(media, { packname: options.packname ? options.packname : global.packname, author: options.author ? options.author : global.author, categories: options.categories ? options.categories : [] })
         await fs.promises.unlink(filename)

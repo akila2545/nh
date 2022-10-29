@@ -35,24 +35,24 @@ const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
-const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
+const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./plugins/myfunc')
 const xeonkey = require('xfarr-api')
 const cheerio = require ("cheerio")
-const { BluelioneIncTiktok } = require('./lib/tiktokbyxeon')
-let { msgFilter } = require('./lib/antispam')
-let { covid } = require('./lib/covid.js') 
+const { BluelioneIncTiktok } = require('./plugins/tiktokbyxeon')
+let { msgFilter } = require('./plugins/antispam')
+let { covid } = require('./plugins/covid.js') 
 const { EmojiAPI } = require("emoji-api")
 const emoji = new EmojiAPI()
 const thiccysapi = require('textmaker-thiccy')
-const { BluelioneIncWiki } = require('./lib/xeonywiki.js')
-const textpro = require('./lib/textpro')
-const { mediafireDl } = require('./lib/mediafire.js')
-const { Gempa } = require("./lib/gempa.js")
-const { jadwaltv }= require('./lib/jadwaltv')
+const { BluelioneIncWiki } = require('./plugins/xeonywiki.js')
+const textpro = require('./plugins/textpro')
+const { mediafireDl } = require('./plugins/mediafire.js')
+const { Gempa } = require("./plugins/gempa.js")
+const { jadwaltv }= require('./plugins/jadwaltv')
 const xeontod = require("tod-api")
-const { pinterest } = require("./lib/pinterest")
+const { pinterest } = require("./plugins/pinterest")
 const toHur = require('@develoka/angka-terbilang-js')
-const { hentai } = require('./lib/scraper2.js')
+const { hentai } = require('./plugins/scraper2.js')
 const {
  FajarNews, 
  BBCNews,
@@ -1568,7 +1568,7 @@ if (isBanChat) return reply(mess.banChat)
         case 'ttc': case 'ttt': case 'tictactoe': {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-            let TicTacToe = require("./lib/tictactoe")
+            let TicTacToe = require("./plugins/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replay(`You Are Still In The Game`)
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
@@ -1813,7 +1813,7 @@ break
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
-                let { genMath, modes } = require('./lib/math')
+                let { genMath, modes } = require('./plugins/math')
                 if (!text) return replay(`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: ${prefix}math medium`)
                 let result = await genMath(text.toLowerCase())
                 BluelioneInc.sendText(m.chat, `*What Is The Result Of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
@@ -2420,7 +2420,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit) //wont response when limit runs out\\
 		db.data.users[m.sender].limit -= 1 // -1 limit
-		let { styletext } = require('./lib/scraper')
+		let { styletext } = require('./plugins/scraper')
 		if (!text) return replay(`Enter Query Text!`)
                 let anu = await styletext(text)
                 let teks = `Entered Text ${text}\n\n`
@@ -3566,7 +3566,7 @@ break
 case 'smeme': case 'stickermeme': case 'stickmeme': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-let { TelegraPh } = require('./lib/uploader')
+let { TelegraPh } = require('./plugins/uploader')
 if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
@@ -3582,7 +3582,7 @@ break
             	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.quoted.text && !text) return replay(`Reply Text With Caption ${prefix + command}`)
-            let { eBinary } = require('./lib/binary')
+            let { eBinary } = require('./plugins/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
             let eb = await eBinary(teks)
             reply(eb)
@@ -3592,7 +3592,7 @@ if (isBanChat) return reply(mess.banChat)
             	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.quoted.text && !text) return replay(`Reply Text With Caption ${prefix + command}`)
-            let { dBinary } = require('./lib/binary')
+            let { dBinary } = require('./plugins/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
             let db = await dBinary(teks)
             reply(db)
@@ -4606,7 +4606,7 @@ case 'jail': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwe
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
-	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
+	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./plugins/uploader2')
                 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/${command}?url=${anu}`)
@@ -4617,7 +4617,7 @@ case 'gayeffect': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
-	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
+	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./plugins/uploader2')
                 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/gay?url=${anu}`)
@@ -4628,7 +4628,7 @@ case 'deleteeffect': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
-	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
+	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./plugins/uploader2')
                 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/delete?url=${anu}`)
@@ -4639,7 +4639,7 @@ case 'framed': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
-	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
+	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./plugins/uploader2')
                 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/fotojatoh?url=${anu}`)
@@ -4650,7 +4650,7 @@ case 'beautifuleffect': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
-	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
+	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./plugins/uploader2')
                 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/beautiful?url=${anu}`)
@@ -6243,7 +6243,7 @@ if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
-let { webp2mp4File } = require('./lib/uploader')
+let { webp2mp4File } = require('./plugins/uploader')
 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
 await BluelioneInc.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Video' } }, { quoted: m })
@@ -6257,7 +6257,7 @@ if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/A
 if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
 reply(mess.wait)
 let media = await quoted.download()
-let { toAudio } = require('./lib/converter')
+let { toAudio } = require('./plugins/converter')
 let audio = await toAudio(media, 'mp4')
 BluelioneInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
 }
@@ -6270,7 +6270,7 @@ if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/A
 if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
 reply(mess.wait)
 let media = await quoted.download()
-let { toAudio } = require('./lib/converter')
+let { toAudio } = require('./plugins/converter')
 let audio = await toAudio(media, 'mp4')
 BluelioneInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${BluelioneInc.user.name} (${m.id}).mp3`}, { quoted : m })
 }
@@ -6282,7 +6282,7 @@ if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio 
 if (!m.quoted) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
 reply(mess.wait)
 let media = await quoted.download()
-let { toPTT } = require('./lib/converter')
+let { toPTT } = require('./plugins/converter')
 let audio = await toPTT(media, 'mp4')
 BluelioneInc.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
 }
@@ -6293,7 +6293,7 @@ if (isBanChat) return reply(mess.banChat)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
-let { webp2mp4File } = require('./lib/uploader')
+let { webp2mp4File } = require('./plugins/uploader')
 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
 await BluelioneInc.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Converted From Webp To Gif' }, gifPlayback: true }, { quoted: m })
@@ -6304,7 +6304,7 @@ break
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)
-let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./plugins/uploader')
 let media = await BluelioneInc.downloadAndSaveMediaMessage(quoted)
 if (/image/.test(mime)) {
 let anu = await TelegraPh(media)
@@ -6740,7 +6740,7 @@ await BluelioneInc.sendMessage(from, { delete: filedown.key })
             	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
-		let { pinterest } = require('./lib/scraper')
+		let { pinterest } = require('./plugins/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
                 BluelioneInc.sendMessage(m.chat, { image: { url: result }, caption: '${themeemoji} Media Url : '+result }, { quoted: m })
@@ -6786,7 +6786,7 @@ case 'apk': case 'apkmod': case 'apkdl': {
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
   if (!text) return reply(`Use${prefix + command} whatsapp`) 
-  let noh = require('./lib/myfunc2')                
+  let noh = require('./plugins/myfunc2')                
   noh.rexdl(`${text}`).then(async (data) => {
   let sections = []   
   for (let i of data) {
@@ -6820,7 +6820,7 @@ if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(`Use${prefix + command} whatsapp`)
                 if (!isUrl(args[0]) && !args[0].includes('rexdl.com')) reply('*The link you provided is invalid*')
-           let rex = require('./lib/ApkDown.js')
+           let rex = require('./plugins/ApkDown.js')
            rex.ApkDown(`${text}`).then(async (anu) => {        
            if (anu[0].size.split('MB')[0] >= 150) return reply('*File Over Limit* '+util.format(anu))
            for (let i of anu) {    
@@ -7193,7 +7193,7 @@ case 'image': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
-		let { pinterest } = require('./lib/scraperW')
+		let { pinterest } = require('./plugins/scraperW')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
                 BluelioneInc.sendMessage(m.chat, { image: { url: result }, caption: ` ${themeemoji} Media Url : `+result }, { quoted: m })
@@ -7724,7 +7724,7 @@ if (isBanChat) return reply(mess.banChat)
             case 'animequotes': case 'animequote': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-		let { quotesAnime } = require('./lib/scraperW')
+		let { quotesAnime } = require('./plugins/scraperW')
                 let anu = await quotesAnime()
                 result = anu[Math.floor(Math.random() * anu.length)]
                 let buttons = [
@@ -7743,7 +7743,7 @@ case 'wallpaper': case 'animewallpaper': case 'animewall': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!args.join(" ")) return reply("What picture are you looking for??")
-		let { wallpaper } = require('./lib/scraperW')
+		let { wallpaper } = require('./plugins/scraperW')
                 anu = await wallpaper(args)
                 result = anu[Math.floor(Math.random() * anu.length)]
 		let buttons = [
@@ -7774,7 +7774,7 @@ break
             	 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(`Enter Query Title`)
-		let { wikimedia } = require('./lib/scraper')
+		let { wikimedia } = require('./plugins/scraper')
                 anu = await wikimedia(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
                 let buttons = [
@@ -7793,7 +7793,7 @@ break
             case 'quotesanime': case 'animequotes': case 'animequote': case 'quoteanime': {
             	 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-		let { quotesAnime } = require('./lib/scraper')
+		let { quotesAnime } = require('./plugins/scraper')
                 let anu = await quotesAnime()
                 result = anu[Math.floor(Math.random() * anu.length)]
                 let buttons = [
@@ -8322,7 +8322,7 @@ BluelioneInc.relayMessage(m.chat, template.message, { messageId: template.key.id
 }
 break
 case 'ytdoc': {	    
-    let { yta } = require('./lib/y2mate')
+    let { yta } = require('./plugins/y2mate')
     if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
     if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
     let quality = args[1] ? args[1] : '128kbps'
@@ -8337,7 +8337,7 @@ case 'ytdoc': {
     }
 break
             case 'ytmp4': {
-                                let { ytv } = require('./lib/y2mate')
+                                let { ytv } = require('./plugins/y2mate')
                                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=RNa4thokVJ4 360p`)
                                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid!`)
                                 let quality = args[1] ? args[1] : '360p'
@@ -8352,7 +8352,7 @@ break
                             }
                             break
                             case 'ytmp3': {	    
-                     let { yta } = require('./lib/y2mate')
+                     let { yta } = require('./plugins/y2mate')
                      if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                      if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
                      let quality = args[1] ? args[1] : '128kbps'
@@ -8456,7 +8456,7 @@ break
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	        if (!text) return reply(`Example : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`)
-                let { umma } = require('./lib/scraper')
+                let { umma } = require('./plugins/scraper')
 		let anu = await umma(isUrl(text)[0])
 		if (anu.type == 'video') {
 		    let buttons = [
@@ -8489,7 +8489,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
         	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 		if (!text) return reply(`Where is the ringtone name noob?, Example : ${prefix + command} charlie puth`)
-        let { ringtone } = require('./lib/scraper')
+        let { ringtone } = require('./plugins/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
 		BluelioneInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
